@@ -1,4 +1,5 @@
-FROM python:3.9-buster
+# https://hub.docker.com/r/nikolaik/python-nodejs
+FROM nikolaik/python-nodejs:python3.9-nodejs15
 
 # Install packages needed to run your application (not build deps):
 # We need to recreate the /usr/share/man/man{1..8} directories first because
@@ -56,10 +57,12 @@ ENV UWSGI_WORKERS=2 UWSGI_THREADS=4
 # uWSGI uploaded media file serving configuration:
 ENV UWSGI_STATIC_MAP="/media/=/code/pfwra/media/"
 
-# Call collectstatic with dummy environment variables:
-RUN DATABASE_URL=postgres://none REDIS_URL=none 
-RUN /venv/bin/python manage.py collectstatic --noinput
+# Static assets stuff:
+#RUN DATABASE_URL=postgres://none REDIS_URL=none 
 RUN /venv/bin/python manage.py update_index
+RUN /venv/bin/python manage.py copy_bulma_static_into_project
+RUN /venv/bin/python manage.py bulma install
+RUN /venv/bin/python manage.py collectstatic --noinput
 
 # make sure static files are writable by uWSGI process
 RUN mkdir -p /code/pfwra/media/images && chown -R 1000:2000 /code/pfwra/media
@@ -71,4 +74,4 @@ VOLUME ["/code/pfwra/media/images/"]
 ENTRYPOINT ["/code/docker-entrypoint.sh"]
 
 # Start uWSGI
-CMD ["/venv/bin/uwsgi", "--show-config"]
+CMD ["/venv/bin/uwsgi", "--show-config --reload"]
