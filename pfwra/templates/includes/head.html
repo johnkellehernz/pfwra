@@ -1,0 +1,28 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        {% block title %}
+            {% block title_prefix %}
+                Pest Free Waitakere Ranges Alliance
+            {% endblock %}
+            {% if page.seo_title %}
+                {{ page.seo_title }}
+            {% else %}
+                {{ page.title }}
+            {% endif %}
+        {% endblock %}
+    </title>
+    <meta name="description" content="{% if page.search_description %}{{ page.search_description }}{% endif %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom Fonts 
+    <link href="{% static 'css/font-alegreya.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-lato.css' %}" rel="stylesheet">-->
+
+    <!-- Theme CSS -->
+   <link href="{% static 'css/project.min.css' %}" rel="stylesheet">
+
+</head>

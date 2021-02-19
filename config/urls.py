@@ -11,7 +11,6 @@ from wagtail.admin import urls as wagtailadmin_urls  # noqa isort:skip
 from pfwra.search import views as search_views  # noqa isort:skip
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="home/home_page.html"), name="home"),
     # Django Admin, use {% url "admin:index" %}
     path(settings.DJANGO_ADMIN_URL, admin.site.urls),
     # Wagtail Admin

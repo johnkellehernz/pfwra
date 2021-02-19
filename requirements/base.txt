@@ -16,4 +16,4 @@ django-redis==4.12.1  # https://github.com/jazzband/django-redis
 
 # Wagtail
 # ------------------------------------------------------------------------------
-wagtail==2.11.3  # https://github.com/wagtail/wagtail
+wagtail==2.12.2  # https://github.com/wagtail/wagtail

@@ -1,0 +1,18 @@
+{% load wagtailimages_tags %}
+
+{% image page.image fill-1920x600 as image %}
+<section class="hero is-link is-fullheight" style="background-image: url('{{ image.url }}')">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+        <div class="columns">
+            <div class="column is-offset-2 is-8 is-offset-2">
+              <p class="title">{{ page.hero_text }}</p>
+            </div>
+          </div>
+        </div>
+  </div>
+</section>
+
+
+
+        
