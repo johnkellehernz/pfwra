@@ -20,14 +20,15 @@ def create_homepage(apps, schema_editor):
 
     # Create a new homepage
     homepage = HomePage.objects.create(
-        title="Pest Free Waitakere Ranges Alliance",
-        draft_title="Pest Free Waitakere Ranges Alliance",
+        title="Pest Free Waitākere Ranges Alliance",
+        draft_title="Pest Free Waitākere Ranges Alliance",
         slug="home",
         content_type=homepage_content_type,
         path="00010001",
         depth=2,
         numchild=0,
         url_path="/home/",
+        locale_id=1,
     )
 
     # Create a site with the new homepage set as the root

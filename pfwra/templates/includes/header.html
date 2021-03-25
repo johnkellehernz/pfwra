@@ -1,55 +1,58 @@
 {% load static %}
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="{% static 'images/logo.png' %}" width="121" height="36">
-    </a>
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="{% static 'images/logo.png' %}" width="121" height="36">
+      </a>
 
-    <a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <div class="navbar-item field">
-      <p class="control has-icons-right">
-        <input class="input is-primary is-rounded" type="search" placeholder="Search">
-        <span class="icon is-right">
-          <i class="fas fa-search"></i>
-        </span>
-      </p>
-    </div>
+      <a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
-    <div class="navbar-end">
-      <a class="navbar-item">
-        About
-      </a>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+      </div>
 
-      <a class="navbar-item">
-        What's Happening
-      </a>
+      <div class="navbar-end">
+        <a class="navbar-item">
+          {{ 'About'|upper }}
+        </a>
 
-      <a class="navbar-item">
-        Participate
-      </a>
+        <a class="navbar-item">
+          {{ 'What\'s Happening'|upper }}
+        </a>
 
-      <a class="navbar-item">
-        Connect
-      </a>
+        <a class="navbar-item">
+          {{ 'Participate'|upper }}
+        </a>
 
-      <div class="navbar-item">
-        <div class="buttons">
-          <!-- <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a> -->
-          <a class="button is-primary">
-            Log in
-          </a>
+        <a class="navbar-item">
+          {{ 'Connect'|upper }}
+        </a>
+
+        <div class="navbar-item">
+          <p class="control has-icons-right">
+            <input class="input is-primary is-rounded" type="search" placeholder="Search">
+            <span class="icon is-right">
+              <i class="fa fa-search"></i>
+            </span>
+          </p>
+        </div>
+
+        <div class="navbar-item">
+          <div class="buttons">
+            <!-- <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a> -->
+            <a class="button is-primary">
+              {{ 'Log in'|upper }}
+            </a>
+          </div>
         </div>
       </div>
     </div>

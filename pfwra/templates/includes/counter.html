@@ -1,0 +1,10 @@
+{% load wagtailimages_tags wagtailcore_tags %}
+
+<div class="card rounded-card is-justify-content-center">
+  <div class="card-content is-justify-content-center">
+    <p class="title">{{ counter.count|upper }}</p>
+    <div class="subtitle">
+      <p>{{ counter.text }}</p>
+    </div>
+  </div>
+</div>

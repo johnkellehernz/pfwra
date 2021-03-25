@@ -54,8 +54,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 # ------------------------------------------------------------------------------
 # wagtail apps
 WAGTAIL = [
-    "pfwra.home",
-    "pfwra.search",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.search_promotions",
@@ -94,6 +92,9 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "pfwra.users.apps.UsersConfig",
     # Your stuff: custom apps go here
+    "pfwra.common",
+    "pfwra.home",
+    "pfwra.search",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

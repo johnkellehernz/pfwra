@@ -2,14 +2,35 @@ from django.db import models
 
 from wagtail.admin.edit_handlers import (
     FieldPanel,
-    FieldRowPanel,
     InlinePanel,
     MultiFieldPanel,
     PageChooserPanel,
     StreamFieldPanel,
 )
-from wagtail.core.models import Page
+from wagtail.core.fields import StreamField
+from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.snippets.edit_handlers import SnippetChooserPanel
+
+from modelcluster.fields import ParentalKey
+
+from common.blocks import CardBlock, QuoteBlock, BaseStreamBlock
+
+
+class CounterPageAdvertPlacement(Orderable, models.Model):
+    page = ParentalKey('home.HomePage', on_delete=models.CASCADE, related_name='counter_placements')
+    counter = models.ForeignKey('common.Counter', on_delete=models.CASCADE, related_name='+')
+
+    class Meta(Orderable.Meta):
+        verbose_name = "counter placement"
+        verbose_name_plural = "counter placements"
+
+    panels = [
+        SnippetChooserPanel('counter'),
+    ]
+
+    def __str__(self):
+        return self.page.title + " -> " + self.counter.text
 
 
 class HomePage(Page):
@@ -45,6 +66,9 @@ class HomePage(Page):
         help_text='Choose a page to link to for the Call to Action'
     )
 
+    featured = StreamField([('cards', CardBlock())], help_text='Featured cards', blank=True)
+    quotations = StreamField([('quotes', QuoteBlock())], help_text='Featured quotes', blank=True)
+    body = StreamField(BaseStreamBlock(), verbose_name="Page body", blank=True)
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             ImageChooserPanel('image'),
@@ -53,7 +77,10 @@ class HomePage(Page):
                 FieldPanel('hero_cta'),
                 PageChooserPanel('hero_cta_link'),
             ]),
-        ], heading="Hero section")
+        ], heading="Hero section"),
+        StreamFieldPanel('featured'),
+        StreamFieldPanel('quotations'),
+        InlinePanel('counter_placements', label="Counters"),
     ]
 
     def __str__(self):

@@ -1,33 +1,49 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
 
-// Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+// Fonts
+$family-sans-serif: "Oswald", sans-serif;
+// family-secondary defaults to family-sans-serif in Bulma
+$family-secondary: "Bitter", serif;
 
-// Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+// Brand colors
+// Main palette
+$dark-green: #046A37; // Main brand colour
+$green: #5C8D3E; // Support colour #1
+$light-blue: #B9E2E7; // Support colour #2
+$dark-blue: #317796; // Button?
+$orange: #D96D28; // Button? / Alert?
+// Support palette
+$light-green: #88BE41; // Main brand colour
+$beige: #F7F5EA; // Neutral background
+$red: #D9222D; // Alert
+
+$primary: $dark-green;
+$link: $primary;
+$info: $light-blue;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+// $dark: $grey-darker;
+// $text: $grey-dark;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
-$control-border-width: 2px;
-$input-border-color: transparent;
-$input-shadow: none;
+$body-background-color: $beige;
+
+// $control-border-width: 2px;
+// $input-border-color: transparent;
+// $input-shadow: none;
 
 @import "./node_modules/bulma/bulma.sass";
 
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.rounded-card {
+    background-image: url("https://bulma.io/images/placeholders/256x256.png");
+    border-radius: 50%;
 }

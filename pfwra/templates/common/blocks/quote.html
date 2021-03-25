@@ -1,0 +1,9 @@
+<figure class="quote">
+    {% if value.title %}<h3>{{ value.title|upper }}</h3>{% endif %}
+    
+    <blockquote {% if value.link %}cite="{{ value.link.url }}"{% endif %}>{{ value.text }}</blockquote>
+        
+    {% if value.author %}
+    <figcaption>{{ value.author }}</figcaption>
+    {% endif %}
+</figure>

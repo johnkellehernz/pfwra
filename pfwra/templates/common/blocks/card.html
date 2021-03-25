@@ -1,0 +1,27 @@
+{% load wagtailimages_tags wagtailcore_tags %}
+
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      {% if value.image %}
+        {% image value.image fill-1280x960 %}
+      {% else %}
+      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"/>
+      {% endif %}
+    </figure>
+  </div>
+
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title">{{ value.header|upper }}</p>
+      </div>
+    </div>
+    <div class="content">
+      <p>{{ value.text }}</p>
+      {% if value.button and value.link %}
+        <a href="{{ value.link.url }}" class="button is-link">{{ value.link.text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
