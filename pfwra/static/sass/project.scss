@@ -38,12 +38,18 @@ $body-background-color: $beige;
 
 @import "./node_modules/bulma/bulma.sass";
 
+
+// Bulma override
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+
+//Customstuff
 .rounded-card {
     background-image: url("https://bulma.io/images/placeholders/256x256.png");
     border-radius: 50%;
+    width: 256px;
+    height: 256px;
 }

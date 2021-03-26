@@ -18,6 +18,12 @@
     {% block content %}
     {% endblock content %}
 
+    {% block footer %}
+      {# Header contains the main_navigation block #}
+      {% include "includes/footer.html" %}
+    {% endblock footer %}
+
+
     <script src="{% static 'js/project.min.js' %}"></script>
   
   </body>

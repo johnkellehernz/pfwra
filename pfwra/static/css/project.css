@@ -9224,4 +9224,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .rounded-card {
   background-image: url("https://bulma.io/images/placeholders/256x256.png");
-  border-radius: 50%; }
+  border-radius: 50%;
+  width: 256px;
+  height: 256px; }

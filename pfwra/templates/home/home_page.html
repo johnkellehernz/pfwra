@@ -29,13 +29,18 @@
 
          <section class="section">
             <div class="container">
-                <div class="columns is-multiline">
-                {% for counter in page.counter_placements.all %}
-                    <div class="column is-one-third is-justify-content-center">
-                    {% include "includes/counter.html" with counter=counter.counter %}
-                    </div>
-                {% endfor %}
-                </div> 
+                <nav class="level">
+                    {% for counter in page.counter_placements.all %}
+                        <div class="level-item has-text-centered">
+                        {% include "includes/counter.html" with counter=counter.counter %}
+                        </div>
+                        
+                        {% if forloop.counter|divisibleby:3 %}
+                            </nav>
+                            <nav class="level">
+                        {% endif %}
+                    {% endfor %}
+                </nav> 
             </div>  
          </section>
 {% endblock content %}
