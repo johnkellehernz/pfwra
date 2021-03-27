@@ -1,0 +1,25 @@
+
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+  <a class="pagination-previous" 
+    {% if subpages.has_previous %}
+      title="Previous page" href="?page={{ subpages.previous_page_number }}"
+    {% else %}
+      disabled
+    {% endif %}
+    >Previous</a>
+  <a class="pagination-next"    
+    {% if subpages.has_next %}title="Next page" href="?page={{ subpages.next_page_number }}"
+    {% else %}disabled
+    {% endif %}>Next</a></a>
+  <ul class="pagination-list">
+    {% for i in subpages.paginator.page_range %}
+      <li>
+        {% if subpages.number == i %}
+          <a class="pagination-link is-current" aria-label="Page {{ i }}" aria-current="page">{{ i }}</a>
+        {% else %}
+          <a class="pagination-link" href="?page={{ i }}" aria-label="Goto page {{ i }}">{{ i }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

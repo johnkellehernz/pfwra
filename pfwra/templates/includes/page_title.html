@@ -1,0 +1,20 @@
+{% load wagtailimages_tags %}
+
+{% if page.image %}
+    {% image page.image fill-1200x400 as image %}
+    <section class="hero is-medium" style="background-image: url('{{ image.url }}');">
+{% else %}
+    <section class="hero is-medium">
+{% endif %}
+
+  <div class="hero-body">
+    <div class="container has-text-left">
+        <h1 class="title is-1 has-text-primary-light">{{ page.title|upper }}</h1>
+        <p class="subtitle has-text-primary-light">{{ page.introduction }}</p>
+    </div>
+  </div>
+</section>
+
+
+
+        
