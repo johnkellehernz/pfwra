@@ -290,7 +290,6 @@ LOGGING = {
 # # https://django-allauth.readthedocs.io/en/latest/configuration.html
 # SOCIALACCOUNT_ADAPTER = "pfwra.users.adapters.SocialAccountAdapter"
 
-
 # Your stuff...
 WAGTAIL_SITE_NAME = "pfwra"
 BASE_URL = "https://pfwra"

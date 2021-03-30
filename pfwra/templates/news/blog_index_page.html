@@ -33,6 +33,16 @@
 
     <section class="section">
         <div class="container">
+            {% if tag %}
+                <div class='notification is-info is-light'>
+                    <p>Showing news tagged with: <strong>{{ tag|title }}</strong></p>
+                </div>
+            {% endif %}
+            {% if suburb %}
+                <div class='notification is-info is-light'>
+                    <p>Showing news from: <strong>{{ suburb|title }}</strong></p>
+                </div>
+            {% endif %}      
             <div class="tags">
                 {% for tag in page.get_child_tags  %}
                       <a class="tag is-medium is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>

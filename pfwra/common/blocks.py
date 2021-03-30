@@ -111,11 +111,11 @@ class BaseStreamBlock(StreamBlock):
     heading_block = HeadingBlock()
     paragraph_block = RichTextBlock(
         icon="fa-paragraph",
-        template="common/blocks/paragraph_block.html"
+        template="common/blocks/paragraph.html"
     )
     image_block = ImageBlock()
     block_quote = BlockQuote()
     embed_block = EmbedBlock(
         help_text='Insert an embed URL e.g https://www.youtube.com/embed/SGJFWirQ3ks',
         icon="fa-s15",
-        template="blocks/embed_block.html")
+        template="common/blocks/embed.html")

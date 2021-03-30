@@ -18,8 +18,16 @@
       </div>
     </div>
     <div class="content">
+      <p class="title is-6 is-family-secondary">
+            {% if page.author %}
+                {{ page.author.first_name }} {{ page.author.last_name }}
+            {% endif %}
+            {% if page.date_published %}
+                <br>{{ page.date_published|date:"d M Y" }}
+            {% endif %}
+      </p>
       <p>{{ page.introduction }}</p>
-        <a href="{% pageurl page %}" class="button is-link">Read on</a>
+      <a href="{% pageurl page %}" class="button is-link">Read on</a>
     </div>
   </div>
 </div>  
