@@ -22,25 +22,35 @@ from common.blocks import BaseStreamBlock
 from common.models import Suburb
 
 
-class BlogPageTag(TaggedItemBase):
+class GroupPageSuburb(Orderable, models.Model):
+    page = ParentalKey('groups.GroupPage', on_delete=models.CASCADE, related_name='suburb_set')
+    suburb = models.ForeignKey('common.Suburb', on_delete=models.CASCADE, related_name='group_set')
+
+    class Meta(Orderable.Meta):
+        verbose_name = "suburb"
+        verbose_name_plural = "suburbs"
+
+    panels = [
+        SnippetChooserPanel('suburb'),
+    ]
+
+    def __str__(self):
+        return self.page.title + " -> " + self.suburb.name
+
+
+class GroupPageTag(TaggedItemBase):
     """
     This model allows us to create a many-to-many relationship between
-    the BlogPage object and tags. There's a longer guide on using it at
+    the GroupPage object and tags. There's a longer guide on using it at
     http://docs.wagtail.io/en/latest/reference/pages/model_recipes.html#tagging
     """
-    content_object = ParentalKey('BlogPage', related_name='tagged_items', on_delete=models.CASCADE)
+    content_object = ParentalKey('GroupPage', related_name='tagged_items', on_delete=models.CASCADE)
 
 
-class BlogPage(Page):
-    author = models.ForeignKey(
-        'common.People',
-        null=True,
-        blank=True,
-        related_name='+',
-        on_delete=models.SET_NULL
-    )
+class GroupPage(Page):
+    subtitle = models.CharField("Title in Te reo Māori", max_length=254, blank=True, null=True)
     introduction = models.TextField(
-        help_text='Text to describe the page',
+        help_text='Text to describe the group',
         blank=True)
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -49,33 +59,27 @@ class BlogPage(Page):
         on_delete=models.SET_NULL,
         related_name='+',
     )
+    logo = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+    external_url = models.URLField(blank=True, null=True, help_text="URL of the group, if any")
     body = StreamField(
         BaseStreamBlock(), verbose_name="Page body", blank=True
     )
-    tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
-    suburb = models.ForeignKey(
-        'common.Suburb',
-        null=True,
-        blank=True,
-        related_name='page_set',
-        on_delete=models.SET_NULL
-    )
-    date_published = models.DateField(
-        "Date article published", blank=True, null=True
-    )
-
+    tags = ClusterTaggableManager(through=GroupPageTag, blank=True)
     content_panels = Page.content_panels + [
+        FieldPanel('subtitle', classname="full"),
         FieldPanel('introduction', classname="full"),
         ImageChooserPanel('image'),
+        ImageChooserPanel('logo'),
+        FieldPanel('external_url', classname="full"),
         StreamFieldPanel('body'),
-        FieldPanel('date_published'),
-        SnippetChooserPanel('author'),
-        SnippetChooserPanel('suburb'),
+        InlinePanel('suburb_set', label="Suburbs"),
         FieldPanel('tags'),
-    ]
-
-    search_fields = Page.search_fields + [
-        index.SearchField('body'),
     ]
 
     @property
@@ -89,19 +93,25 @@ class BlogPage(Page):
             ])
         return tags
 
-    # Specifies parent to BlogPage as being BlogIndexPages
-    parent_page_types = ['BlogIndexPage']
+    @property
+    def get_suburbs(self):
+        suburbs = []
+        for gps in self.suburb_set.all():
+            suburb = gps.suburb
+            suburb.url = '/' + '/'.join(s.strip('/') for s in [
+                self.get_parent().url,
+                'suburbs',
+                suburb.slug
+            ])
+            suburbs.append(suburb)
+        return suburbs
 
-    # Specifies what content types can exist as children of BlogPage.
-    # Empty list means that no child content types are allowed.
-    subpage_types = []
 
-
-class BlogIndexPage(RoutablePageMixin, Page):
+class GroupIndexPage(RoutablePageMixin, Page):
     """
-    Index page for blogs.
+    Index page for groups.
     We need to alter the page model's context to return the child page objects,
-    the BlogPage objects, so that it works as an index page
+    the GroupPage objects, so that it works as an index page
 
     RoutablePageMixin is used to allow for a custom sub-URL for the tag views
     defined above.
@@ -122,12 +132,13 @@ class BlogIndexPage(RoutablePageMixin, Page):
         FieldPanel('subtitle', classname="full"),
         FieldPanel('introduction', classname="full"),
         ImageChooserPanel('image'),
+
     ]
 
-    # Speficies that only BlogPage objects can live under this index page
-    subpage_types = ['BlogPage']
+    # Speficies that only GroupPage objects can live under this index page
+    subpage_types = ['GroupPage']
     parent_page_types = ['home.HomePage']
-    # # Defines a method to access the children of the page (e.g. BlogPage
+    # # Defines a method to access the children of the page (e.g. GroupPage
     # # objects). On the demo site we use this on the HomePage
     # def children(self):
     #     return self.get_children().specific().live()
@@ -136,13 +147,13 @@ class BlogIndexPage(RoutablePageMixin, Page):
     # date that they were published
     # http://docs.wagtail.io/en/latest/getting_started/tutorial.html#overriding-context
     def get_context(self, request):
-        context = super(BlogIndexPage, self).get_context(request)
-        context['posts'] = self.paginate(request, self.get_posts())
+        context = super(GroupIndexPage, self).get_context(request)
+        context['groups'] = self.paginate(request, self.get_groups())
         return context
 
-    def paginate(self, request, posts, *args):
+    def paginate(self, request, groups, *args):
         page = request.GET.get('page')
-        paginator = Paginator(posts, 1)
+        paginator = Paginator(groups, 1)
         try:
             pages = paginator.page(page)
         except PageNotAnInteger:
@@ -152,7 +163,7 @@ class BlogIndexPage(RoutablePageMixin, Page):
         return pages
 
     # This defines a Custom view that utilizes Tags. This view will return all
-    # related BlogPages for a given Tag or redirect back to the BlogIndexPage.
+    # related GroupPages for a given Tag or redirect back to the GroupIndexPage.
     # More information on RoutablePages is at
     # http://docs.wagtail.io/en/latest/reference/contrib/routablepage.html
     @route(r'^tags/$', name='tag_archive')
@@ -163,65 +174,65 @@ class BlogIndexPage(RoutablePageMixin, Page):
             tag = Tag.objects.get(slug=tag)
         except Tag.DoesNotExist:
             if tag:
-                msg = 'There are no blog posts tagged with "{}"'.format(tag)
+                msg = 'There are no groups tagged with "{}"'.format(tag)
                 messages.add_message(request, messages.INFO, msg)
             return redirect(self.url)
 
-        posts = self.get_posts(tag=tag)
+        groups = self.get_groups(tag=tag)
         context = {
             'page': self,
             'tag': tag,
-            'posts': self.paginate(request, posts)
+            'groups': self.paginate(request, groups)
         }
-        return render(request, 'news/blog_index_page.html', context)
+        return render(request, 'groups/group_index_page.html', context)
 
     # This defines a Custom view that utilizes Tags. This view will return all
-    # related BlogPages for a given Tag or redirect back to the BlogIndexPage.
+    # related GroupPages for a given Tag or redirect back to the GroupIndexPage.
     # More information on RoutablePages is at
     # http://docs.wagtail.io/en/latest/reference/contrib/routablepage.html
     @route(r'^suburbs/$', name='suburb_archive')
     @route(r'^suburbs/([\w-]+)/$', name='suburb_archive')
-    def suburb_archive(self, request, tag=None):
+    def suburb_archive(self, request, slug=None):
 
         try:
-            suburb = Suburb.objects.get(slug=tag)
+            suburb = Suburb.objects.get(slug=slug)
         except suburb.DoesNotExist:
             if suburb:
-                msg = 'There are no blog posts with the "{}" suburb'.format(suburb)
+                msg = 'There are no groups with the "{}" suburb'.format(suburb)
                 messages.add_message(request, messages.INFO, msg)
             return redirect(self.url)
 
-        posts = self.get_posts(suburb=suburb)
+        groups = self.get_groups(suburb=suburb)
         context = {
             'page': self,
             'suburb': suburb,
-            'posts': self.paginate(request, posts)
+            'groups': self.paginate(request, groups)
         }
-        return render(request, 'news/blog_index_page.html', context)
+        return render(request, 'news/group_index_page.html', context)
 
     def serve_preview(self, request, mode_name):
         # Needed for previews to work
         return self.serve(request)
 
-    # Returns the child BlogPage objects for this BlogPageIndex.
-    # If a tag is used then it will filter the posts by tag.
+    # Returns the child GroupPage objects for this GroupPageIndex.
+    # If a tag is used then it will filter the groups by tag.
     # Same with suburb if no tag present
-    def get_posts(self, tag=None, suburb=None):
-        posts = BlogPage.objects.live().descendant_of(self).order_by('-date_published')
+    def get_groups(self, tag=None, suburb=None):
+        groups = GroupPage.objects.live().descendant_of(self).order_by('-title')
         if tag:
-            posts = posts.filter(tags=tag)
+            groups = groups.filter(tags=tag)
         elif suburb:
-            posts = posts.filter(suburb=suburb)
-        return posts
+            groups = groups.filter(suburb_set__suburb=suburb)
+        return groups
 
-    # Returns the list of Tags for all child posts of this BlogPage.
+    # Returns the list of Tags for all child groups of this GroupPage.
     def get_child_tags(self):
         tags = []
-        for post in self.get_posts():
+        for group in self.get_groups():
             # Not tags.append() because we don't want a list of lists
-            tags += post.get_tags
+            tags += group.get_tags
         tags = sorted(set(tags))
         return tags
 
     def get_child_suburbs(self):
-        return Suburb.objects.exclude(page_set__isnull=True)
+        return Suburb.objects.exclude(group_set__isnull=True)

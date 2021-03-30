@@ -97,6 +97,7 @@ LOCAL_APPS = [
     "home",
     "news",
     "search",
+    "groups",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

@@ -83,5 +83,7 @@ class HomePage(Page):
         InlinePanel('counter_placements', label="Counters"),
     ]
 
+    subpage_types = ['groups.GroupIndexPage', 'news.BlogIndexPage', 'common.StandardPage']
+
     def __str__(self):
         return self.title
