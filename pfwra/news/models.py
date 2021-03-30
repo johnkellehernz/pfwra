@@ -162,9 +162,6 @@ class BlogIndexPage(RoutablePageMixin, Page):
         try:
             tag = Tag.objects.get(slug=tag)
         except Tag.DoesNotExist:
-            if tag:
-                msg = 'There are no blog posts tagged with "{}"'.format(tag)
-                messages.add_message(request, messages.INFO, msg)
             return redirect(self.url)
 
         posts = self.get_posts(tag=tag)

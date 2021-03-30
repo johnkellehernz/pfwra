@@ -196,10 +196,7 @@ class GroupIndexPage(RoutablePageMixin, Page):
 
         try:
             suburb = Suburb.objects.get(slug=slug)
-        except suburb.DoesNotExist:
-            if suburb:
-                msg = 'There are no groups with the "{}" suburb'.format(suburb)
-                messages.add_message(request, messages.INFO, msg)
+        except Suburb.DoesNotExist:
             return redirect(self.url)
 
         groups = self.get_groups(suburb=suburb)
@@ -208,7 +205,7 @@ class GroupIndexPage(RoutablePageMixin, Page):
             'suburb': suburb,
             'groups': self.paginate(request, groups)
         }
-        return render(request, 'news/group_index_page.html', context)
+        return render(request, 'groups/group_index_page.html', context)
 
     def serve_preview(self, request, mode_name):
         # Needed for previews to work

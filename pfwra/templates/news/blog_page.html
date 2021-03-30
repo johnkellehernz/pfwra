@@ -41,9 +41,15 @@
         <div class="container">
             <div class="tags">
                 {% for tag in page.get_tags  %}
-                      <a class="tag is-medium is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+                    {% if forloop.counter == 1 %}
+                        <span class="mr-2 mb-2">Tags:</span>
+                    {% endif %}
+                    <a class="tag is-medium is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
                 {% endfor %}
                 {% for suburb in page.get_child_suburbs  %}
+                    {% if forloop.counter == 1 %}
+                        <span class="mr-2 mb-2">Suburbs:</span>
+                    {% endif %}
                     <a class="tag is-medium  is-rounded" href="{% routablepageurl page "suburb_archive" suburb.slug %}">{{ suburb.name|title }}</a>
                 {% endfor %}
             </div>
