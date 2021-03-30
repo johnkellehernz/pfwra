@@ -11,7 +11,7 @@ from modelcluster.fields import ParentalKey
 from taggit.models import Tag, TaggedItemBase
 
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel, MultiFieldPanel
 from wagtail.core.fields import StreamField
 from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
@@ -78,9 +78,23 @@ class GroupPage(Page):
         ImageChooserPanel('logo'),
         FieldPanel('external_url', classname="full"),
         StreamFieldPanel('body'),
-        InlinePanel('suburb_set', label="Suburbs"),
-        FieldPanel('tags'),
+        MultiFieldPanel([
+            FieldPanel('tags'),
+            InlinePanel('suburb_set', label="Suburbs")
+        ], heading="Suburbs and tags"),
     ]
+
+    search_fields = Page.search_fields + [
+        index.SearchField('introduction'),
+        index.SearchField('body'),
+    ]
+
+    # Specifies parent to BlogPage as being BlogIndexPages
+    parent_page_types = ['GroupIndexPage']
+
+    # Specifies what content types can exist as children of BlogPage.
+    # Empty list means that no child content types are allowed.
+    subpage_types = ['events.EventPage']
 
     @property
     def get_tags(self):

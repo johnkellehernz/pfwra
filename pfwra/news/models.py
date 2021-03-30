@@ -11,7 +11,7 @@ from modelcluster.fields import ParentalKey
 from taggit.models import Tag, TaggedItemBase
 
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel, MultiFieldPanel
 from wagtail.core.fields import StreamField
 from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
@@ -70,8 +70,10 @@ class BlogPage(Page):
         StreamFieldPanel('body'),
         FieldPanel('date_published'),
         SnippetChooserPanel('author'),
-        SnippetChooserPanel('suburb'),
-        FieldPanel('tags'),
+        MultiFieldPanel([
+            FieldPanel('tags'),
+            SnippetChooserPanel('suburb'),
+        ], heading="Suburbs and tags"),
     ]
 
     search_fields = Page.search_fields + [
