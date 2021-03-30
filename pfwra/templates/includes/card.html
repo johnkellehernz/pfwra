@@ -44,6 +44,18 @@
                 <a class="tag is-small is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
             {% endfor %}
           </div>
+      {% elif class == 'event' %}
+        <div class="block">
+          {% if page.location %}
+            <p>Location:<br/>{{ page.location }}</p>
+          {% endif %}
+          {% if page.date_scheduled %}
+            <p>Date:<br/>{{ page.date_scheduled|date:"d M Y" }}</p>
+          {% endif %}
+          {% if page.starting_time %}
+            <p>Time:<br/>{{ page.starting_time }}{% if page.ending_time %} - {{ page.ending_time }}{% endif %}</p>
+          {% endif %}
+        </div>
       {% endif %}
       <a href="{% pageurl page %}" class="button is-link">See more</a>
     </div>
