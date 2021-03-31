@@ -9222,15 +9222,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.navbar {
-  max-height: 56px;
-  max-height: 3.5rem; }
-
-.navbar .navbar-item img {
-  max-height: 64px;
-  max-height: 4rem;
-  overflow: visible; }
-
 .hero-head .navbar::before {
   content: "";
   background-color: white;
@@ -9242,8 +9233,29 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   bottom: 0px;
   left: 0px; }
 
+.navbar {
+  max-height: 56px;
+  max-height: 3.5rem; }
+
+.navbar .navbar-item img {
+  max-height: 64px;
+  max-height: 4rem;
+  overflow: visible; }
+
 .rounded-card {
   background-image: url("https://bulma.io/images/placeholders/256x256.png");
   border-radius: 50%;
   width: 256px;
   height: 256px; }
+
+.responsive-object {
+  position: relative; }
+
+.responsive-object iframe,
+.responsive-object object,
+.responsive-object embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }

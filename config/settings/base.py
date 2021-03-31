@@ -295,3 +295,5 @@ LOGGING = {
 # Your stuff...
 WAGTAIL_SITE_NAME = "pfwra"
 BASE_URL = "https://pfwra"
+
+WAGTAILEMBEDS_RESPONSIVE_HTML = True
