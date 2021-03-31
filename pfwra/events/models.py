@@ -118,7 +118,7 @@ class EventPage(Page):
         for gps in self.suburb_set.all():
             suburb = gps.suburb
             suburb.url = '/' + '/'.join(s.strip('/') for s in [
-                self.get_parent().url,
+                EventIndexPage.objects.live().first().url,
                 'suburbs',
                 suburb.slug
             ])

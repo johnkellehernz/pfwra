@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+from datetime import datetime
+
 from django.contrib import messages
 from django.db import models
 from django.shortcuts import redirect, render
@@ -20,6 +22,7 @@ from wagtail.snippets.edit_handlers import SnippetChooserPanel
 
 from common.blocks import BaseStreamBlock
 from common.models import Suburb
+from events.models import EventPage
 
 
 class GroupPageSuburb(Orderable, models.Model):
@@ -119,6 +122,13 @@ class GroupPage(Page):
             ])
             suburbs.append(suburb)
         return suburbs
+
+    @property
+    def get_events(self):
+        return (EventPage.objects.live().descendant_of(self).
+                filter(date_scheduled__gte=datetime.today()).order_by('-date_scheduled'))
+
+
 
 
 class GroupIndexPage(RoutablePageMixin, Page):
