@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
 
+{% block header %}
+    {% include "includes/hero.html" with page=page header=True %}
+{% endblock header %}
+
 {% block content %}  
-
-    {% include "includes/hero.html" with page=page %}
-
     <section class="section">
         <div class="container">
             <div class="columns is-multiline">

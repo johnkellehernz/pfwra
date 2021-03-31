@@ -40,13 +40,36 @@ $body-background-color: $beige;
 
 
 // Bulma override
+
+// Hero stuff
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.hero-head .navbar::before {
+    content: "";
+    background-color: $white;
+    opacity: 0.2;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
 
-//Customstuff
+// Navbar(header) including logo
+.navbar {
+    max-height: 3.5rem;
+}
+
+.navbar .navbar-item img {
+    max-height: 4rem;
+    overflow: visible;
+}
+
+// Home page ounded cards 
 .rounded-card {
     background-image: url("https://bulma.io/images/placeholders/256x256.png");
     border-radius: 50%;
