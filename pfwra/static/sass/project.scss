@@ -31,6 +31,9 @@ $danger: $red;
 
 // Update some of Bulma's component variables
 $body-background-color: $beige;
+$title-line-height: 1;
+$size-1: 5rem;
+$title-weight: 500;
 
 // $control-border-width: 2px;
 // $input-border-color: transparent;
@@ -40,11 +43,18 @@ $body-background-color: $beige;
 
 
 // Bulma override
+
+p {
+    font-family:"Bitter", serif;
+    font-weight: 300;
+}
+
+
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
-
 
 //Customstuff
 .rounded-card {
