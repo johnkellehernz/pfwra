@@ -1,0 +1,6 @@
+{% load wagtailimages_tags %}
+
+<figure class="image mx-0">
+    {% image self.image width-900 %}
+    <figcaption class="has-text-left">{{ self.caption }} - {{ self.attribution }}</figcaption>
+</figure>

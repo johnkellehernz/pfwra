@@ -19,7 +19,7 @@
     </div>
     <div class="content">
       <p>{{ value.text }}</p>
-      {% if value.button and value.link %}
+      {% if value.link %}
         <a href="{{ value.link.url }}" class="button is-link">{{ value.link.text }}</a>
       {% endif %}
     </div>

@@ -1,0 +1,63 @@
+{% load wagtailimages_tags wagtailcore_tags wagtailroutablepage_tags %}
+
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      {% if page.image %}
+        {% image page.image fill-512x512 %}
+      {% else %}
+      <img src="https://bulma.io/images/placeholders/empty.png" alt="Placeholder image"/>
+      {% endif %}
+    </figure>
+  </div>
+
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title">{{ page.title|upper }}</p>
+      </div>
+    </div>
+    <div class="content">
+      <p class="title is-6 is-family-secondary">
+            {% if page.author %}
+                {{ page.author.first_name }} {{ page.author.last_name }}
+            {% endif %}
+            {% if page.date_published %}
+                <br>{{ page.date_published|date:"d M Y" }}
+            {% endif %}
+      </p>
+      <p>{{ page.introduction }}</p>
+      {% if class == 'group' %}
+          {% if page.external_url %}
+            <span class="icon-text mb-3">
+              <span class="icon">
+                <i class="fas fa-link"></i>
+              </span>
+              <span><a class="link" href="{{ page.external_url}}" target="_blank">Website</a></span>
+            </span>
+          {% endif %}
+          <div class="tags">
+            {% for tag in page.get_tags  %}
+                  <a class="tag is-small is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+            {% endfor %}
+            {% for suburb in page.get_suburbs  %}
+                <a class="tag is-small is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+            {% endfor %}
+          </div>
+      {% elif class == 'event' %}
+        <div class="block">
+          {% if page.location %}
+            <p>Location:<br/>{{ page.location }}</p>
+          {% endif %}
+          {% if page.date_scheduled %}
+            <p>Date:<br/>{{ page.date_scheduled|date:"d M Y" }}</p>
+          {% endif %}
+          {% if page.starting_time %}
+            <p>Time:<br/>{{ page.starting_time }}{% if page.ending_time %} - {{ page.ending_time }}{% endif %}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+      <a href="{% pageurl page %}" class="button is-link">See more</a>
+    </div>
+  </div>
+</div>  

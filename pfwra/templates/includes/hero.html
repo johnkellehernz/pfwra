@@ -1,7 +1,15 @@
 {% load wagtailimages_tags %}
 
 {% image page.image fill-1920x600 as image %}
+
 <section class="hero is-medium" style="background-image: url('{{ image.url }}');">
+
+    {% if header == True %}
+        <div class="hero-head">
+            {% include "includes/header.html" with header=True%}
+        </div>
+    {% endif %} 
+    
   <div class="hero-body">
     {% if page.hero_text %}
     <div class="container has-text-left">

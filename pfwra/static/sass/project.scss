@@ -50,16 +50,44 @@ p {
 }
 
 
+// Hero stuff
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-//Customstuff
+.hero-head .navbar::before {
+    content: "";
+    background-color: $white;
+    opacity: 0.2;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+// Navbar(header) including logo
+.navbar {
+    max-height: 3.5rem;
+}
+
+.navbar .navbar-item img {
+    max-height: 4rem;
+    overflow: visible;
+}
+
+// Home page ounded cards 
+
 .rounded-card {
     background-image: url("https://bulma.io/images/placeholders/256x256.png");
     border-radius: 50%;
     width: 256px;
     height: 256px;
 }
+
+
+@import "./wagtail.scss";
+

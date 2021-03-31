@@ -77,10 +77,19 @@ class HomePage(Page):
                 FieldPanel('hero_cta'),
                 PageChooserPanel('hero_cta_link'),
             ]),
-        ], heading="Hero section"),
-        StreamFieldPanel('featured'),
-        StreamFieldPanel('quotations'),
+        ], heading="Top hero section"),
+        MultiFieldPanel([
+            StreamFieldPanel('featured'),
+            StreamFieldPanel('quotations')],
+            heading="Featured cards and quotations"),
         InlinePanel('counter_placements', label="Counters"),
+    ]
+
+    subpage_types = [
+        'groups.GroupIndexPage',
+        'news.BlogIndexPage',
+        'common.StandardPage',
+        'events.EventIndexPage'
     ]
 
     def __str__(self):
