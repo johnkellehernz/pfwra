@@ -2294,8 +2294,8 @@ a.tag:hover {
   color: #363636;
   font-size: 32px;
   font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.125; }
+  font-weight: 500;
+  line-height: 1; }
   .title strong {
     color: inherit;
     font-weight: inherit; }
@@ -2306,8 +2306,8 @@ a.tag:hover {
     margin-top: -20px;
     margin-top: -1.25rem; }
   .title.is-1 {
-    font-size: 48px;
-    font-size: 3rem; }
+    font-size: 80px;
+    font-size: 5rem; }
   .title.is-2 {
     font-size: 40px;
     font-size: 2.5rem; }
@@ -2340,8 +2340,8 @@ a.tag:hover {
     margin-top: -20px;
     margin-top: -1.25rem; }
   .subtitle.is-1 {
-    font-size: 48px;
-    font-size: 3rem; }
+    font-size: 80px;
+    font-size: 5rem; }
   .subtitle.is-2 {
     font-size: 40px;
     font-size: 2.5rem; }
@@ -8020,8 +8020,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding-bottom: 3rem !important; }
 
 .is-size-1 {
-  font-size: 48px !important;
-  font-size: 3rem !important; }
+  font-size: 80px !important;
+  font-size: 5rem !important; }
 
 .is-size-2 {
   font-size: 40px !important;
@@ -8049,7 +8049,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 @media screen and (max-width: 768px) {
   .is-size-1-mobile {
-    font-size: 3rem !important; }
+    font-size: 5rem !important; }
   .is-size-2-mobile {
     font-size: 2.5rem !important; }
   .is-size-3-mobile {
@@ -8065,7 +8065,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 @media screen and (min-width: 769px), print {
   .is-size-1-tablet {
-    font-size: 3rem !important; }
+    font-size: 5rem !important; }
   .is-size-2-tablet {
     font-size: 2.5rem !important; }
   .is-size-3-tablet {
@@ -8081,7 +8081,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 @media screen and (max-width: 1023px) {
   .is-size-1-touch {
-    font-size: 3rem !important; }
+    font-size: 5rem !important; }
   .is-size-2-touch {
     font-size: 2.5rem !important; }
   .is-size-3-touch {
@@ -8097,7 +8097,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 @media screen and (min-width: 1024px) {
   .is-size-1-desktop {
-    font-size: 3rem !important; }
+    font-size: 5rem !important; }
   .is-size-2-desktop {
     font-size: 2.5rem !important; }
   .is-size-3-desktop {
@@ -8113,7 +8113,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 @media screen and (min-width: 1216px) {
   .is-size-1-widescreen {
-    font-size: 3rem !important; }
+    font-size: 5rem !important; }
   .is-size-2-widescreen {
     font-size: 2.5rem !important; }
   .is-size-3-widescreen {
@@ -8129,7 +8129,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 @media screen and (min-width: 1408px) {
   .is-size-1-fullhd {
-    font-size: 3rem !important; }
+    font-size: 5rem !important; }
   .is-size-2-fullhd {
     font-size: 2.5rem !important; }
   .is-size-3-fullhd {
@@ -9218,9 +9218,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 48px 24px 96px;
   padding: 3rem 1.5rem 6rem; }
 
+p {
+  font-family: "Bitter", serif;
+  font-weight: 300; }
+
 .hero {
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center; }
 
 .hero-head .navbar::before {
   content: "";

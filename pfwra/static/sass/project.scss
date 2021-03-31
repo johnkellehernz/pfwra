@@ -31,6 +31,9 @@ $danger: $red;
 
 // Update some of Bulma's component variables
 $body-background-color: $beige;
+$title-line-height: 1;
+$size-1: 5rem;
+$title-weight: 500;
 
 // $control-border-width: 2px;
 // $input-border-color: transparent;
@@ -41,10 +44,17 @@ $body-background-color: $beige;
 
 // Bulma override
 
+p {
+    font-family:"Bitter", serif;
+    font-weight: 300;
+}
+
+
 // Hero stuff
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .hero-head .navbar::before {
@@ -70,6 +80,7 @@ $body-background-color: $beige;
 }
 
 // Home page ounded cards 
+
 .rounded-card {
     background-image: url("https://bulma.io/images/placeholders/256x256.png");
     border-radius: 50%;

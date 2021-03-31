@@ -1,7 +1,8 @@
 {% load wagtailimages_tags %}
 
 {% image page.image fill-1920x600 as image %}
-<section class="hero is-large" style="background-image: url('{{ image.url }}');">
+
+<section class="hero is-medium" style="background-image: url('{{ image.url }}');">
 
     {% if header == True %}
         <div class="hero-head">
@@ -13,15 +14,11 @@
     {% if page.hero_text %}
     <div class="container has-text-left">
         <div class="columns">
-            <div class="column is-one-third-desktop is-one-third-widescreen is-one-third-fullhd">
-                <h1 class="title is-1 has-text-primary-light">{{ page.hero_text|upper }}</h1>
+            <div class="column is-half is-half-widescreen is-half-fullhd">
+                <h1 class="title is-1 has-text-white">{{ page.hero_text|upper }}</h1>
             </div>
         </div>
     </div>
     {% endif %}
   </div>
 </section>
-
-
-
-        
