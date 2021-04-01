@@ -45,11 +45,7 @@ $title-weight: 500;
 
 // Bulma override
 
-ul, ol, p, figcaption {
-    font-family: $family-secondary;
-    font-weight: $weight-light;
-}
-p {
+ul, ol, p, figcaption, blockquote {
     font-family: $family-secondary;
     font-weight: $weight-light;
 }

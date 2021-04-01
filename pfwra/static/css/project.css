@@ -9218,11 +9218,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 48px 24px 96px;
   padding: 3rem 1.5rem 6rem; }
 
-ul, ol, p, figcaption {
-  font-family: "Bitter", serif;
-  font-weight: 300; }
-
-p {
+ul, ol, p, figcaption, blockquote {
   font-family: "Bitter", serif;
   font-weight: 300; }
 
