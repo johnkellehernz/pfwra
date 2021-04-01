@@ -33,6 +33,7 @@ $danger: $red;
 $body-background-color: $beige;
 $title-line-height: 1;
 $size-1: 5rem;
+$size-3: 2.5rem;
 $title-weight: 500;
 
 // $control-border-width: 2px;
@@ -44,14 +45,17 @@ $title-weight: 500;
 
 // Bulma override
 
+ul, ol, p, figcaption {
+    font-family: $family-secondary;
+    font-weight: $weight-light;
+}
 p {
-    font-family: "Bitter", serif;
-    font-weight: 300;
+    font-family: $family-secondary;
+    font-weight: $weight-light;
 }
 
 h3.title {
-    color: #046a37;
-    font-size: 2.5rem;
+    color: $dark-green;
 }
 
 // Hero stuff
