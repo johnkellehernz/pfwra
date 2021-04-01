@@ -9222,6 +9222,11 @@ p {
   font-family: "Bitter", serif;
   font-weight: 300; }
 
+h3.title {
+  color: #046a37;
+  font-size: 40px;
+  font-size: 2.5rem; }
+
 .hero {
   background-repeat: no-repeat;
   background-size: cover;
@@ -9229,8 +9234,8 @@ p {
 
 .hero-head .navbar::before {
   content: "";
-  background-color: white;
-  opacity: 0.2;
+  background-color: #046A37;
+  opacity: 0.75;
   background-size: cover;
   position: absolute;
   top: 0px;
@@ -9243,8 +9248,8 @@ p {
   max-height: 3.5rem; }
 
 .navbar .navbar-item img {
-  max-height: 64px;
-  max-height: 4rem;
+  max-height: 96px;
+  max-height: 6rem;
   overflow: visible; }
 
 .rounded-card {

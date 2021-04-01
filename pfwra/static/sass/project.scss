@@ -45,10 +45,14 @@ $title-weight: 500;
 // Bulma override
 
 p {
-    font-family:"Bitter", serif;
+    font-family: "Bitter", serif;
     font-weight: 300;
 }
 
+h3.title {
+    color: #046a37;
+    font-size: 2.5rem;
+}
 
 // Hero stuff
 .hero {
@@ -59,8 +63,8 @@ p {
 
 .hero-head .navbar::before {
     content: "";
-    background-color: $white;
-    opacity: 0.2;
+    background-color: $primary;
+    opacity: 0.75;
     background-size: cover;
     position: absolute;
     top: 0px;
@@ -75,7 +79,7 @@ p {
 }
 
 .navbar .navbar-item img {
-    max-height: 4rem;
+    max-height: 6rem;
     overflow: visible;
 }
 
