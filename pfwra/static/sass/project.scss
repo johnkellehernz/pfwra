@@ -37,6 +37,8 @@ $size-1: 5rem;
 $size-3: 2.5rem;
 $title-weight: 500;
 
+$footer-background-color: $dark-green;
+$footer-color: white;
 // $control-border-width: 2px;
 // $input-border-color: transparent;
 // $input-shadow: none;
@@ -103,6 +105,33 @@ h3.title {
 
 .navbar-brand.has-background {
     background-color: $dark-green-transparent;
+}
+
+// Footer
+
+.has-text-secondary {
+    color: $light-green;
+}
+
+a.has-text-secondary:hover, a.has-text-secondary:focus {
+    text-decoration: none;
+    color: $light-blue !important;
+}
+
+.footer hr {
+    background-color: $light-green !important;
+}
+
+.footer {
+    font-family: $family-secondary;
+}
+
+.footer h1, h2, h3, h4, h5, h6 {
+    font-family: $family-primary;
+}
+
+.has-underline{
+    text-decoration: underline;
 }
 
 // Home page ounded cards 

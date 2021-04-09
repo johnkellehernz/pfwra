@@ -9214,9 +9214,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
       padding: 18rem 1.5rem; } }
 
 .footer {
-  background-color: #fafafa;
+  background-color: #046A37;
   padding: 48px 24px 96px;
-  padding: 3rem 1.5rem 6rem; }
+  padding: 3rem 1.5rem 6rem;
+  color: white; }
 
 ul, ol, p, figcaption, blockquote {
   font-family: "Bitter", serif;
@@ -9265,6 +9266,25 @@ h3.title {
 
 .navbar-brand.has-background {
   background-color: rgba(4, 106, 55, 0.75); }
+
+.has-text-secondary {
+  color: #88BE41; }
+
+a.has-text-secondary:hover, a.has-text-secondary:focus {
+  text-decoration: none;
+  color: #B9E2E7 !important; }
+
+.footer hr {
+  background-color: #88BE41 !important; }
+
+.footer {
+  font-family: "Bitter", serif; }
+
+.footer h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif; }
+
+.has-underline {
+  text-decoration: underline; }
 
 .rounded-card {
   background-image: url("https://bulma.io/images/placeholders/256x256.png");
