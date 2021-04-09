@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
         el.classList.toggle('is-active');
         $target.classList.toggle('is-active');
+        // Set background for parent elem navbar-brand to avoid any background gaps
+        el.parentNode.classList.toggle('has-background');
 
       });
     });
