@@ -89,7 +89,8 @@ class HomePage(Page):
         'groups.GroupIndexPage',
         'news.BlogIndexPage',
         'common.StandardPage',
-        'events.EventIndexPage'
+        'events.EventIndexPage',
+        'contactforms.FormPage',
     ]
 
     def __str__(self):

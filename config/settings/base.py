@@ -84,7 +84,8 @@ DJANGO_APPS = [
     "django.forms",
 ]
 THIRD_PARTY_APPS = [
-    "crispy_forms",
+    'widget_tweaks'
+    # "crispy_forms",
     # "allauth",
     # "allauth.account",
     # "allauth.socialaccount",
@@ -99,6 +100,7 @@ LOCAL_APPS = [
     "search",
     "groups",
     "events",
+    "contactforms",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

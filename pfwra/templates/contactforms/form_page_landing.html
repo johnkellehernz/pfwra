@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailroutablepage_tags widget_tweaks %}
+
+{% block content %}
+
+    {% include "includes/page_title.html" with page=page %}
+
+    <div class="container my-5">
+        <div class="content">
+            {% for block in page.thank_you_text %}
+                {{ block }}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
