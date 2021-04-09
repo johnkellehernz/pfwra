@@ -1,52 +1,55 @@
 {% load static %}
 
-<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+<nav class="navbar is-primary has-text-white" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item pb-0 pt-5" href="/">
+      <!-- same navbar-item elem butdifferent classes on mobile -->
+      <a class="navbar-item is-hidden-touch pb-0 pt-5" href="/">
+        <img src="{% static 'images/logo_v2.png' %}" width="248" height="93">
+      </a>
+      <a class="navbar-item is-hidden-desktop pb-0 pt-0" href="/">
         <img src="{% static 'images/logo_v2.png' %}" width="248" height="93">
       </a>
 
-      <a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-start">
       </div>
 
       <div class="navbar-end">
-        <a class="navbar-item">
-          {{ 'Kāinga' |upper }}<br>
-            {{ 'Home' |upper }}
-          </a>
-
-        <a class="navbar-item">
-          {{ 'Whakauru'|upper }}<br>
-            {{ 'Participate'|upper }}
+        <a class="navbar-item has-text-left is-block">
+          <div class="is-size-7">{{ 'Kāinga' |upper }}</div>
+          <div>{{ 'Home' |upper }}</div>
+        </a>
+        <a class="navbar-item has-text-left is-block">
+          <div class="is-size-7">{{ 'Whakauru'|upper }}</div>
+          <div>{{ 'Participate'|upper }}</div>
         </a>
 
-        <a class="navbar-item">
-          {{ 'Rōpū'|upper }}<br>
-            {{ 'Groups'|upper }}
+        <a class="navbar-item has-text-left is-block">
+          <div class="is-size-7">{{ 'Rōpū'|upper }}</div>
+          <div> {{ 'Groups'|upper }}</div>
         </a>
 
-        <a class="navbar-item">
-            {{ 'Korero'|upper }}<br>
-          {{ 'News'|upper }}
+        <a class="navbar-item has-text-left is-block">
+          <div class="is-size-7">  {{ 'Korero'|upper }}</div>
+          <div>{{ 'News'|upper }}</div>
         </a>
 
-        <a class="navbar-item">
-          {{ 'Mo Tatou'|upper }}<br>
-          {{ 'About Us'|upper }}
+        <a class="navbar-item has-text-left is-block">
+          <div class="is-size-7">{{ 'Mo Tatou'|upper }}</div>
+          <div>{{ 'About Us'|upper }}</div>
         </a>
 
-        <a class="navbar-item">
-          {{ 'Hono'|upper }}<br>
-          {{ 'Connect'|upper }}
+        <a class="navbar-item has-text-left is-block">
+          <div class="is-size-7">{{ 'Hono'|upper }}</div>
+          <div>{{ 'Connect'|upper }}</div>
         </a>
 
         <div class="navbar-item">
