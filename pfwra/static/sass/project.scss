@@ -11,7 +11,7 @@ $family-secondary: "Bitter", serif;
 // Brand colors
 // Main palette
 $dark-green: #046A37; // Main brand colour
-$dark-green-trasparent: rgba(4, 106, 55, 0.75);  // main with opacity 0.75
+$dark-green-transparent: rgba(4, 106, 55, 0.75);  // main with opacity 0.75
 $green: #5C8D3E; // Support colour #1
 $light-blue: #B9E2E7; // Support colour #2
 $dark-blue: #317796; // Button?
@@ -93,11 +93,16 @@ h3.title {
 }
 
 .navbar-menu.is-active {
-    background-color: $dark-green-trasparent;
+    background-color: $dark-green-transparent;
 }
 
+.navbar.is-primary .navbar-brand a.navbar-item:hover, .navbar.is-primary .navbar-brand a.navbar-item:focus {
+        background-color: transparent;
+}
+
+
 .navbar-brand.has-background {
-    background-color: $dark-green-trasparent;
+    background-color: $dark-green-transparent;
 }
 
 // Home page ounded cards 

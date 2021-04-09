@@ -9260,6 +9260,9 @@ h3.title {
 .navbar-menu.is-active {
   background-color: rgba(4, 106, 55, 0.75); }
 
+.navbar.is-primary .navbar-brand a.navbar-item:hover, .navbar.is-primary .navbar-brand a.navbar-item:focus {
+  background-color: transparent; }
+
 .navbar-brand.has-background {
   background-color: rgba(4, 106, 55, 0.75); }
 
