@@ -1,3 +1,5 @@
+{% load static %}
+
 <footer class="footer">
     <div class="container">
         <nav class="level">
@@ -26,6 +28,24 @@
             </div>
           </div>
         </nav>
+
+        <div class="navbar-menu">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="{% static 'images/PFWRA_Logo_REV@2x.png' %}" width="332" height="124">
+            </a>
+          </div>
+          <div class="navbar-start">
+            <!-- navbar items -->
+          </div>
+
+          <div class="navbar-end is-align-items-end">
+            <a href="https://facebook.com" target="_blank" class="icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="https://instagram.com" target="_blank" class="icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-instagram-square" aria-hidden="true"></i></a>
+            <a href="https://twitter.com" target="_blank" class="icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-twitter-square" aria-hidden="true"></i></a>
+
+          </div>
+        </div>
 
         <div class="content has-text-right">
             <hr>

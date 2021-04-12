@@ -18,13 +18,17 @@
         </div>
     </section>
 
-    <section class="section_green">
+    <section class="section_green has-text-white has-text-centered">
         <div class="container">
         {% for quote in page.quotations %}
             <div class="content">
             {% include_block quote %}
             </div>
         {% endfor %}
+        {% for block in page.body %}
+            {{ block }}
+        {% endfor %}
+        </div>
         </div>
     </section>
 

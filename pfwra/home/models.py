@@ -80,7 +80,8 @@ class HomePage(Page):
         ], heading="Top hero section"),
         MultiFieldPanel([
             StreamFieldPanel('featured'),
-            StreamFieldPanel('quotations')],
+            StreamFieldPanel('quotations'),
+            StreamFieldPanel('body')],
             heading="Featured cards and quotations"),
         InlinePanel('counter_placements', label="Counters"),
     ]
