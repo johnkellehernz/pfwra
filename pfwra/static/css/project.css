@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@600&display=swap");
 /*! bulma.io v0.9.2 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
 .button, .input, .textarea, .select select, .file-cta,
@@ -1305,8 +1306,8 @@ a.box:active {
     font-size: 20px;
     font-size: 1.25rem; }
   .button.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .button[disabled],
   fieldset[disabled] .button {
     background-color: white;
@@ -1372,8 +1373,8 @@ a.box:active {
     font-size: 20px;
     font-size: 1.25rem; }
   .buttons.are-large .button:not(.is-small):not(.is-normal):not(.is-medium) {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .buttons.has-addons .button:not(:first-child) {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0; }
@@ -1587,8 +1588,8 @@ a.box:active {
   font-size: 1.25rem; }
 
 .content.is-large {
-  font-size: 24px;
-  font-size: 1.5rem; }
+  font-size: 20px;
+  font-size: 1.25rem; }
 
 .icon {
   -webkit-box-align: center;
@@ -1944,8 +1945,8 @@ div.icon-text {
     height: 20px;
     height: 1.25rem; }
   .progress.is-large {
-    height: 24px;
-    height: 1.5rem; }
+    height: 20px;
+    height: 1.25rem; }
 
 @-webkit-keyframes moveIndeterminate {
   from {
@@ -2310,15 +2311,15 @@ a.tag:hover {
     font-size: 80px;
     font-size: 5rem; }
   .title.is-2 {
-    font-size: 40px;
-    font-size: 2.5rem; }
-  .title.is-2 {
+    font-size: 64px;
+    font-size: 4rem; }
+  .title.is-3 {
     font-size: 40px;
     font-size: 2.5rem; }
   .title.is-4 {
-    font-size: 24px;
-    font-size: 1.5rem; }
-  .title.is-5 {
+    font-size: 20px;
+    font-size: 1.25rem; }
+  .title.is-4 {
     font-size: 20px;
     font-size: 1.25rem; }
   .title.is-6 {
@@ -2344,15 +2345,15 @@ a.tag:hover {
     font-size: 80px;
     font-size: 5rem; }
   .subtitle.is-2 {
-    font-size: 40px;
-    font-size: 2.5rem; }
-  .subtitle.is-2 {
+    font-size: 64px;
+    font-size: 4rem; }
+  .subtitle.is-3 {
     font-size: 40px;
     font-size: 2.5rem; }
   .subtitle.is-4 {
-    font-size: 24px;
-    font-size: 1.5rem; }
-  .subtitle.is-5 {
+    font-size: 20px;
+    font-size: 1.25rem; }
+  .subtitle.is-4 {
     font-size: 20px;
     font-size: 1.25rem; }
   .subtitle.is-6 {
@@ -2522,8 +2523,8 @@ a.tag:hover {
     font-size: 20px;
     font-size: 1.25rem; }
   .is-large.input, .is-large.textarea {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .is-fullwidth.input, .is-fullwidth.textarea {
     display: block;
     width: 100%; }
@@ -2710,8 +2711,8 @@ a.tag:hover {
     font-size: 20px;
     font-size: 1.25rem; }
   .select.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .select.is-disabled::after {
     border-color: #7a7a7a; }
   .select.is-fullwidth {
@@ -2732,8 +2733,8 @@ a.tag:hover {
     font-size: 20px;
     font-size: 1.25rem; }
   .select.is-loading.is-large:after {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
 
 .file {
   -webkit-box-align: stretch;
@@ -2925,8 +2926,8 @@ a.tag:hover {
     .file.is-medium .file-icon .fa {
       font-size: 21px; }
   .file.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
     .file.is-large .file-icon .fa {
       font-size: 28px; }
   .file.has-name .file-cta {
@@ -3080,8 +3081,8 @@ a.tag:hover {
     font-size: 20px;
     font-size: 1.25rem; }
   .label.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
 
 .help {
   display: block;
@@ -3257,7 +3258,7 @@ a.tag:hover {
       font-size: 1.25rem;
       padding-top: 0.375em; }
     .field-label.is-large {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       padding-top: 0.375em; } }
 
 .field-body .field .field {
@@ -3312,8 +3313,8 @@ a.tag:hover {
   .control.has-icons-left .input.is-large ~ .icon,
   .control.has-icons-left .select.is-large ~ .icon, .control.has-icons-right .input.is-large ~ .icon,
   .control.has-icons-right .select.is-large ~ .icon {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .control.has-icons-left .icon, .control.has-icons-right .icon {
     color: #dbdbdb;
     height: 2.5em;
@@ -3344,8 +3345,8 @@ a.tag:hover {
     font-size: 20px;
     font-size: 1.25rem; }
   .control.is-loading.is-large:after {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
 
 /* Bulma Components */
 .breadcrumb {
@@ -3416,8 +3417,8 @@ a.tag:hover {
     font-size: 20px;
     font-size: 1.25rem; }
   .breadcrumb.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .breadcrumb.has-arrow-separator li + li::before {
     content: "\02192"; }
   .breadcrumb.has-bullet-separator li + li::before {
@@ -3813,8 +3814,8 @@ button.dropdown-item {
     font-size: 20px;
     font-size: 1.25rem; }
   .menu.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
 
 .menu-list {
   line-height: 1.25; }
@@ -3861,8 +3862,8 @@ button.dropdown-item {
     font-size: 20px;
     font-size: 1.25rem; }
   .message.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .message.is-white {
     background-color: white; }
     .message.is-white .message-header {
@@ -4068,8 +4069,8 @@ button.dropdown-item {
           flex-grow: 1;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  font-size: 24px;
-  font-size: 1.5rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1; }
 
 .modal-card-foot {
@@ -4973,8 +4974,8 @@ a.navbar-item,
     font-size: 20px;
     font-size: 1.25rem; }
   .pagination.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .pagination.is-rounded .pagination-previous,
   .pagination.is-rounded .pagination-next {
     padding-left: 1em;
@@ -5449,8 +5450,8 @@ label.panel-block {
     font-size: 20px;
     font-size: 1.25rem; }
   .tabs.is-large {
-    font-size: 24px;
-    font-size: 1.5rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
 
 /* Bulma Grid */
 .column {
@@ -8025,18 +8026,18 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-size: 5rem !important; }
 
 .is-size-2 {
-  font-size: 40px !important;
-  font-size: 2.5rem !important; }
+  font-size: 64px !important;
+  font-size: 4rem !important; }
 
-.is-size-2 {
+.is-size-3 {
   font-size: 40px !important;
   font-size: 2.5rem !important; }
 
 .is-size-4 {
-  font-size: 24px !important;
-  font-size: 1.5rem !important; }
+  font-size: 20px !important;
+  font-size: 1.25rem !important; }
 
-.is-size-5 {
+.is-size-4 {
   font-size: 20px !important;
   font-size: 1.25rem !important; }
 
@@ -8052,12 +8053,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .is-size-1-mobile {
     font-size: 5rem !important; }
   .is-size-2-mobile {
-    font-size: 2.5rem !important; }
-  .is-size-2-mobile {
+    font-size: 4rem !important; }
+  .is-size-3-mobile {
     font-size: 2.5rem !important; }
   .is-size-4-mobile {
-    font-size: 1.5rem !important; }
-  .is-size-5-mobile {
+    font-size: 1.25rem !important; }
+  .is-size-4-mobile {
     font-size: 1.25rem !important; }
   .is-size-6-mobile {
     font-size: 1rem !important; }
@@ -8068,12 +8069,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .is-size-1-tablet {
     font-size: 5rem !important; }
   .is-size-2-tablet {
-    font-size: 2.5rem !important; }
-  .is-size-2-tablet {
+    font-size: 4rem !important; }
+  .is-size-3-tablet {
     font-size: 2.5rem !important; }
   .is-size-4-tablet {
-    font-size: 1.5rem !important; }
-  .is-size-5-tablet {
+    font-size: 1.25rem !important; }
+  .is-size-4-tablet {
     font-size: 1.25rem !important; }
   .is-size-6-tablet {
     font-size: 1rem !important; }
@@ -8084,12 +8085,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .is-size-1-touch {
     font-size: 5rem !important; }
   .is-size-2-touch {
-    font-size: 2.5rem !important; }
-  .is-size-2-touch {
+    font-size: 4rem !important; }
+  .is-size-3-touch {
     font-size: 2.5rem !important; }
   .is-size-4-touch {
-    font-size: 1.5rem !important; }
-  .is-size-5-touch {
+    font-size: 1.25rem !important; }
+  .is-size-4-touch {
     font-size: 1.25rem !important; }
   .is-size-6-touch {
     font-size: 1rem !important; }
@@ -8100,12 +8101,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .is-size-1-desktop {
     font-size: 5rem !important; }
   .is-size-2-desktop {
-    font-size: 2.5rem !important; }
-  .is-size-2-desktop {
+    font-size: 4rem !important; }
+  .is-size-3-desktop {
     font-size: 2.5rem !important; }
   .is-size-4-desktop {
-    font-size: 1.5rem !important; }
-  .is-size-5-desktop {
+    font-size: 1.25rem !important; }
+  .is-size-4-desktop {
     font-size: 1.25rem !important; }
   .is-size-6-desktop {
     font-size: 1rem !important; }
@@ -8116,12 +8117,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .is-size-1-widescreen {
     font-size: 5rem !important; }
   .is-size-2-widescreen {
-    font-size: 2.5rem !important; }
-  .is-size-2-widescreen {
+    font-size: 4rem !important; }
+  .is-size-3-widescreen {
     font-size: 2.5rem !important; }
   .is-size-4-widescreen {
-    font-size: 1.5rem !important; }
-  .is-size-5-widescreen {
+    font-size: 1.25rem !important; }
+  .is-size-4-widescreen {
     font-size: 1.25rem !important; }
   .is-size-6-widescreen {
     font-size: 1rem !important; }
@@ -8132,12 +8133,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .is-size-1-fullhd {
     font-size: 5rem !important; }
   .is-size-2-fullhd {
-    font-size: 2.5rem !important; }
-  .is-size-2-fullhd {
+    font-size: 4rem !important; }
+  .is-size-3-fullhd {
     font-size: 2.5rem !important; }
   .is-size-4-fullhd {
-    font-size: 1.5rem !important; }
-  .is-size-5-fullhd {
+    font-size: 1.25rem !important; }
+  .is-size-4-fullhd {
     font-size: 1.25rem !important; }
   .is-size-6-fullhd {
     font-size: 1rem !important; }
@@ -9220,12 +9221,54 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
   color: white; }
 
-ul, ol, p, figcaption, blockquote {
+ul, ol, p, figcaption {
   font-family: "Bitter", serif;
   font-weight: 300; }
 
 h3.title {
   color: #046A37; }
+
+.card-image:first-child img {
+  border: 8px solid white; }
+
+.card-content h4 {
+  color: #046A37;
+  font-family: "Bitter", serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 600; }
+
+.card-content h2 {
+  color: white;
+  font-size: 64px;
+  font-size: 4rem; }
+
+.section_green {
+  background-color: #5C8D3E;
+  padding: 48px 0;
+  padding: 3rem 0; }
+
+.quote h3 {
+  color: #88BE41;
+  font-weight: 500;
+  font-size: 40px;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  margin-bottom: .75rem; }
+
+blockquote {
+  font-family: "Bitter", serif;
+  font-weight: 300;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: white;
+  margin: 0 15%;
+  font-style: italic; }
+
+.content blockquote {
+  background-color: transparent;
+  border-left: 0;
+  padding: 0; }
 
 .hero {
   background-repeat: no-repeat;
