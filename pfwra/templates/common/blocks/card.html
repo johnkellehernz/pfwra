@@ -14,14 +14,17 @@
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <h3 class="title">{{ value.header|upper }}</h3>
+        <h3 class="title has-text-primary">{{ value.header|upper }}</h3>
       </div>
     </div>
     <div class="content">
       <p>{{ value.text }}</p>
+    </div>
+  </div>
+
+  <footer class="card-footer mx-5 mb-5 ">
       {% if value.link %}
         <a href="{{ value.link.url }}" class="button is-link is-rounded is-fullwidth is-medium is-info">{{ value.link.text }}</a>
       {% endif %}
-    </div>
-  </div>
+  </footer>
 </div>
