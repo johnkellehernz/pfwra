@@ -9342,7 +9342,8 @@ a.has-text-secondary:hover, a.has-text-secondary:focus {
 .rounded-card {
   border-radius: 50%;
   width: 256px;
-  height: 256px; }
+  height: 256px;
+  background-size: cover; }
   .rounded-card .card-content {
     position: relative;
     top: 28%; }

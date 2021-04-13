@@ -279,6 +279,7 @@ LOGGING = {
     "root": {"level": "INFO", "handlers": ["console"]},
 }
 
+USE_THOUSAND_SEPARATOR = True
 
 # django-allauth
 # ------------------------------------------------------------------------------

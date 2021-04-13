@@ -198,12 +198,13 @@ a.has-text-secondary:hover, a.has-text-secondary:focus {
     text-decoration: underline;
 }
 
-// Home page ounded cards 
+// Home page rounded cards 
 
 .rounded-card {
     border-radius: 50%;
     width: 256px;
     height: 256px;
+    background-size: cover;
 
     .card-content {
         position: relative;
