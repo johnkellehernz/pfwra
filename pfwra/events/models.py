@@ -172,7 +172,7 @@ class EventIndexPage(RoutablePageMixin, Page):
 
     def paginate(self, request, events, *args):
         page = request.GET.get('page')
-        paginator = Paginator(events, 1)
+        paginator = Paginator(events, 6)
         try:
             pages = paginator.page(page)
         except PageNotAnInteger:

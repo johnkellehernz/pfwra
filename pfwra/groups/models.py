@@ -177,7 +177,7 @@ class GroupIndexPage(RoutablePageMixin, Page):
 
     def paginate(self, request, groups, *args):
         page = request.GET.get('page')
-        paginator = Paginator(groups, 1)
+        paginator = Paginator(groups, 6)
         try:
             pages = paginator.page(page)
         except PageNotAnInteger:

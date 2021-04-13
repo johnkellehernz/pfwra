@@ -79,6 +79,15 @@ h3.title {
     font-size: $size-2;
 }
 
+.card-equal-height {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+.card-equal-height .card-footer {
+  margin-top: auto;
+}
+
 // Homepage Vision, Mission headings, body, background
 
 .section_green {
@@ -198,7 +207,7 @@ a.has-text-secondary:hover, a.has-text-secondary:focus {
     text-decoration: underline;
 }
 
-// Home page rounded cards 
+// Home page rounded cards for the counters
 
 .rounded-card {
     border-radius: 50%;
