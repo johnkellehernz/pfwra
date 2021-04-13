@@ -1303,8 +1303,8 @@ a.box:active {
     font-size: 16px;
     font-size: 1rem; }
   .button.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .button.is-large {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -1370,8 +1370,8 @@ a.box:active {
     .buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
       border-radius: 2px; }
   .buttons.are-medium .button:not(.is-small):not(.is-normal):not(.is-large) {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .buttons.are-large .button:not(.is-small):not(.is-normal):not(.is-medium) {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -1584,8 +1584,8 @@ a.box:active {
   font-size: 0.75rem; }
 
 .content.is-medium {
-  font-size: 20px;
-  font-size: 1.25rem; }
+  font-size: 18.4px;
+  font-size: 1.15rem; }
 
 .content.is-large {
   font-size: 20px;
@@ -1942,8 +1942,8 @@ div.icon-text {
     height: 12px;
     height: 0.75rem; }
   .progress.is-medium {
-    height: 20px;
-    height: 1.25rem; }
+    height: 18.4px;
+    height: 1.15rem; }
   .progress.is-large {
     height: 20px;
     height: 1.25rem; }
@@ -2120,8 +2120,8 @@ div.icon-text {
     font-size: 16px;
     font-size: 1rem; }
   .tags.are-large .tag:not(.is-normal):not(.is-medium) {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .tags.is-centered {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -2230,8 +2230,8 @@ div.icon-text {
     font-size: 16px;
     font-size: 1rem; }
   .tag:not(body).is-large {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .tag:not(body) .icon:first-child:not(:last-child) {
     margin-left: -0.375em;
     margin-right: 0.1875em; }
@@ -2319,9 +2319,9 @@ a.tag:hover {
   .title.is-4 {
     font-size: 20px;
     font-size: 1.25rem; }
-  .title.is-4 {
-    font-size: 20px;
-    font-size: 1.25rem; }
+  .title.is-5 {
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .title.is-6 {
     font-size: 16px;
     font-size: 1rem; }
@@ -2331,8 +2331,8 @@ a.tag:hover {
 
 .subtitle {
   color: #4a4a4a;
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 18.4px;
+  font-size: 1.15rem;
   font-weight: 400;
   line-height: 1.25; }
   .subtitle strong {
@@ -2353,9 +2353,9 @@ a.tag:hover {
   .subtitle.is-4 {
     font-size: 20px;
     font-size: 1.25rem; }
-  .subtitle.is-4 {
-    font-size: 20px;
-    font-size: 1.25rem; }
+  .subtitle.is-5 {
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .subtitle.is-6 {
     font-size: 16px;
     font-size: 1rem; }
@@ -2388,8 +2388,8 @@ a.tag:hover {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 18.4px;
+  font-size: 1.15rem;
   height: 2em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -2520,8 +2520,8 @@ a.tag:hover {
     font-size: 12px;
     font-size: 0.75rem; }
   .is-medium.input, .is-medium.textarea {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .is-large.input, .is-large.textarea {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -2708,8 +2708,8 @@ a.tag:hover {
     font-size: 12px;
     font-size: 0.75rem; }
   .select.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .select.is-large {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -2730,8 +2730,8 @@ a.tag:hover {
     font-size: 12px;
     font-size: 0.75rem; }
   .select.is-loading.is-medium:after {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .select.is-loading.is-large:after {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -2921,8 +2921,8 @@ a.tag:hover {
     font-size: 12px;
     font-size: 0.75rem; }
   .file.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
     .file.is-medium .file-icon .fa {
       font-size: 21px; }
   .file.is-large {
@@ -3078,8 +3078,8 @@ a.tag:hover {
     font-size: 12px;
     font-size: 0.75rem; }
   .label.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .label.is-large {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -3255,7 +3255,7 @@ a.tag:hover {
     .field-label.is-normal {
       padding-top: 0.375em; }
     .field-label.is-medium {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       padding-top: 0.375em; }
     .field-label.is-large {
       font-size: 1.25rem;
@@ -3308,8 +3308,8 @@ a.tag:hover {
   .control.has-icons-left .input.is-medium ~ .icon,
   .control.has-icons-left .select.is-medium ~ .icon, .control.has-icons-right .input.is-medium ~ .icon,
   .control.has-icons-right .select.is-medium ~ .icon {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .control.has-icons-left .input.is-large ~ .icon,
   .control.has-icons-left .select.is-large ~ .icon, .control.has-icons-right .input.is-large ~ .icon,
   .control.has-icons-right .select.is-large ~ .icon {
@@ -3342,8 +3342,8 @@ a.tag:hover {
     font-size: 12px;
     font-size: 0.75rem; }
   .control.is-loading.is-medium:after {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .control.is-loading.is-large:after {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -3414,8 +3414,8 @@ a.tag:hover {
     font-size: 12px;
     font-size: 0.75rem; }
   .breadcrumb.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .breadcrumb.is-large {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -3811,8 +3811,8 @@ button.dropdown-item {
     font-size: 12px;
     font-size: 0.75rem; }
   .menu.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .menu.is-large {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -3859,8 +3859,8 @@ button.dropdown-item {
     font-size: 12px;
     font-size: 0.75rem; }
   .message.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .message.is-large {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -4971,8 +4971,8 @@ a.navbar-item,
     font-size: 12px;
     font-size: 0.75rem; }
   .pagination.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .pagination.is-large {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -5447,8 +5447,8 @@ label.panel-block {
     font-size: 12px;
     font-size: 0.75rem; }
   .tabs.is-medium {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 18.4px;
+    font-size: 1.15rem; }
   .tabs.is-large {
     font-size: 20px;
     font-size: 1.25rem; }
@@ -8037,9 +8037,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-size: 20px !important;
   font-size: 1.25rem !important; }
 
-.is-size-4 {
-  font-size: 20px !important;
-  font-size: 1.25rem !important; }
+.is-size-5 {
+  font-size: 18.4px !important;
+  font-size: 1.15rem !important; }
 
 .is-size-6 {
   font-size: 16px !important;
@@ -8058,8 +8058,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     font-size: 2.5rem !important; }
   .is-size-4-mobile {
     font-size: 1.25rem !important; }
-  .is-size-4-mobile {
-    font-size: 1.25rem !important; }
+  .is-size-5-mobile {
+    font-size: 1.15rem !important; }
   .is-size-6-mobile {
     font-size: 1rem !important; }
   .is-size-7-mobile {
@@ -8074,8 +8074,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     font-size: 2.5rem !important; }
   .is-size-4-tablet {
     font-size: 1.25rem !important; }
-  .is-size-4-tablet {
-    font-size: 1.25rem !important; }
+  .is-size-5-tablet {
+    font-size: 1.15rem !important; }
   .is-size-6-tablet {
     font-size: 1rem !important; }
   .is-size-7-tablet {
@@ -8090,8 +8090,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     font-size: 2.5rem !important; }
   .is-size-4-touch {
     font-size: 1.25rem !important; }
-  .is-size-4-touch {
-    font-size: 1.25rem !important; }
+  .is-size-5-touch {
+    font-size: 1.15rem !important; }
   .is-size-6-touch {
     font-size: 1rem !important; }
   .is-size-7-touch {
@@ -8106,8 +8106,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     font-size: 2.5rem !important; }
   .is-size-4-desktop {
     font-size: 1.25rem !important; }
-  .is-size-4-desktop {
-    font-size: 1.25rem !important; }
+  .is-size-5-desktop {
+    font-size: 1.15rem !important; }
   .is-size-6-desktop {
     font-size: 1rem !important; }
   .is-size-7-desktop {
@@ -8122,8 +8122,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     font-size: 2.5rem !important; }
   .is-size-4-widescreen {
     font-size: 1.25rem !important; }
-  .is-size-4-widescreen {
-    font-size: 1.25rem !important; }
+  .is-size-5-widescreen {
+    font-size: 1.15rem !important; }
   .is-size-6-widescreen {
     font-size: 1rem !important; }
   .is-size-7-widescreen {
@@ -8138,8 +8138,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     font-size: 2.5rem !important; }
   .is-size-4-fullhd {
     font-size: 1.25rem !important; }
-  .is-size-4-fullhd {
-    font-size: 1.25rem !important; }
+  .is-size-5-fullhd {
+    font-size: 1.15rem !important; }
   .is-size-6-fullhd {
     font-size: 1rem !important; }
   .is-size-7-fullhd {
