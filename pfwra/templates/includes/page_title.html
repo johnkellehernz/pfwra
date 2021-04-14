@@ -1,16 +1,16 @@
 {% load wagtailimages_tags %}
 
-{% if page.image %}
+{% if page.image and not heroclass %}
     {% image page.image fill-1200x400 as image %}
-    <section class="hero is-medium" style="background-image: url('{{ image.url }}');">
+    <section class="hero is-small py-5" style="background-image: url('{{ image.url }}');">
 {% else %}
-    <section class="hero is-medium">
+    <section class="hero is-small py-5 {% if heroclass %}{{ heroclass }}{% endif %}">
 {% endif %}
 
   <div class="hero-body">
     <div class="container has-text-left">
-        <h1 class="title is-1 has-text-primary-light">{{ page.title|upper }}</h1>
-        <p class="subtitle has-text-primary-light">{{ page.introduction }}</p>
+        <h1 class="title is-1 {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.title|upper }}</h1>
+        <p class="subtitle {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.introduction }}</p>
     </div>
   </div>
 </section>

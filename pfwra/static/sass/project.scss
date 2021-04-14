@@ -54,6 +54,10 @@ $footer-color: white;
 
 // Bulma override
 
+.has-background-primary-light {
+    background-color: $light-green !important;
+}
+
 ul, ol, p, figcaption {
     font-family: $family-secondary;
     font-weight: $weight-light;
@@ -91,10 +95,14 @@ ul, ol, p, figcaption {
    flex-direction: column;
    height: 100%;
 }
+
 .card-equal-height .card-footer {
   margin-top: auto;
 }
 
+.card-footer {
+    border: none;
+}
 // Homepage Vision, Mission headings, body, background
 
 .section_green {

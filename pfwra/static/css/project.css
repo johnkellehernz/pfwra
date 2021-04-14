@@ -9221,9 +9221,17 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
   color: white; }
 
+.has-background-primary-light {
+  background-color: #88BE41 !important; }
+
 ul, ol, p, figcaption {
   font-family: "Bitter", serif;
   font-weight: 300; }
+
+.footer hr {
+  height: 1px;
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
 
 .card-image:first-child img {
   border: 8px solid white; }
@@ -9252,6 +9260,9 @@ ul, ol, p, figcaption {
 
 .card-equal-height .card-footer {
   margin-top: auto; }
+
+.card-footer {
+  border: none; }
 
 .section_green {
   background-color: #5C8D3E;
