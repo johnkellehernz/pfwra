@@ -77,7 +77,14 @@ class BlogPage(Page):
     ]
 
     search_fields = Page.search_fields + [
+        index.SearchField('introduction'),
         index.SearchField('body'),
+        index.RelatedFields('tags', [
+            index.SearchField('name', partial_match=True, boost=10),
+        ]),
+        index.RelatedFields('suburb', [
+            index.SearchField('name'),
+        ]),
     ]
 
     @property
@@ -125,7 +132,9 @@ class BlogIndexPage(RoutablePageMixin, Page):
         FieldPanel('introduction', classname="full"),
         ImageChooserPanel('image'),
     ]
-
+    search_fields = Page.search_fields + [
+        index.SearchField('introduction'),
+    ]
     # Speficies that only BlogPage objects can live under this index page
     subpage_types = ['BlogPage']
     parent_page_types = ['home.HomePage']

@@ -1,38 +1,36 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags %}
 
-{% block body_class %}template-searchresults{% endblock %}
-
-{% block title %}Search{% endblock %}
-
 {% block content %}
-    <h1>Search</h1>
+    <section class="hero is-small py-5">
+      <div class="hero-body">
+        <div class="container has-text-left">
+            <h1 class="title is-1">{{ 'Search'|upper }}</h1>
+            {% if search_query %}
+                <p class="subtitle">You have searched for: <i><strong>{{ search_query|escape }}<strong/></i></p>
+            {% endif %}
+        </div>
+      </div>
+    </section>
 
-    <form action="{% url 'search' %}" method="get">
-        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-        <input type="submit" value="Search" class="button">
-    </form>
+    <section class="section">
+        <div class="container">
+            {% if search_results %}
+                {% for result in search_results %}
+                    {% include "search/result.html" with result=result %}
+                {% endfor %}
+            {% elif search_query %}
+                No results found
+            {% endif %}
+        </div>
+    </section>
 
-    {% if search_results %}
-        <ul>
-            {% for result in search_results %}
-                <li>
-                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
-                    {% if result.search_description %}
-                        {{ result.search_description }}
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-
-        {% if search_results.has_previous %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+    <section class="mb-6">
+        {% if search_results and search_results.paginator.count > 1 %}
+            <div class="container">
+                {% include "includes/pagination.html" with subpages=search_results search_query=search_query %}
+            </div>
         {% endif %}
+    </section>
 
-        {% if search_results.has_next %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
-        {% endif %}
-    {% elif search_query %}
-        No results found
-    {% endif %}
 {% endblock %}

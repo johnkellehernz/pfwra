@@ -130,3 +130,7 @@ class StandardPage(Page):
         StreamFieldPanel('body'),
         ImageChooserPanel('image'),
     ]
+    search_fields = Page.search_fields + [ # Inherit search_fields from Page
+        index.SearchField('introduction'),
+        index.SearchField('body'),
+    ]

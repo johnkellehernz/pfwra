@@ -1,0 +1,27 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="box">
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-128x128">
+        {% if result.specific.image %}
+          {% image result.specific.image fill-256x256 %}
+        {% else %}
+          <img src="https://bulma.io/images/placeholders/256x256png">
+        {% endif %}
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <a class="title is-3 has-text-primary" href="{% pageurl result %}">{{ result.title|upper }}</a>
+        <p>
+          {% if result.search_description %}
+            {{ result.search_description }}
+          {% elif result.specific.introduction %}
+            {{ result.specific.introduction }}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </article>
+</div>

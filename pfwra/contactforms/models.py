@@ -5,9 +5,11 @@ from wagtail.admin.edit_handlers import (
     FieldPanel, FieldRowPanel,
     InlinePanel, MultiFieldPanel, StreamFieldPanel,
 )
+from wagtail.core.models import Page
 from wagtail.core.fields import StreamField
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
 
 from common.blocks import BaseStreamBlock
 
@@ -50,7 +52,10 @@ class FormPage(AbstractEmailForm):
             FieldPanel('subject'),
         ], "Email"),
     ]
-
+    search_fields = Page.search_fields + [
+        index.SearchField('introduction'),
+        index.SearchField('body'),
+    ]
     subpage_types = []
     parent_page_types = ['home.HomePage']
 

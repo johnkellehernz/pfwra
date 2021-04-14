@@ -26,6 +26,10 @@ class EventPageSuburb(Orderable, models.Model):
     page = ParentalKey('events.EventPage', on_delete=models.CASCADE, related_name='suburb_set')
     suburb = models.ForeignKey('common.Suburb', on_delete=models.CASCADE, related_name='event_set')
 
+    @property
+    def suburb_name(self):
+        return suburb.name
+
     class Meta(Orderable.Meta):
         verbose_name = "suburb"
         verbose_name_plural = "suburbs"
@@ -92,6 +96,13 @@ class EventPage(Page):
     search_fields = Page.search_fields + [
         index.SearchField('introduction'),
         index.SearchField('body'),
+        index.SearchField('location'),
+        index.RelatedFields('tags', [
+            index.SearchField('name', partial_match=True, boost=10),
+        ]),
+        index.RelatedFields('suburb_set', [
+            index.SearchField('suburb_name'),
+        ]),
     ]
 
     # Specifies parent to BlogPage as being BlogIndexPages
