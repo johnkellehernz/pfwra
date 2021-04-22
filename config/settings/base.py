@@ -4,6 +4,7 @@ Base settings to build other settings files upon.
 from pathlib import Path
 
 import environ
+import mimetypes
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # pfwra/
@@ -300,3 +301,6 @@ WAGTAIL_SITE_NAME = "pfwra"
 BASE_URL = "https://pfwra"
 
 WAGTAILEMBEDS_RESPONSIVE_HTML = True
+
+mimetypes.add_type("image/svg+xml", ".svg", True)
+mimetypes.add_type("image/svg+xml", ".svgz", True)

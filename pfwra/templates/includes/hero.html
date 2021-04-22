@@ -3,7 +3,7 @@
 {% image page.image fill-1920x600 as image %}
 
 <div class="has-background-info">
-    <section class="hero is-medium clip" style="background-image: linear-gradient(5deg, rgba(4, 106, 55, 0.3) 35%, transparent 0), url('{{ image.url }}');">
+    <section class="hero is-medium clip" style="background-image: linear-gradient(5deg, rgba(4, 106, 55, 0.3) 35%, transparent, transparent calc(0% + 1px)), url('{{ image.url }}');">
 
         {% if header == True %}
             <div class="hero-head">
@@ -16,7 +16,7 @@
         <div class="container has-text-left">
             <div class="columns">
                 <div class="column is-half is-half-widescreen is-half-fullhd">
-                    <h1 class="title is-1 has-text-white">{{ page.hero_text|upper }}</h1>
+                    <h1 class="title is-1 is-size-2-touch has-text-white">{{ page.hero_text|upper }}</h1>
                 </div>
             </div>
         </div>

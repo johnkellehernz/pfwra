@@ -139,4 +139,4 @@ cython_debug/
 
 **/.DS_Store
 collect_static/
-media/
+*media/

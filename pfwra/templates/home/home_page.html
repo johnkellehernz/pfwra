@@ -5,33 +5,38 @@
     {% include "includes/hero.html" with page=page header=True %}
 {% endblock header %}
 
-{% block content %}  
-    <section class="section">
-        <div class="container">
-            <div class="columns is-multiline">
-            {% for card in page.featured %}
-                <div class="column is-one-quarter">
-                {% include_block card %}
+{% block content %}
+
+    <div class="has-background-info">
+        <section class="section clip2">
+            <div class="container">
+                <div class="columns is-multiline">
+                {% for card in page.featured %}
+                    <div class="column is-one-quarter">
+                    {% include_block card %}
+                    </div>
+                {% endfor %}
                 </div>
-            {% endfor %}
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <section class="section_green has-text-white has-text-centered">
-        <div class="container">
-            {% for quote in page.quotations %}
-                <div class="content">
-                {% include_block quote %}
-                </div>
-            {% endfor %}
-            {% for block in page.body %}
-                {{ block }}
-            {% endfor %}
-        </div>
-    </section>
+    <div style="margin-top: -13.5%;">
+        <section class="clip3 section_green has-text-white has-text-centered has-background-primary">
+            <div class="container" style="padding-top:175px;">
+                {% for quote in page.quotations %}
+                    <div class="content">
+                    {% include_block quote %}
+                    </div>
+                {% endfor %}
+                {% for block in page.body %}
+                    {{ block }}
+                {% endfor %}
+            </div>
+        </section>
+    </div>
 
-     <section class="section">
+     <section class="section clip4">
         <div class="container">
             <h2 class="title is-2 has-text-centered has-text-primary">{{ "How we're doing"|upper }}</h2>
             <nav class="level">

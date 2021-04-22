@@ -68,6 +68,12 @@ ul, ol, p, figcaption {
     margin-bottom: 1rem;
 }
 
+// Titles
+
+.subtitle, .title {
+    word-break: keep-all;
+}
+
 // Homepage Card Headings etc
 
 // h3.title {
@@ -106,7 +112,7 @@ ul, ol, p, figcaption {
 // Homepage Vision, Mission headings, body, background
 
 .section_green {
-    background-color: $green;
+    // background-color: $green;
     padding: 3rem 0;
 }
 
@@ -236,9 +242,37 @@ a.has-text-secondary:hover, a.has-text-secondary:focus {
     }
 }
 
-// Polygon clips
+// Homepage Polygon lines - HACKY AF needs to be cleaned up 
+// and review for responsiveness
 
 section.clip {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
 }
+section.clip2 {
+    // clip-path: polygon(3px 35px, 99.74% 57px, 100% 90%, 3px 84.84%);
+    padding-top: 0; 
+    margin-top: -5%;
+    // background: linear-gradient(3deg, rgb(247, 245, 234), rgb(247, 245, 234) 65%, $info calc(10.1% + 1px));
+}
+section.clip3 {
+    // clip-path: polygon(61.61% 4.95%, 100% 0px, 100% 100%, 0px 100%, 0px 0px);;
+    // padding-top: 0; 
+    // margin-top: -12.5%;
+    // background:
+        // linear-gradient(175deg, $beige 15%, transparent 15.1%),
+        // linear-gradient(3deg, transparent 83% , transparent 83.5%, $success 83.6%),
+        
+        // linear-gradient(1deg, transparent 97.2%, $beige 97.3%),
+        // linear-gradient(3deg, transparent 83.5%, $beige 83.6%),
+        // linear-gradient(2deg, $beige 2.1%, $beige 2.2%, transparent 0) 100px
+        ;
+}
+section.clip4{
+    // background: linear-gradient(183.5deg, $white 0%, $white 10.4%, $white 10.5%, transparent 0);
+    
+    // background-color: $beige;
+    // clip-path: polygon(36.28% 11.37%, 99.92% 5px, 100% 100%, 0px 100%, 0px 0px);
+} 
+
+
 @import "./wagtail.scss";

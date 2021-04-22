@@ -9233,6 +9233,9 @@ ul, ol, p, figcaption {
   margin-bottom: 16px;
   margin-bottom: 1rem; }
 
+.subtitle, .title {
+  word-break: keep-all; }
+
 .card-image:first-child img {
   border: 8px solid white; }
 
@@ -9265,7 +9268,6 @@ ul, ol, p, figcaption {
   border: none; }
 
 .section_green {
-  background-color: #5C8D3E;
   padding: 48px 0;
   padding: 3rem 0; }
 
@@ -9372,6 +9374,10 @@ a.has-text-secondary:hover, a.has-text-secondary:focus {
 section.clip {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
           clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
+
+section.clip2 {
+  padding-top: 0;
+  margin-top: -5%; }
 
 .responsive-object {
   position: relative; }
