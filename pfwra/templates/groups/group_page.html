@@ -49,10 +49,10 @@
 
     <section>
         <div class="container">
-            <div class="columns is-multiline">
+            <div class="columns is-multiline my-5 ">
                 {% for event in page.get_events|slice:3 %}
                     <div class="column is-one-third">
-                        {% include "includes/card.html" with page=event class="event" %}
+                        {% include "includes/card.html" with page=event class="event" buttonclass='has-text-primary has-background-white' footerclass="has-background-success" buttontext="See details" %}
                     </div>
                 {% endfor %}
             </div>

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    {% include "includes/page_title.html" with page=page heroclass='is-success light-green-info-gradient' subtitleclass='has-text-primary'  %}
+    {% include "includes/page_title.html" with page=page heroclass='is-success light-green-info-gradient' subtitleclass='has-text-primary' %}
 
     {% if tag %}
         <div class="box">
@@ -59,7 +59,7 @@
             <div class="columns is-multiline">
                 {% for event in events %}
                     <div class="column is-one-third">
-                        {% include "includes/card.html" with page=event class="event" buttonclass='has-text-primary has-background-white' footerclass="has-background-success" %}
+                        {% include "includes/card.html" with page=event class="event" buttonclass='has-text-primary has-background-white' footerclass="has-background-success" buttontext='See details' %}
                     </div>
                 {% endfor %}
             </div>

@@ -34,7 +34,7 @@
               <span class="icon">
                 <i class="fas fa-link"></i>
               </span>
-              <span><a class="link" href="{{ page.external_url}}" target="_blank">Website</a></span>
+              <span><a class="link" href="{{ page.external_url}}" target="_blank">{{ 'GO TO Website'|upper }}</a></span>
             </span>
           {% endif %}
           <div class="tags">
@@ -69,7 +69,7 @@
   {% endif %}
 
   <footer class="card-footer px-5 py-5 {% if footerclass %}{{ footerclass }}{% endif %}">
-      <a href="{% pageurl page %}" class="button {% if buttonclass %}{{ buttonclass }}{% else %}is-link{% endif %} is-rounded is-fullwidth is-medium">{{ "See more"|upper }}</a>
+      <a href="{% pageurl page %}" class="button {% if buttonclass %}{{ buttonclass }}{% else %}is-link{% endif %} is-rounded is-fullwidth is-medium">{{ buttontext|upper }} ></a>
   </footer>
 
 </div>  

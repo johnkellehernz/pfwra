@@ -51,7 +51,9 @@ $footer-color: white;
 
 @import "./node_modules/bulma/bulma.sass";
 
-
+.is-info {
+    color: $primary !important;
+}
 // Bulma override
 
 .has-background-primary-light {

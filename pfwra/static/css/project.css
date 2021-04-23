@@ -9221,6 +9221,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
   color: white; }
 
+.is-info {
+  color: #046A37 !important; }
+
 .has-background-primary-light {
   background-color: #88BE41 !important; }
 
