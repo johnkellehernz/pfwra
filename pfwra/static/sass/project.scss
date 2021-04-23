@@ -2,7 +2,7 @@
 
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&display=swap');
 
 // Fonts
 $family-sans-serif: "Oswald", sans-serif;
@@ -58,7 +58,7 @@ $footer-color: white;
     background-color: $light-green !important;
 }
 
-ul, ol, p, figcaption {
+ul, ol, p, figcaption, a {
     font-family: $family-secondary;
     font-weight: $weight-light;
 }
@@ -80,7 +80,7 @@ ul, ol, p, figcaption {
 //     color: $dark-green;
 // }
 
-.card-image:first-child img {
+.card-image figure.image img {
     border: 8px solid white;
 }
 
@@ -108,6 +108,18 @@ ul, ol, p, figcaption {
 
 .card-footer {
     border: none;
+
+    a {
+        font-family: $family-primary;
+    }
+}
+
+.card .has-background-success {
+    color: $white;
+
+    .title {
+        color: $white;
+    }
 }
 // Homepage Vision, Mission headings, body, background
 
@@ -116,11 +128,18 @@ ul, ol, p, figcaption {
     padding: 3rem 0;
 }
 
-.section_green h3 {
-    color: $light-green;
-    font-weight: $weight-medium;
-    font-size: $size-3;
-    margin-bottom: .75rem;
+.section_green {
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $light-green;
+        font-weight: $title-weight;
+        text-transform: uppercase;
+    }
+    // h3 {
+    //     margin-bottom: .75rem;
+    // }
+    // font-size: $size-3;
+    
 }
 
 .section_green {
@@ -144,6 +163,9 @@ ul, ol, p, figcaption {
     padding: 0;
 }
 
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-weight: $title-weight;
+}
 
 // Hero stuff
 .hero {
@@ -167,6 +189,9 @@ ul, ol, p, figcaption {
 // Navbar(header) including logo
 .navbar {
     max-height: 3.5rem;
+    a {
+        font-family: $family-primary;
+    }
 }
 
 .navbar .navbar-item img {
@@ -250,9 +275,9 @@ section.clip {
 }
 section.clip2 {
     // clip-path: polygon(3px 35px, 99.74% 57px, 100% 90%, 3px 84.84%);
-    padding-top: 0; 
-    margin-top: -5%;
-    // background: linear-gradient(3deg, rgb(247, 245, 234), rgb(247, 245, 234) 65%, $info calc(10.1% + 1px));
+    // padding-top: 0; 
+    // margin-top: -5%;
+    background: linear-gradient(3deg, $beige 65%, $info calc(65% + 1px));
 }
 section.clip3 {
     // clip-path: polygon(61.61% 4.95%, 100% 0px, 100% 100%, 0px 100%, 0px 0px);;
@@ -265,7 +290,7 @@ section.clip3 {
         // linear-gradient(1deg, transparent 97.2%, $beige 97.3%),
         // linear-gradient(3deg, transparent 83.5%, $beige 83.6%),
         // linear-gradient(2deg, $beige 2.1%, $beige 2.2%, transparent 0) 100px
-        ;
+        //;
 }
 section.clip4{
     // background: linear-gradient(183.5deg, $white 0%, $white 10.4%, $white 10.5%, transparent 0);
@@ -274,5 +299,25 @@ section.clip4{
     // clip-path: polygon(36.28% 11.37%, 99.92% 5px, 100% 100%, 0px 100%, 0px 0px);
 } 
 
+// Hero class-based linear gradients
+
+.success-info-gradient {
+    background: linear-gradient(-0.5deg, $info 20%, $success calc(20% + 1px));
+}
+
+.light-green-info-gradient {
+    background: linear-gradient(-1deg, $light-green 20%, $success calc(20% + 1px));
+}
+.light-green-info-gradient-mobile {
+    background: linear-gradient(-3deg, $light-green 20%, $success calc(20% + 1px));
+}
+
+// Tags
+
+a.tag {
+    font-family: $family-primary;
+    text-transform: uppercase;
+
+}
 
 @import "./wagtail.scss";

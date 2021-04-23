@@ -9,8 +9,12 @@
 
   <div class="hero-body">
     <div class="container has-text-left">
-        <h1 class="title is-1 {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.title|upper }}</h1>
-        <p class="subtitle {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.introduction }}</p>
+        <h1 class="title is-1 {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.title|upper }}<span class="ml-5 {% if subtitleclass %}{{ subtitleclass }}{% endif %}">{{ page.subtitle|upper }}</span></h1>
+        <div class="columns">
+            <div class="column is-half-desktop is-full-mobile">
+                <p class="subtitle  has-text-weight-semibold {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.introduction }}</p>
+            </div>
+        </div>
     </div>
   </div>
 </section>

@@ -1,7 +1,11 @@
 {% if self.size == 'h2' %}
-    <h2>{{ self.heading_text }}</h2>
+    <h2 class="title is-2">{{ self.heading_text }}</h2>
 {% elif self.size == 'h3' %}
-    <h3>{{ self.heading_text }}</h3>
+    <h3 class="title is-3">{{ self.heading_text }}</h3>
 {% elif self.size == 'h4' %}
-    <h4>{{ self.heading_text }}</h4>
+    <h4 class="title is-4">{{ self.heading_text }}</h4>
+{% elif self.size == 'h5' %}
+    <h5 class="title is-5">{{ self.heading_text }}</h5>
+{% elif self.size == 'h6' %}
+    <h6 class="title is-6">{{ self.heading_text }}</h6>
 {% endif %}

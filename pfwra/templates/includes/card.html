@@ -14,20 +14,21 @@
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title">{{ page.title|upper }}</p>
+        <p class="title has-text-primary">{{ page.title|upper }}</p>
+        <p class="title is-6 is-family-secondary">
+              {% if page.author %}
+                  {{ page.author.first_name }} {{ page.author.last_name }}
+              {% endif %}
+              {% if page.date_published %}
+                  <br>{{ page.date_published|date:"d M Y" }}
+              {% endif %}
+        </p>
+        <p>{{ page.introduction }}</p>
       </div>
     </div>
-    <div class="content">
-      <p class="title is-6 is-family-secondary">
-            {% if page.author %}
-                {{ page.author.first_name }} {{ page.author.last_name }}
-            {% endif %}
-            {% if page.date_published %}
-                <br>{{ page.date_published|date:"d M Y" }}
-            {% endif %}
-      </p>
-      <p>{{ page.introduction }}</p>
+    
       {% if class == 'group' %}
+        <div class="content">
           {% if page.external_url %}
             <span class="icon-text mb-3">
               <span class="icon">
@@ -44,22 +45,31 @@
                 <a class="tag is-small is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
             {% endfor %}
           </div>
-      {% elif class == 'event' %}
-        <div class="block">
-          {% if page.location %}
-            <p>Location:<br/>{{ page.location }}</p>
-          {% endif %}
-          {% if page.date_scheduled %}
-            <p>Date:<br/>{{ page.date_scheduled|date:"d M Y" }}</p>
-          {% endif %}
-          {% if page.starting_time %}
-            <p>Time:<br/>{{ page.starting_time }}{% if page.ending_time %} - {{ page.ending_time }}{% endif %}</p>
-          {% endif %}
-        </div>
+      </div>
+       
       {% endif %}
-    </div>
+    
   </div>
-   <footer class="card-footer mx-5 mb-5 ">
+
+  {% if class == 'event' %}
+    <div class="px-5 pt-5 has-background-success">
+        {% if page.location %}
+          <h6 class="is-6 title mb-1">{{ 'Location:'|upper }}</h6>
+          <p class="has-text-weight-normal">{{ page.location }}</p>
+        {% endif %}
+        {% if page.date_scheduled %}
+          <h6 class="is-6 title my-2">{{ 'Date:'|upper }}</h6>
+          <p class="has-text-weight-normal">{{ page.date_scheduled|date:"d M Y" }}</p>
+        {% endif %}
+        {% if page.starting_time %}
+          <h6 class="is-6 title my-2">{{ 'Time:'|upper }}</h6>
+          <p class="has-text-weight-normal">{{ page.starting_time }}{% if page.ending_time %} - {{ page.ending_time }}{% endif %}</p>
+        {% endif %}
+      </div>
+  {% endif %}
+
+  <footer class="card-footer px-5 py-5 {% if footerclass %}{{ footerclass }}{% endif %}">
       <a href="{% pageurl page %}" class="button {% if buttonclass %}{{ buttonclass }}{% else %}is-link{% endif %} is-rounded is-fullwidth is-medium">{{ "See more"|upper }}</a>
   </footer>
+
 </div>  

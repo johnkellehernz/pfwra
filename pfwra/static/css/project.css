@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&display=swap");
 /*! bulma.io v0.9.2 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
 .button, .input, .textarea, .select select, .file-cta,
@@ -9224,7 +9224,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .has-background-primary-light {
   background-color: #88BE41 !important; }
 
-ul, ol, p, figcaption {
+ul, ol, p, figcaption, a {
   font-family: "Bitter", serif;
   font-weight: 300; }
 
@@ -9236,7 +9236,7 @@ ul, ol, p, figcaption {
 .subtitle, .title {
   word-break: keep-all; }
 
-.card-image:first-child img {
+.card-image figure.image img {
   border: 8px solid white; }
 
 .card-content h4 {
@@ -9266,18 +9266,22 @@ ul, ol, p, figcaption {
 
 .card-footer {
   border: none; }
+  .card-footer a {
+    font-family: "Oswald", sans-serif; }
+
+.card .has-background-success {
+  color: white; }
+  .card .has-background-success .title {
+    color: white; }
 
 .section_green {
   padding: 48px 0;
   padding: 3rem 0; }
 
-.section_green h3 {
+.section_green h1, .section_green h2, .section_green h3, .section_green h4, .section_green h5, .section_green h6 {
   color: #88BE41;
   font-weight: 500;
-  font-size: 40px;
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-  margin-bottom: .75rem; }
+  text-transform: uppercase; }
 
 .section_green blockquote, .section_green p, .section_green li {
   font-family: "Bitter", serif;
@@ -9295,6 +9299,14 @@ ul, ol, p, figcaption {
   background-color: transparent;
   border-left: 0;
   padding: 0; }
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-weight: 500; }
 
 .hero {
   background-repeat: no-repeat;
@@ -9315,6 +9327,8 @@ ul, ol, p, figcaption {
 .navbar {
   max-height: 56px;
   max-height: 3.5rem; }
+  .navbar a {
+    font-family: "Oswald", sans-serif; }
 
 .navbar .navbar-item img {
   max-height: 96px;
@@ -9376,8 +9390,20 @@ section.clip {
           clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
 
 section.clip2 {
-  padding-top: 0;
-  margin-top: -5%; }
+  background: linear-gradient(3deg, #F7F5EA 65%, #B9E2E7 calc(65% + 1px)); }
+
+.success-info-gradient {
+  background: linear-gradient(-0.5deg, #B9E2E7 20%, #5C8D3E calc(20% + 1px)); }
+
+.light-green-info-gradient {
+  background: linear-gradient(-1deg, #88BE41 20%, #5C8D3E calc(20% + 1px)); }
+
+.light-green-info-gradient-mobile {
+  background: linear-gradient(-3deg, #88BE41 20%, #5C8D3E calc(20% + 1px)); }
+
+a.tag {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase; }
 
 .responsive-object {
   position: relative; }

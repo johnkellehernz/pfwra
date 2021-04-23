@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    {% include "includes/page_title.html" with page=page heroclass='has-background-primary-light' %}
+    {% include "includes/page_title.html" with page=page heroclass='is-success light-green-info-gradient' subtitleclass='has-text-primary'  %}
 
     {% if tag %}
         <div class="box">
@@ -43,12 +43,12 @@
                     <p>Showing events from: <strong>{{ suburb|title }}</strong></p>
                 </div>
             {% endif %}      
-            <div class="tags">
+            <div class="tags are-large">
                 {% for tag in page.get_child_tags  %}
-                      <a class="tag is-medium is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+                      <a class="tag py-5 px-5 is-rounded has-text-white has-background-success" href="{{ tag.url }}">{{ tag.name|title }}</a>
                 {% endfor %}
                 {% for suburb in page.get_child_suburbs  %}
-                    <a class="tag is-medium is-rounded" href="{% routablepageurl page "suburb_archive" suburb.slug %}">{{ suburb.name|title }}</a>    
+                    <a class="tag py-5 px-5 is-rounded has-text-white has-background-success" href="{% routablepageurl page "suburb_archive" suburb.slug %}">{{ suburb.name|title }}</a>    
                 {% endfor %}
             </div>
         </div>
@@ -59,7 +59,7 @@
             <div class="columns is-multiline">
                 {% for event in events %}
                     <div class="column is-one-third">
-                        {% include "includes/card.html" with page=event class="event" buttonclass='has-background-primary-light' %}
+                        {% include "includes/card.html" with page=event class="event" buttonclass='has-text-primary has-background-white' footerclass="has-background-success" %}
                     </div>
                 {% endfor %}
             </div>
