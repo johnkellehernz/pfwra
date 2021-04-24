@@ -8,7 +8,7 @@
 {% block content %}
 
     <div class="has-background-info">
-        <section class="section clip2">
+        <section class="section home-clip-1">
             <div class="container">
                 <div class="columns is-multiline">
                 {% for card in page.featured %}
@@ -21,8 +21,10 @@
         </section>
     </div>
 
-    <div style="<!--margin-top: -13.5%;-->">
-        <section class="clip3 section_green has-text-white has-text-centered has-background-primary">
+    <div class="home-between-clip-1-2"></div>
+
+    <!--<div style="margin-top: -13.5%;">-->
+        <section class="home-clip-2 home-section-green has-text-white has-text-centered has-background-primary">
             <div class="container" style="<!--padding-top:175px;-->">
                 {% for quote in page.quotations %}
                     <div class="content">
@@ -34,9 +36,11 @@
                 {% endfor %}
             </div>
         </section>
-    </div>
+    <!--</div>-->
 
-     <section class="section clip4">
+    <div class="home-between-clip-2-3"></div>
+
+     <section class="section home-clip-3">
         <div class="container">
             <h2 class="title is-2 has-text-centered has-text-primary">{{ "How we're doing"|upper }}</h2>
             <nav class="level">

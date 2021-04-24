@@ -1,0 +1,88 @@
+// Home page rounded cards for the counters
+
+.rounded-card {
+    border-radius: 50%;
+    width: 256px;
+    height: 256px;
+    background-size: cover;
+
+    .card-content {
+        position: relative;
+        top: 28%;
+    }
+}
+
+// Homepage Vision, Mission headings, body, background
+
+.home-section-green {
+
+    padding: 3rem 0;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $light-green;
+        font-weight: $title-weight;
+        text-transform: uppercase;
+    }
+
+    blockquote, p, li {
+        font-family: $family-secondary;
+        font-weight: $weight-light;
+        font-size: $size-4;
+        color: white;
+        margin: 0 15%;
+        font-style: italic;
+    }
+
+    li {
+        list-style: inside;
+    }
+}
+
+// Homepage Polygon lines - HACKY AF needs to be cleaned up 
+// and review for responsiveness
+
+section.clip {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+section.home-clip-1 {
+    // clip-path: polygon(3px 35px, 99.74% 57px, 100% 90%, 3px 84.84%);
+    // padding-top: 0; 
+    // margin-top: -5%;
+    background: linear-gradient(-1deg, $green 20%, $beige calc(20% + 1px), transparent calc(20% + 2px)),
+                linear-gradient(3deg, $beige calc(75% + 1px), $info calc(75% + 2px))
+                ;
+}
+
+div.home-between-clip-1-2 {
+    height: 100px;
+    background: linear-gradient(to top right, $dark-green calc(50%), $green calc(50% + 1px));
+}
+
+div.home-between-clip-2-3 { 
+    height: 100px;
+    background: linear-gradient(to top right, $beige calc(50%), $dark-green calc(50% + 1px));
+}
+
+section.home-clip-2 {
+    // background: linear-gradient(-1deg, $info 20%, $dark-green calc(20% + 1px), transparent calc(20% + 2px)),
+    //             linear-gradient(2deg, $dark-green calc(90% + 1px), $green calc(90% + 2px))
+    //             ;
+    // clip-path: polygon(61.61% 4.95%, 100% 0px, 100% 100%, 0px 100%, 0px 0px);;
+    // padding-top: 0; 
+    // margin-top: -12.5%;
+    // background:
+        // linear-gradient(175deg, $beige 15%, transparent 15.1%),
+        // linear-gradient(3deg, transparent 83% , transparent 83.5%, $success 83.6%),
+        
+        // linear-gradient(1deg, transparent 97.2%, $beige 97.3%),
+        // linear-gradient(3deg, transparent 83.5%, $beige 83.6%),
+        // linear-gradient(2deg, $beige 2.1%, $beige 2.2%, transparent 0) 100px
+        //;
+}
+section.home-clip-3{
+    // background: linear-gradient(183.5deg, $white 0%, $white 10.4%, $white 10.5%, transparent 0);
+    
+    // background-color: $beige;
+    // clip-path: polygon(36.28% 11.37%, 99.92% 5px, 100% 100%, 0px 100%, 0px 0px);
+} 
