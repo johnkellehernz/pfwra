@@ -2,12 +2,16 @@
 {% load static wagtailcore_tags %}
 
 {% block content %}
-    <section class="hero is-small py-5">
+    <section class="hero is-small py-5 has-text-primary is-beige">
       <div class="hero-body">
         <div class="container has-text-left">
-            <h1 class="title is-1">{{ 'Search'|upper }}</h1>
+            <h1 class="title is-1">{{ 'Search results'|upper }}</h1>
             {% if search_query %}
-                <p class="subtitle">You have searched for: <i><strong>{{ search_query|escape }}<strong/></i></p>
+            <div class="columns">
+                <div class="column is-half-desktop is-full-mobile">
+                    <p class="subtitle has-text-weight-semibold has-text-dark">You have searched for: <strong>{{ search_query|escape|upper }}<strong/></p>
+                </div>
+            </div>
             {% endif %}
         </div>
       </div>
@@ -15,22 +19,26 @@
 
     <section class="section">
         <div class="container">
-            {% if search_results %}
-                {% for result in search_results %}
-                    {% include "search/result.html" with result=result %}
-                {% endfor %}
-            {% elif search_query %}
-                No results found
-            {% endif %}
+            <div class="columns">
+                {% if search_results %}
+                    {% for result in search_results %}
+                        <div class="column is-three-quarters">
+                            {% include "search/result.html" with result=result %}
+                        </div>
+                    {% endfor %}
+                {% elif search_query %}
+                    No results found
+                {% endif %}
+            </div>
         </div>
     </section>
-
-    <section class="mb-6">
-        {% if search_results and search_results.paginator.count > 1 %}
+    
+    {% if search_results and search_results.paginator.count > 1 %}
+        <section class="mb-6">
             <div class="container">
                 {% include "includes/pagination.html" with subpages=search_results search_query=search_query %}
             </div>
-        {% endif %}
-    </section>
+        </section>
+    {% endif %}
 
 {% endblock %}

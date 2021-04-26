@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    {% include "includes/page_title.html" with page=page %}
+    {% include "includes/page_title.html" with showimage=True page=page heroclass='has-text-white' subtitleclass='has-text-grey-light' %}
 
     <div class="box">
         <div class="container">
@@ -18,7 +18,7 @@
 
     <section class="section">
         <div class="container">
-            <p class="title is-5 is-family-secondary">
+            <p class="title is-5 is-family-primary">
             {% if page.author %}
                 {{ page.author.first_name }} {{ page.author.last_name }}
             {% endif %}
@@ -39,18 +39,18 @@
 
     <section class="section">
         <div class="container">
-            <div class="tags">
+            <div class="tags are-large">
                 {% for tag in page.get_tags  %}
                     {% if forloop.counter == 1 %}
                         <span class="mr-2 mb-2">Tags:</span>
                     {% endif %}
-                    <a class="tag is-medium is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+                    <a class="tag py-5 px-5 is-rounded has-text-white has-background-success" href="{{ tag.url }}">{{ tag.name|title }}</a>
                 {% endfor %}
                 {% for suburb in page.get_child_suburbs  %}
                     {% if forloop.counter == 1 %}
                         <span class="mr-2 mb-2">Suburbs:</span>
                     {% endif %}
-                    <a class="tag is-medium  is-rounded" href="{% routablepageurl page "suburb_archive" suburb.slug %}">{{ suburb.name|title }}</a>
+                    <a class="tag py-5 px-5 is-rounded has-text-white has-background-success" href="{% routablepageurl page "suburb_archive" suburb.slug %}">{{ suburb.name|title }}</a>
                 {% endfor %}
             </div>
         </div>

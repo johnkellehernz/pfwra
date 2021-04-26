@@ -59,6 +59,7 @@ WAGTAIL = [
     "wagtail.contrib.redirects",
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.routable_page",
+    "wagtail.contrib.modeladmin",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -70,6 +71,7 @@ WAGTAIL = [
     "wagtail.core",
     "modelcluster",
     "taggit",
+    "wagtailmenus",
 ]
 
 
@@ -209,6 +211,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
+                "wagtailmenus.context_processors.wagtailmenus",
                 # "pfwra.utils.context_processors.settings_context",
             ],
         },

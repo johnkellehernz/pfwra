@@ -1,4 +1,4 @@
-{% load static %}
+{% load static menu_tags %}
 
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="container">
@@ -23,41 +23,18 @@
       </div>
 
       <div class="navbar-end">
-          
-        <a class="navbar-item has-text-left is-block">
-          <div class="is-size-7 is-light-green">{{ 'Kāinga' |upper }}</div>
-          <div>{{ 'Home' |upper }}</div>
-        </a>
-          
-        <a class="navbar-item has-text-left is-block">
-          <div class="is-size-7">{{ 'Whakauru'|upper }}</div>
-          <div>{{ 'Participate'|upper }}</div>
-        </a>
 
-        <a class="navbar-item has-text-left is-block">
-          <div class="is-size-7">{{ 'Rōpū'|upper }}</div>
-          <div> {{ 'Groups'|upper }}</div>
-        </a>
-
-        <a class="navbar-item has-text-left is-block">
-          <div class="is-size-7">  {{ 'Korero'|upper }}</div>
-          <div>{{ 'News'|upper }}</div>
-        </a>
-
-        <a class="navbar-item has-text-left is-block">
-          <div class="is-size-7">{{ 'Mo Tatou'|upper }}</div>
-          <div>{{ 'About Us'|upper }}</div>
-        </a>
-
-        <a class="navbar-item has-text-left is-block">
-          <div class="is-size-7">{{ 'Hono'|upper }}</div>
-          <div>{{ 'Connect'|upper }}</div>
-        </a>
+        {% for item in menu_items %}
+          <a class="navbar-item has-text-left is-block mx-2" href="{{ item.href }}" >
+            <div class="is-size-7 is-light-green">{{ item.handle |upper }}</div>
+            <div>{{ item.text |upper }}</div>
+          </a>
+        {% endfor %}
 
         <div class="navbar-item">
-          <form class="control has-icons-right"action="/search" method="get" role="search">
+          <form id="search-form" class="control has-icons-right" action="/search" method="get" role="search">
               <input name="q" class="input is-primary is-rounded" type="search" placeholder="Search">
-              <span class="icon is-right">
+              <span id="search-icon" class="icon is-right" style="pointer-events: initial;cursor:pointer;">
                 <i class="fa fa-search"></i>
               </span>
           </form>

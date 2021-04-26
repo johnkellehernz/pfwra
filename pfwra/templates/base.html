@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags menu_tags %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -11,8 +11,7 @@
 
   <body>
     {% block header %}
-      {# Header contains the main_navigation block #}
-      {% include "includes/header.html" %}
+      {% main_menu template="includes/header.html" %}
     {% endblock header %}
 
     {% block pre-content %}
@@ -22,8 +21,7 @@
     {% endblock content %}
 
     {% block footer %}
-      {# Header contains the main_navigation block #}
-      {% include "includes/footer.html" %}
+      {% flat_menu 'footer-menu' template="includes/footer.html" %}
     {% endblock footer %}
 
 

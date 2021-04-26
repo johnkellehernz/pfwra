@@ -15,15 +15,13 @@
     <div class="media">
       <div class="media-content">
         <p class="title has-text-primary">{{ page.title|upper }}</p>
-        <p class="title is-6 is-family-secondary">
-              {% if page.author %}
-                  {{ page.author.first_name }} {{ page.author.last_name }}
-              {% endif %}
-              {% if page.date_published %}
-                  <br>{{ page.date_published|date:"d M Y" }}
-              {% endif %}
-        </p>
-        <p>{{ page.introduction }}</p>
+          {% if page.author %}
+              <p class="has-text-weight-semibold has-text-primary">{{ page.author.first_name }} {{ page.author.last_name }}</p>
+          {% endif %}
+          {% if page.date_published %}
+              <p class="has-text-weight-semibold has-text-primary">{{ page.date_published|date:"d M Y" }}</p>
+          {% endif %}
+        <p class="mt-3">{{ page.introduction }}</p>
       </div>
     </div>
     

@@ -1,0 +1,8 @@
+{% load static menu_tags %}
+
+{% for item in menu_items %}
+  <a class="navbar-item has-text-left is-block" href="{{ item.href }}" >
+    <div class="is-size-7 is-light-green">{{ item.handle |upper }}</div>
+    <div>{{ item.text |upper }}</div>
+  </a>
+{% endfor %}

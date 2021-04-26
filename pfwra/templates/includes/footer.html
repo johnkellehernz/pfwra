@@ -3,44 +3,17 @@
 <footer class="footer">
     <div class="container">
         <nav class="level">
-          <div class="level-item has-text-left-desktop has-text-centered-touch">
-            <a class="link">
-                <div class="title has-text-white is-6 mb-1">{{ "Kāinga"|upper }}</div>
-                <div class="title has-text-white is-4">{{ "Home"|upper }}</div>
-            </a>
 
-          </div>
-          
-          <div class="level-item has-text-left-desktop has-text-centered-touch">
-            <a class="link">
-                <div class="title has-text-white is-6 mb-1">{{ "Whakauru"|upper }}</div>
-                <div class="title has-text-white is-4">{{ "Participate"|upper }}</div>
-            </a>
-          </div>
-          <div class="level-item has-text-left-desktop has-text-centered-touch">
-            <a class="link">
-                <div class="title has-text-white is-6 mb-1">{{ "Rōpū"|upper }}</div>
-                <div class="title has-text-white is-4">{{ "Groups"|upper }}</div>
-            </a>
-          </div>
-          <div class="level-item has-text-left-desktop has-text-centered-touch">
-            <a class="link">
-                <div class="title has-text-white is-6 mb-1">{{ "Korero"|upper }}</div>
-                <div class="title has-text-white is-4">{{ "News"|upper }}</div>
-            </a>
-          </div>
-          <div class="level-item has-text-left-desktop has-text-centered-touch">
-            <a class="link">
-                <div class="title has-text-white is-6 mb-1">{{ "Mo Tatou"|upper }}</div>
-                <div class="title has-text-white is-4">{{ "About Us"|upper }}</div>
-            </a>
-          </div>
-          <div class="level-item has-text-left-desktop has-text-centered-touch">
-            <a class="link">
-                <div class="title has-text-white is-6 mb-1">{{ "Hono"|upper }}</div>
-                <div class="title has-text-white is-4">{{ "Connect"|upper }}</div>
-            </a>
-          </div>
+          {% for  item in menu_items %}
+            <div class="level-item has-text-left-desktop has-text-centered-touch">
+              <a class="link" href="{{ item.href }}">
+                  <div class="title has-text-white is-6 mb-1">{{ item.handle|upper }}</div>
+                  <div class="title has-text-white is-4">{{ item.text|upper }}</div>
+              </a>
+
+            </div>
+          {% endfor %}
+
         </nav>
 
         <div class="is-shadowless navbar-menu is-active">

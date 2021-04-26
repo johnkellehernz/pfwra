@@ -1,6 +1,11 @@
 /* Project specific Javascript goes here. */
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Search form
+  var form = document.getElementById("search-form");
+  document.getElementById("search-icon").addEventListener("click", function () {
+    form.submit();
+  });
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 

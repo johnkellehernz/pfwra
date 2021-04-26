@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailroutablepage_tags %}
+
+{% block content %}
+
+    {% include "includes/page_title.html" with page=page heroclass='has-text-primary is-beige' subtitleclass='has-text-dark' %}
+
+    <div class="container">
+        <div class="content ">
+            {% for block in page.body %}
+                {{ block }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

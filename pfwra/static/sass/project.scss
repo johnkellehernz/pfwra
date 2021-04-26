@@ -7,7 +7,7 @@
 // Fonts
 $family-sans-serif: "Oswald", sans-serif;
 // family-secondary defaults to family-sans-serif in Bulma
-$family-secondary: "Bitter", serif;
+$family-primary: "Bitter", serif;
 
 // Brand colors
 // Main palette
@@ -32,7 +32,8 @@ $danger: $red;
 // $text: $grey-dark;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige;
+// $body-background-color: $white;
+$custom-colors: ("beige": $beige);
 $title-line-height: 1;
 $title-family: $family-sans-serif;
 $size-1: 5rem;
@@ -63,7 +64,7 @@ $footer-color: white;
 }
 
 ul, ol, p, figcaption, a {
-    font-family: $family-secondary;
+    // font-family: $family-secondary;
     font-weight: $weight-light;
 }
 
@@ -108,7 +109,7 @@ ul, ol, p, figcaption, a {
     border: none;
 
     a {
-        font-family: $family-primary;
+        font-family: $family-secondary;
     }
 }
 
@@ -135,6 +136,11 @@ ul, ol, p, figcaption, a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    .title, .subtitle {
+        color: inherit !important;
+    }
+
 }
 
 .hero-head .navbar::before {
@@ -149,11 +155,13 @@ ul, ol, p, figcaption, a {
     left: 0px;
 }
 
+
+
 // Navbar(header) including logo
 .navbar {
     max-height: 3.5rem;
     a {
-        font-family: $family-primary;
+        font-family: $family-secondary;
     }
 }
 
@@ -198,13 +206,6 @@ a.has-text-secondary:hover, a.has-text-secondary:focus {
     background-color: $light-green !important;
 }
 
-.footer {
-    font-family: $family-secondary;
-}
-
-.footer h1, h2, h3, h4, h5, h6 {
-    font-family: $family-primary;
-}
 .footer .navbar-menu{
     color: $footer-color;
 }
@@ -232,10 +233,10 @@ a.has-text-secondary:hover, a.has-text-secondary:focus {
 // Tags
 
 a.tag {
-    font-family: $family-primary;
+    font-family: $family-secondary;
     text-transform: uppercase;
-
 }
+
 
 @import "./components/home.scss";
 @import "./wagtail.scss";
