@@ -6,9 +6,9 @@
 
           {% for  item in menu_items %}
             <div class="level-item has-text-left-desktop has-text-centered-touch">
-              <a class="link" href="{{ item.href }}">
-                  <div class="title has-text-white is-6 mb-1">{{ item.handle|upper }}</div>
-                  <div class="title has-text-white is-4">{{ item.text|upper }}</div>
+              <a class="is-family-secondary" href="{{ item.href }}">
+                  <div class=" is-size-6 mb-1">{{ item.handle|upper }}</div>
+                  <div class=" is-size-4">{{ item.text|upper }}</div>
               </a>
 
             </div>
@@ -34,20 +34,20 @@
             </a>
           </div>
           <div class="is-hidden-desktop navbar-start is-align-items-end">
-            <a href="https://facebook.com" target="_blank" class="icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
-            <a href="https://instagram.com" target="_blank" class="icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-instagram-square" aria-hidden="true"></i></a>
-            <a href="https://twitter.com" target="_blank" class="icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-twitter-square" aria-hidden="true"></i></a>
+            <a href="https://facebook.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="https://instagram.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-brands fa-instagram-square" aria-hidden="true"></i></a>
+            <a href="https://twitter.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-brands fa-twitter-square" aria-hidden="true"></i></a>
           </div>
           <div class="is-hidden-touch navbar-end is-align-items-end">
-            <a href="https://facebook.com" target="_blank" class="navbar-item icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
-            <a href="https://instagram.com" target="_blank" class="navbar-item icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-instagram-square" aria-hidden="true"></i></a>
-            <a href="https://twitter.com" target="_blank" class="navbar-item icon is-large"><i class="has-text-white fab fa-2x fa-brands fa-twitter-square" aria-hidden="true"></i></a>
+            <a href="https://facebook.com" target="_blank" class="navbar-item icon is-large"><i class="fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="https://instagram.com" target="_blank" class="navbar-item icon is-large"><i class="fab fa-2x fa-brands fa-instagram-square" aria-hidden="true"></i></a>
+            <a href="https://twitter.com" target="_blank" class="navbar-item icon is-large"><i class="fab fa-2x fa-brands fa-twitter-square" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="content has-text-right">
-            <hr>
-            <p class="is-family-primary has-text-secondary">© {% now "Y" %} Pest Free Waitākere Ranges Alliance <a class="has-text-secondary has-underline" href="/">Privacy Policy</a></p>
+            <hr class="has-background-light-green">
+            <p class="is-family-primary has-text-light-green">© {% now "Y" %} Pest Free Waitākere Ranges Alliance <a class="is-light-green has-underline has-text-light-green" href="/">Privacy Policy</a></p>
         </div>
   </div>
 </footer>

@@ -33,7 +33,7 @@ $danger: $red;
 
 // Update some of Bulma's component variables
 // $body-background-color: $white;
-$custom-colors: ("beige": $beige);
+$custom-colors: ("beige": $beige, "light-green": $light-green);
 $title-line-height: 1;
 $title-family: $family-sans-serif;
 $size-1: 5rem;
@@ -58,10 +58,6 @@ $footer-color: white;
 }
 
 // Bulma override
-
-.has-background-primary-light {
-    background-color: $light-green !important;
-}
 
 ul, ol, p, figcaption, a {
     // font-family: $family-secondary;
@@ -193,30 +189,37 @@ ul, ol, p, figcaption, a {
 
 // Footer
 
-.has-text-secondary {
-    color: $light-green;
-}
+footer{
 
-a.has-text-secondary:hover, a.has-text-secondary:focus {
-    text-decoration: none;
-    color: $light-blue !important;
-}
+    .level-item {
+        a {
+            color: $white;
+        }
 
-.footer hr {
-    background-color: $light-green !important;
-}
+        a.is-active, a:focus, a:focus-within, a:hover, a.is-active, a:focus, a:focus-within, a:hover {
+            background-color: transparent;
+            color: $light-blue;
+        }
+    }
 
-.footer .navbar-menu{
-    color: $footer-color;
-}
-.footer .navbar-menu .navbar-item img { 
-    max-height: inherit;
-}
+    a.is-light-green:hover, a.is-light-green:focus {
+        text-decoration: none;
+        color: $light-blue !important;
+    }
 
-.has-underline{
-    text-decoration: underline;
-}
+    .footer .navbar-menu .navbar-item img { 
+        max-height: inherit;
+    }
 
+    .navbar-link.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover {
+        background-color: transparent;
+        color: $light-blue;
+    }
+
+    .has-underline{
+        text-decoration: underline;
+    }
+}
 // Hero class-based linear gradients
 
 .success-info-gradient {
@@ -226,6 +229,7 @@ a.has-text-secondary:hover, a.has-text-secondary:focus {
 .light-green-info-gradient {
     background: linear-gradient(-1deg, $light-green 20%, $success calc(20% + 1px));
 }
+
 .light-green-info-gradient-mobile {
     background: linear-gradient(-3deg, $light-green 20%, $success calc(20% + 1px));
 }
