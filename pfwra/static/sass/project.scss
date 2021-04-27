@@ -241,6 +241,10 @@ a.tag {
     text-transform: uppercase;
 }
 
+.is-256x256 {
+    width: 256px;
+    height: 256px;
+}
 
 @import "./components/home.scss";
 @import "./wagtail.scss";

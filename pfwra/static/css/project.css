@@ -9913,6 +9913,10 @@ a.tag {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase; }
 
+.is-256x256 {
+  width: 256px;
+  height: 256px; }
+
 .rounded-card {
   border-radius: 50%;
   width: 256px;

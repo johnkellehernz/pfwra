@@ -5,25 +5,16 @@
 
     {% include "includes/page_title.html" with showimage=True page=page heroclass='has-text-white' subtitleclass='has-text-grey-light' %}
 
-    <div class="box">
-        <div class="container">
-            <nav class="breadcrumb" aria-label="breadcrumbs">
-              <ul>
-                <li><a href="{% pageurl page.get_parent %}">{{ page.get_parent.title }}</a></li>
-                <li class="is-active"><a href="#">{{ page.title|title }}</a></li>
-              </ul>
-            </nav>
-        </div>
-    </div>
+    {% include "includes/breadcrumb.html" with page=page %}
 
     <section class="section">
         <div class="container">
             <p class="title is-5 is-family-primary">
             {% if page.author %}
-                {{ page.author.first_name }} {{ page.author.last_name }}
+                By {{ page.author.first_name }} {{ page.author.last_name }}
             {% endif %}
             {% if page.date_published %}
-                | {{ page.date_published|date:"d M Y" }}
+                on {{ page.date_published|date:"d M Y" }}
             {% endif %}
             </p>
         </div>

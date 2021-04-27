@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailroutablepage_tags widget_tweaks %}
+{% load static wagtailcore_tags wagtailroutablepage_tags widget_tweaks %}
 
 {% block content %}
 
@@ -8,17 +8,22 @@
     <div class="container my-5">
         <div class="content">
             <div class="columns">
-                <div class="column is-half">
+                <div class="column is-4">
                     {% for block in page.body %}
                         {{ block }}
                     {% endfor %}
 
-                    <a href="https://facebook.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-instagram-square" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-twitter-square" aria-hidden="true"></i></a>
-                        
+                    <figure class="image is-256x256">
+                      <img class="is-rounded" width="256" height="256" src="{% static 'images/contact.jpg' %}">
+                    </figure>
+
+                    <div>
+                        <a href="https://facebook.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-instagram-square" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-twitter-square" aria-hidden="true"></i></a>
+                    </div>
                 </div>
-                <div class="column is-half">
+                <div class="column is-4">
                     <form class="block" action="{% pageurl page %}" method="POST" role="form">
                         {% csrf_token %}
                         {% if form.subject.errors %}
@@ -58,6 +63,7 @@
                         </div>
                     </form>
                 </div>
+                <div class="column is-4"></div>
             </div>
         </div>
     </div>

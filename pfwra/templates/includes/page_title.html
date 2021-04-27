@@ -2,14 +2,14 @@
 
 {% if page.image and showimage %}
     {% image page.image fill-1200x400 as image %}
-    <section class="hero is-small py-5 {% if heroclass %}{{ heroclass }}{% endif %}" style="background-image: url('{{ image.url }}');">
+    <section class="hero is-small py-5 {% if heroclass %}{{ heroclass }}{% endif %}" style="background-image: linear-gradient(5deg, rgba(4, 106, 55, 0.3) 35%, transparent calc(35% + 1px)), url('{{ image.url }}');">
 {% else %}
     <section class="hero is-small py-5 {% if heroclass %}{{ heroclass }}{% endif %}">
 {% endif %}
 
   <div class="hero-body">
     <div class="container has-text-left">
-        <h1 class="title is-1 {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.title|upper }}<span class="ml-5 {% if subtitleclass %}{{ subtitleclass }}{% endif %}">{{ page.subtitle|upper }}</span></h1>
+        <h1 class="title is-1 {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.title|upper }}{% if page.subtitle %}<span class="ml-5 {% if subtitleclass %}{{ subtitleclass }}{% endif %}">{{ page.subtitle|upper }}</span>{% endif %}</h1>
         <div class="columns">
             <div class="column is-half-desktop is-full-mobile">
                 <p class="subtitle has-text-weight-semibold {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.introduction }}</p>
