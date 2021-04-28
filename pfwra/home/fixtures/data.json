@@ -320,7 +320,7 @@
   "pk": 4,
   "fields": {
     "sort_order": 0,
-    "page": 8,
+    "page": 3,
     "counter": 4
   }
 },
@@ -329,7 +329,7 @@
   "pk": 5,
   "fields": {
     "sort_order": 1,
-    "page": 8,
+    "page": 3,
     "counter": 5
   }
 },
@@ -338,7 +338,7 @@
   "pk": 6,
   "fields": {
     "sort_order": 2,
-    "page": 8,
+    "page": 3,
     "counter": 6
   }
 },
@@ -347,7 +347,7 @@
   "pk": 7,
   "fields": {
     "sort_order": 3,
-    "page": 8,
+    "page": 3,
     "counter": 5
   }
 },
@@ -356,7 +356,7 @@
   "pk": 8,
   "fields": {
     "sort_order": 4,
-    "page": 8,
+    "page": 3,
     "counter": 6
   }
 },
@@ -365,7 +365,7 @@
   "pk": 9,
   "fields": {
     "sort_order": 5,
-    "page": 8,
+    "page": 3,
     "counter": 4
   }
 },
@@ -1287,7 +1287,7 @@
     "hostname": "localhost",
     "port": 80,
     "site_name": "",
-    "root_page": 8,
+    "root_page": 3,
     "is_default_site": true
   }
 },
@@ -1856,7 +1856,7 @@
   "pk": 1,
   "fields": {
     "sort_order": 0,
-    "link_page": 8,
+    "link_page": 3,
     "link_url": null,
     "url_append": "",
     "handle": "KĀINGA",
@@ -1940,7 +1940,7 @@
   "pk": 1,
   "fields": {
     "sort_order": 0,
-    "link_page": 8,
+    "link_page": 3,
     "link_url": null,
     "url_append": "",
     "handle": "KĀINGA",
