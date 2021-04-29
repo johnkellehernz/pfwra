@@ -20,7 +20,7 @@ CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": env("REDIS_URL"),
-        'KEY_PREFIX': 'wagtailcache'
+        'KEY_PREFIX': "wagtailcache",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             # Mimicing memcache behavior.
