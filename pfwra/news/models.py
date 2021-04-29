@@ -18,6 +18,8 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 
+from wagtailcache.cache import WagtailCacheMixin
+
 from common.blocks import BaseStreamBlock
 from common.models import Suburb
 
@@ -31,7 +33,7 @@ class BlogPageTag(TaggedItemBase):
     content_object = ParentalKey('BlogPage', related_name='tagged_items', on_delete=models.CASCADE)
 
 
-class BlogPage(Page):
+class BlogPage(WagtailCacheMixin, Page):
     author = models.ForeignKey(
         'common.People',
         null=True,
@@ -106,7 +108,7 @@ class BlogPage(Page):
     subpage_types = []
 
 
-class BlogIndexPage(RoutablePageMixin, Page):
+class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
     """
     Index page for blogs.
     We need to alter the page model's context to return the child page objects,

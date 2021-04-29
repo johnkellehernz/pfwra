@@ -20,14 +20,24 @@ CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": env("REDIS_URL"),
+        'KEY_PREFIX': 'wagtailcache'
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             # Mimicing memcache behavior.
             # https://github.com/jazzband/django-redis#memcached-exceptions-behavior
             "IGNORE_EXCEPTIONS": True,
         },
+    },
+    "renditions": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": env("REDIS_URL"),
+        "TIMEOUT": 600,
+        "OPTIONS": {
+            "MAX_ENTRIES": 1000
+        }
     }
 }
+WAGTAIL_CACHE = True
 
 # SECURITY
 # ------------------------------------------------------------------------------

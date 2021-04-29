@@ -20,6 +20,8 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 
+from wagtailcache.cache import WagtailCacheMixin
+
 from common.blocks import BaseStreamBlock
 from common.models import Suburb
 from events.models import EventPage
@@ -54,7 +56,7 @@ class GroupPageTag(TaggedItemBase):
     content_object = ParentalKey('GroupPage', related_name='tagged_items', on_delete=models.CASCADE)
 
 
-class GroupPage(Page):
+class GroupPage(WagtailCacheMixin, Page):
     subtitle = models.CharField("Title in Te reo Māori", max_length=254, blank=True, null=True)
     introduction = models.TextField(
         help_text='Text to describe the group',
@@ -141,7 +143,7 @@ class GroupPage(Page):
 
 
 
-class GroupIndexPage(RoutablePageMixin, Page):
+class GroupIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
     """
     Index page for groups.
     We need to alter the page model's context to return the child page objects,

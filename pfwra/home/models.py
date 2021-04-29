@@ -12,6 +12,8 @@ from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 
+from wagtailcache.cache import WagtailCacheMixin
+
 from modelcluster.fields import ParentalKey
 
 from common.blocks import CardBlock, QuoteBlock, BaseStreamBlock
@@ -33,7 +35,7 @@ class CounterPageAdvertPlacement(Orderable, models.Model):
         return self.page.title + " -> " + self.counter.text
 
 
-class HomePage(Page):
+class HomePage(WagtailCacheMixin, Page):
     # Hero section of HomePage
     image = models.ForeignKey(
         'wagtailimages.Image',

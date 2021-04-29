@@ -18,3 +18,4 @@ django-widget-tweaks==1.4.8  # https://pypi.org/project/django-widget-tweaks/
 # ------------------------------------------------------------------------------
 wagtail==2.12.4  # https://github.com/wagtail/wagtail
 wagtailmenus==3.0.2  # https://pypi.org/project/wagtailmenus/
+wagtail-cache==1.0.2  # https://pypi.org/project/wagtail-cache/

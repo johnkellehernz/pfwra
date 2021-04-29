@@ -18,6 +18,8 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 
+from wagtailcache.cache import WagtailCacheMixin
+
 from common.blocks import BaseStreamBlock
 from common.models import Suburb
 
@@ -52,7 +54,7 @@ class EventPageTag(TaggedItemBase):
     content_object = ParentalKey('EventPage', related_name='tagged_items', on_delete=models.CASCADE)
 
 
-class EventPage(Page):
+class EventPage(WagtailCacheMixin, Page):
     subtitle = models.CharField("Title in Te reo Māori", max_length=254, blank=True, null=True)
     introduction = models.TextField(
         help_text='Text to describe the event',
@@ -137,7 +139,7 @@ class EventPage(Page):
         return suburbs
 
 
-class EventIndexPage(RoutablePageMixin, Page):
+class EventIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
     """
     Index page for events.
     We need to alter the page model's context to return the child page objects,

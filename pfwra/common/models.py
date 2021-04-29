@@ -14,6 +14,8 @@ from wagtail.admin.edit_handlers import (
     StreamFieldPanel,
 )
 
+from wagtailcache.cache import WagtailCacheMixin
+
 from modelcluster.models import ClusterableModel
 from modelcluster.fields import ParentalKey
 
@@ -109,7 +111,7 @@ class People(models.Model):
         verbose_name_plural = 'People'
 
 
-class StandardPage(Page):
+class StandardPage(WagtailCacheMixin, Page):
     subtitle = models.CharField("Title in Te reo Māori", max_length=254, blank=True, null=True)
     introduction = models.TextField(
         help_text='Text to describe the page',

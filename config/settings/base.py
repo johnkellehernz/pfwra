@@ -87,7 +87,8 @@ DJANGO_APPS = [
     "django.forms",
 ]
 THIRD_PARTY_APPS = [
-    'widget_tweaks'
+    "widget_tweaks",
+    "wagtailcache",
     # "crispy_forms",
     # "allauth",
     # "allauth.account",
@@ -152,6 +153,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
+    "wagtailcache.cache.UpdateCacheMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
@@ -162,6 +164,7 @@ MIDDLEWARE = [
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    "wagtailcache.cache.FetchFromCacheMiddleware",
 ]
 
 # STATIC
@@ -304,6 +307,10 @@ WAGTAIL_SITE_NAME = "pfwra"
 BASE_URL = "https://pfwra"
 
 WAGTAILEMBEDS_RESPONSIVE_HTML = True
+
+WAGTAIL_GRAVATAR_PROVIDER_URL = None
+
+WAGTAIL_CACHE = False
 
 mimetypes.add_type("image/svg+xml", ".svg", True)
 mimetypes.add_type("image/svg+xml", ".svgz", True)
