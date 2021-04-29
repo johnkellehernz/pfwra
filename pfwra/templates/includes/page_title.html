@@ -12,7 +12,7 @@
         <h1 class="title is-2 {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.title|upper }}{% if page.subtitle %}<span class="ml-5 {% if subtitleclass %}{{ subtitleclass }}{% endif %}">{{ page.subtitle|upper }}</span>{% endif %}</h1>
         <div class="columns">
             <div class="column is-three-quarters is-full-mobile">
-                <p class="subtitle has-text-weight-regular mb-5 {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.introduction }}</p>
+                <p class="subtitle has-text-weight-regular mb-5 {% if pclass %}{{ pclass }}{% elif not heroclass %}has-text-primary-light{% endif %}">{{ page.introduction }}</p>
             </div>
         </div>
     </div>

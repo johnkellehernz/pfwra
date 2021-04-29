@@ -22,7 +22,6 @@ $orange: #D96D28; // Button? / Alert?
 $light-green: #88BE41; // Main brand colour
 $beige: #F2EEE0; // Neutral background
 $red: #D9222D; // Alert
-
 $primary: $dark-green;
 $link: $primary;
 $info: $light-blue;
@@ -34,7 +33,7 @@ $danger: $red;
 
 // Update some of Bulma's component variables
 // $body-background-color: $white;
-$custom-colors: ("beige": $beige, "light-green": $light-green);
+$custom-colors: ("beige": $beige, "light-green": $light-green, "transp-green": $green-transparent);
 $title-line-height: 1;
 $title-family: $family-sans-serif;
 $size-1: 5rem;
@@ -134,7 +133,7 @@ ul, ol, p, figcaption, a {
     background-size: cover;
     background-position: center;
 
-    .title, .subtitle {
+    .title {
         color: inherit !important;
     }
 
@@ -222,6 +221,10 @@ footer{
     }
 }
 // Hero class-based linear gradients
+
+.success-beige-gradient {
+    background: linear-gradient(-0.5deg, $beige 20%, $success calc(20% + 1px));
+}
 
 .success-info-gradient {
     background: linear-gradient(-0.5deg, $info 20%, $success calc(20% + 1px));
