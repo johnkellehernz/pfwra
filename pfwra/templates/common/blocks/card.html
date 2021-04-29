@@ -24,7 +24,7 @@
 
   <footer class="card-footer mx-5 mb-5 ">
       {% if value.link %}
-        <a href="{{ value.link.url }}" class="button is-link is-rounded is-fullwidth is-medium is-info">{{ value.link.text }}</a>
+        <a href="{{ value.link.url }}" class="button is-link is-rounded is-fullwidth is-medium is-info">{{ value.link.text|upper }}</a>
       {% endif %}
   </footer>
 </div>
