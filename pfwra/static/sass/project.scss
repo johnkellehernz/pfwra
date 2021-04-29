@@ -14,12 +14,13 @@ $family-primary: "Bitter", serif;
 $dark-green: #046A37; // Main brand colour
 $dark-green-transparent: rgba(4, 106, 55, 0.75);  // main with opacity 0.75
 $green: #5C8D3E; // Support colour #1
+$green-transparent: rgba(92, 141, 62, 0.50); // Support with opacity 0.5
 $light-blue: #B9E2E7; // Support colour #2
 $dark-blue: #317796; // Button?
 $orange: #D96D28; // Button? / Alert?
 // Support palette
 $light-green: #88BE41; // Main brand colour
-$beige: #F7F5EA; // Neutral background
+$beige: #F2EEE0; // Neutral background
 $red: #D9222D; // Alert
 
 $primary: $dark-green;
@@ -81,7 +82,7 @@ ul, ol, p, figcaption, a {
 
 .card-content h4 {
     color: $dark-green;
-    font-family: $family-secondary;
+    font-family: $family-primary;
     font-size: $size-4;
     font-weight: $weight-semibold;
 }
