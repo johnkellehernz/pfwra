@@ -41,27 +41,26 @@
                             {% else %}
                                 <div class="column is-full">
                             {% endif %}
-                                    <div class="field" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
-                                        <label class="label">{{ field.label_tag }}{% if field.field.required %}<span class="has-text-danger">*</span>{% endif %}</label>
-                                        <div class="control">
-                                            {% if field|widget_type == 'textarea'%}
-                                                {% render_field field class="textarea" %}
-                                            {% else %}
-                                                {% render_field field class="input" %}
-                                            {% endif %}
-                                        </div>
-                                        {% if field.help_text %}
-                                            <p class="help">{{ field.help_text|safe }}</p>
+                                <div class="field" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
+                                    <label class="label">{{ field.label_tag }}{% if field.field.required %}<span class="has-text-danger">*</span>{% endif %}</label>
+                                    <div class="control">
+                                        {% if field|widget_type == 'textarea'%}
+                                            {% render_field field class="textarea" %}
+                                        {% else %}
+                                            {% render_field field class="input" %}
                                         {% endif %}
                                     </div>
+                                    {% if field.help_text %}
+                                        <p class="help">{{ field.help_text|safe }}</p>
+                                    {% endif %}
                                 </div>
+                            </div>
                         {% endfor %}
                             </div>
+                            <div class="control">
+                              <button class="button is-family-secondary is-medium is-rounded is-success">{{ 'Submit'|upper }}</button>
+                            </div>
                         </fieldset>
-
-                        <div class="control">
-                          <button class="button is-family-secondary is-medium is-rounded is-success">{{ 'Submit'|upper }}</button>
-                        </div>
                     </form>
                 </div>
                    
