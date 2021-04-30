@@ -7,23 +7,15 @@
 
     <div class="container my-5">
         <div class="content">
-            <div class="columns">
-                <div class="column is-4">
+            <div class="columns is-multiline">
+                <div class="column is-8 is-offset-4">
+
                     {% for block in page.body %}
                         {{ block }}
                     {% endfor %}
-
-                    <figure class="image is-256x256">
-                      <img class="is-rounded" width="256" height="256" src="{% static 'images/contact.jpg' %}">
-                    </figure>
-
-                    <div>
-                        <a href="https://facebook.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
-                        <a href="https://instagram.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-instagram-square" aria-hidden="true"></i></a>
-                        <a href="https://twitter.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-twitter-square" aria-hidden="true"></i></a>
-                    </div>
                 </div>
-                <div class="column is-4">
+
+                <div class="column is-8">
                     <form class="block" action="{% pageurl page %}" method="POST" role="form">
                         {% csrf_token %}
                         {% if form.subject.errors %}
@@ -41,29 +33,44 @@
                             </article>
                         {% endif %}
 
+                        <fieldset>
+                            <div class="columns is-multiline">
                         {% for field in form %}
-                            <div class="field" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
-                                
-                                <label class="label">{{ field.label_tag }}{% if field.field.required %}<span class="has-text-danger">*</span>{% endif %}</label>
-                                <div class="control">
-                                    {% if field|widget_type == 'textarea'%}
-                                        {% render_field field class="textarea" %}
-                                    {% else %}
-                                        {% render_field field class="input" %}
-                                    {% endif %}
+                            {% if forloop.counter == 1 or forloop.counter == 2  %}
+                                <div class="column is-half">
+                            {% else %}
+                                <div class="column is-full">
+                            {% endif %}
+                                    <div class="field" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
+                                        <label class="label">{{ field.label_tag }}{% if field.field.required %}<span class="has-text-danger">*</span>{% endif %}</label>
+                                        <div class="control">
+                                            {% if field|widget_type == 'textarea'%}
+                                                {% render_field field class="textarea" %}
+                                            {% else %}
+                                                {% render_field field class="input" %}
+                                            {% endif %}
+                                        </div>
+                                        {% if field.help_text %}
+                                            <p class="help">{{ field.help_text|safe }}</p>
+                                        {% endif %}
+                                    </div>
                                 </div>
-                                {% if field.help_text %}
-                                    <p class="help">{{ field.help_text|safe }}</p>
-                                {% endif %}
-                            </div>
                         {% endfor %}
+                            </div>
+                        </fieldset>
 
                         <div class="control">
                           <button class="button is-family-secondary is-medium is-rounded is-success">{{ 'Submit'|upper }}</button>
                         </div>
                     </form>
                 </div>
-                <div class="column is-4"></div>
+                   
+                <div class="column is-4 is-flex is-align-items-center is-justify-content-right">
+                    <a href="https://facebook.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-instagram-square" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="icon is-large"><i class="fab fa-2x fa-twitter-square" aria-hidden="true"></i></a>
+                </div>
+
             </div>
         </div>
     </div>
