@@ -27,7 +27,7 @@
         <section class="home-clip-2 home-section-green has-text-white has-text-centered has-background-primary">
             <div class="container" style="<!--padding-top:175px;-->">
                 {% for quote in page.quotations %}
-                    <div class="content">
+                    <div class="content pt-4">
                     {% include_block quote %}
                     </div>
                 {% endfor %}
@@ -42,7 +42,7 @@
 
      <section class="section home-clip-3">
         <div class="container">
-            <h2 class="title is-2 has-text-centered has-text-primary">{{ "How we're doing"|upper }}</h2>
+            <h2 class="title is-2 has-text-centered has-text-primary pb-4">{{ "How we're doing"|upper }}</h2>
             <nav class="level">
                 {% for counter in page.counter_placements.all %}
                     <div class="level-item has-text-centered">

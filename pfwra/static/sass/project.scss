@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
 // Fonts
 $family-sans-serif: "Oswald", sans-serif;
@@ -61,7 +61,11 @@ $footer-color: white;
 
 ul, ol, p, figcaption, a {
     // font-family: $family-secondary;
-    font-weight: $weight-light;
+    font-weight: $weight-normal;
+}
+
+figcaption {
+    font-size: .85rem;
 }
 
 .footer hr {
@@ -123,8 +127,31 @@ ul, ol, p, figcaption, a {
     padding: 0;
 }
 
+.content blockquote p {
+    font-family: $family-primary;
+    font-style: italic;
+    font-size: $size-3;
+    line-height: $size-3;
+    color: $primary;
+    margin-top: 2rem !important;
+    margin-bottom: .5rem !important;
+}
+
+.content blockquote footer p{
+    color: $green-transparent !important;
+    font-style: normal !important;
+    margin-top: 0rem !important;
+    margin-bottom: 2rem !important;
+}
+
 .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
     font-weight: $title-weight;
+    text-transform: uppercase;
+    color: $primary;
+}
+
+.pagination {
+    text-transform: uppercase;
 }
 
 // Hero stuff
