@@ -1,5 +1,5 @@
 
-<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+<nav class="pagination is-centered is-family-sans-serif" role="navigation" aria-label="pagination">
   <a class="pagination-previous" 
     {% if subpages.has_previous %}
       title="Previous page" href="?page={{ subpages.previous_page_number }}{% if search_query %}&q={{ search_query|urlencode }}

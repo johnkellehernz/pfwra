@@ -19,7 +19,7 @@
               <p class="has-text-weight-semibold has-text-primary">{{ page.author.first_name }} {{ page.author.last_name }}</p>
           {% endif %}
           {% if page.date_published %}
-              <p class="has-text-weight-semibold has-text-primary">{{ page.date_published|date:"d M Y" }}</p>
+              <p class="has-text-weight-normal has-text-primary">{{ page.date_published|date:"d M Y" }}</p>
           {% endif %}
         <p class="mt-3">{{ page.introduction }}</p>
       </div>
@@ -28,11 +28,11 @@
       {% if class == 'group' %}
         <div class="content">
           {% if page.external_url %}
-            <span class="icon-text mb-3">
+            <span class="icon-text mb-3 has-text-primary">
               <span class="icon">
                 <i class="fas fa-link"></i>
               </span>
-              <span><a class="link" href="{{ page.external_url}}" target="_blank">{{ 'GO TO Website'|upper }}</a></span>
+              <span><a class="link is-family-sans-serif" href="{{ page.external_url}}" target="_blank">{{ 'GO TO Website'|upper }}</a></span>
             </span>
           {% endif %}
           <div class="tags">
@@ -40,7 +40,7 @@
                   <a class="tag is-small is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
             {% endfor %}
             {% for suburb in page.get_suburbs  %}
-                <a class="tag is-small is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+                <a class="tag is-small is-link is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
             {% endfor %}
           </div>
       </div>
@@ -53,15 +53,15 @@
     <div class="px-5 pt-5 has-background-success">
         {% if page.location %}
           <h6 class="is-6 title mb-1">{{ 'Location:'|upper }}</h6>
-          <p class="has-text-weight-normal">{{ page.location }}</p>
+          <p class="has-text-weight-medium">{{ page.location }}</p>
         {% endif %}
         {% if page.date_scheduled %}
           <h6 class="is-6 title my-2">{{ 'Date:'|upper }}</h6>
-          <p class="has-text-weight-normal">{{ page.date_scheduled|date:"d M Y" }}</p>
+          <p class="has-text-weight-medium">{{ page.date_scheduled|date:"d M Y" }}</p>
         {% endif %}
         {% if page.starting_time %}
           <h6 class="is-6 title my-2">{{ 'Time:'|upper }}</h6>
-          <p class="has-text-weight-normal">{{ page.starting_time }}{% if page.ending_time %} - {{ page.ending_time }}{% endif %}</p>
+          <p class="has-text-weight-medium">{{ page.starting_time }}{% if page.ending_time %} - {{ page.ending_time }}{% endif %}</p>
         {% endif %}
       </div>
   {% endif %}

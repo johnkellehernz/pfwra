@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
 /*! bulma.io v0.9.2 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
 .button, .input, .textarea, .select select, .file-cta,
@@ -10047,7 +10047,11 @@ a.has-text-transp-green-dark:hover, a.has-text-transp-green-dark:focus {
   color: #046A37 !important; }
 
 ul, ol, p, figcaption, a {
-  font-weight: 300; }
+  font-weight: 400; }
+
+figcaption {
+  font-size: 13.6px;
+  font-size: .85rem; }
 
 .footer hr {
   height: 1px;
@@ -10100,13 +10104,39 @@ ul, ol, p, figcaption, a {
   border-left: 0;
   padding: 0; }
 
+.content blockquote p {
+  font-family: "Bitter", serif;
+  font-style: italic;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 40px;
+  line-height: 2.5rem;
+  color: #046A37;
+  margin-top: 32px !important;
+  margin-top: 2rem !important;
+  margin-bottom: 8px !important;
+  margin-bottom: .5rem !important; }
+
+.content blockquote footer p {
+  color: rgba(92, 141, 62, 0.5) !important;
+  font-style: normal !important;
+  margin-top: 0px !important;
+  margin-top: 0rem !important;
+  margin-bottom: 32px !important;
+  margin-bottom: 2rem !important; }
+
 .content h1,
 .content h2,
 .content h3,
 .content h4,
 .content h5,
 .content h6 {
-  font-weight: 500; }
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #046A37; }
+
+.pagination {
+  text-transform: uppercase; }
 
 .hero {
   background-repeat: no-repeat;

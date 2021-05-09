@@ -7,19 +7,19 @@
 
     {% include "includes/breadcrumb.html" with page=page %}
 
-  <section class="section">
+  <section class="section py-0">
       <div class="container">
         <div class="columns is-multiline">
-          <div class="column is-one-third">
+          <div class="column is-one-quarter">
             <article class="notification media has-background-white">
               <figure class="media-left">
                 <span class="icon">
-                  <i class="fas fa-map-marked-alt fa-2x" aria-hidden="true"></i>
+                  <i class="fas fa-map-marked-alt fa-2x has-text-primary" aria-hidden="true"></i>
                 </span>
               </figure>
               <div class="media-content">
                 <div class="content">
-                  <h1 class="title is-size-4">Where</h1>
+                  <h1 class="title is-size-4 has-text-primary">Where</h1>
                   <p class="is-size-5 subtitle">
                     {{ page.location }}
                   </p>
@@ -27,16 +27,16 @@
               </div>
             </article>
           </div>
-          <div class="column is-one-third">
+          <div class="column is-one-quarter">
             <article class="notification has-background-white media">
               <figure class="media-left">
                 <span class="icon">
-                  <i class="fas fa-2x fa-calendar-alt" aria-hidden="true"></i>
+                  <i class="fas fa-2x fa-calendar-alt has-text-primary" aria-hidden="true"></i>
                 </span>
               </figure>
               <div class="media-content">
                 <div class="content">
-                  <h1 class="title is-size-4">Date</h1>
+                  <h1 class="title is-size-4 has-text-primary">Date</h1>
                   <p class="is-size-5 subtitle">
                      {{ page.date_scheduled|date:"d M Y" }}
                   </p>
@@ -44,16 +44,16 @@
               </div>
             </article>
           </div>
-          <div class="column is-one-third">
+          <div class="column is-one-quarter">
             <article class="notification has-background-white media">
               <figure class="media-left">
                 <span class="icon">
-                  <i class="fas fa-2x fa-clock" aria-hidden="true"></i>
+                  <i class="fas fa-2x fa-clock has-text-primary" aria-hidden="true"></i>
                 </span>
               </figure>
               <div class="media-content">
                 <div class="content">
-                  <h1 class="title is-size-4">Time</h1>
+                  <h1 class="title is-size-4 has-text-primary">Time</h1>
                   <p class="is-size-5 subtitle">
                     {{ page.starting_time }}{% if page.ending_time %} - {{ page.ending_time }}{% endif %}
                   </p>
@@ -66,29 +66,34 @@
   </section>  
 
     
-
+<section class="section pt-0">
     <div class="container">
-        <div class="content ">
+        <div class="content">
+            <div class="columns">
+                <div class="column  is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
             {% for block in page.body %}
                 {{ block }}
             {% endfor %}
+                    </div>
+    </div>
         </div>
     </div>
+    </section>
 
     <section class="section">
         <div class="container">
             <div class="tags">
                 {% for tag in page.get_tags %}
                     {% if forloop.counter == 1 %}
-                        <span class="mr-2 mb-2">Tags:</span>
+                        <span class="mr-2 mb-2 has-text-weight-semibold">Tags:</span>
                     {% endif %}
                     <a class="tag is-medium is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
                 {% endfor %}
                 {% for suburb in page.get_suburbs  %}
                     {% if forloop.counter == 1 %}
-                        <span class="ml-2 mb-2">Suburbs:</span>
+                        <span class="ml-2 mb-2 has-text-weight-semibold">Suburbs:</span>
                     {% endif %}
-                    <a class="tag is-medium is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+                    <a class="tag is-medium is-link is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
                 {% endfor %}
             </div>
         </div>
