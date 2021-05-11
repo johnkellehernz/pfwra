@@ -54,7 +54,7 @@
         </div>
     </section>
 
-    <section class="section pt-0">
+    <section class="section white-beige-gradient">
         <div class="container">
             <div class="columns is-multiline">
                 {% for event in events %}
@@ -66,12 +66,15 @@
         </div>
     </section>
 
-    <section class="mb-6">
-        {% if events.paginator.count > 1 %}
+    <div class="events-between"></div>
+
+
+    {% if events.paginator.count > 1 %}
+        <section class="mb-6">
             <div class="container">
                 {% include "includes/pagination.html" with subpages=events %}
             </div>
-        {% endif %}
-    </section>
+        </section>
+    {% endif %}
 
 {% endblock %}

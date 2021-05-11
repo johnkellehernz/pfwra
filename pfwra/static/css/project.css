@@ -435,16 +435,16 @@ a.box:active {
 .button {
   background-color: white;
   border-color: #dbdbdb;
-  border-width: 1px;
+  border-width: 0;
   color: #363636;
   cursor: pointer;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: calc(0.5em - 1px);
+  padding-bottom: calc(0.5em - 0);
   padding-left: 1em;
   padding-right: 1em;
-  padding-top: calc(0.5em - 1px);
+  padding-top: calc(0.5em - 0);
   text-align: center;
   white-space: nowrap; }
   .button strong {
@@ -453,14 +453,14 @@ a.box:active {
     height: 1.5em;
     width: 1.5em; }
   .button .icon:first-child:not(:last-child) {
-    margin-left: calc(-0.5em - 1px);
+    margin-left: calc(-0.5em - 0);
     margin-right: 0.25em; }
   .button .icon:last-child:not(:first-child) {
     margin-left: 0.25em;
-    margin-right: calc(-0.5em - 1px); }
+    margin-right: calc(-0.5em - 0); }
   .button .icon:first-child:last-child {
-    margin-left: calc(-0.5em - 1px);
-    margin-right: calc(-0.5em - 1px); }
+    margin-left: calc(-0.5em - 0);
+    margin-right: calc(-0.5em - 0); }
   .button:hover, .button.is-hovered {
     border-color: #b5b5b5;
     color: #363636; }
@@ -10219,6 +10219,14 @@ footer .has-underline {
 
 .light-green-info-gradient-mobile {
   background: linear-gradient(-3deg, #88BE41 20%, #5C8D3E calc(20% + 1px)); }
+
+.white-beige-gradient {
+  background: linear-gradient(-2deg, #F2EEE0 90%, white calc(90% + 1px)); }
+
+div.events-between {
+  height: 100px;
+  margin-top: -100px;
+  background: linear-gradient(to bottom left, #F2EEE0 calc(50%), white calc(50% + 1px)); }
 
 a.tag {
   font-family: "Oswald", sans-serif;

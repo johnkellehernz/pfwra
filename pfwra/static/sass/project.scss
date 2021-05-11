@@ -47,6 +47,8 @@ $title-weight: 500;
 $footer-background-color: $dark-green;
 $footer-color: white;
 
+$button-border-width:0;
+
 // $control-border-width: 2px;
 // $input-border-color: transparent;
 // $input-shadow: none;
@@ -271,6 +273,16 @@ footer{
 
 .light-green-info-gradient-mobile {
     background: linear-gradient(-3deg, $light-green 20%, $success calc(20% + 1px));
+}
+
+.white-beige-gradient {
+    background: linear-gradient(-2deg, $beige 90%, $white calc(90% + 1px));
+}
+
+div.events-between {
+    height: 100px;
+    margin-top: -100px;
+    background: linear-gradient(to bottom left, $beige calc(50%), $white calc(50% + 1px));
 }
 
 // Tags
