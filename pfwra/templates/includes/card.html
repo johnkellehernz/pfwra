@@ -11,7 +11,7 @@
     </figure>
   </div>
 
-  <div class="card-content">
+  <div class="card-content py-2 px-3">
     <div class="media">
       <div class="media-content">
         <p class="title has-text-primary">{{ page.title|upper }}</p>
@@ -23,6 +23,7 @@
           {% endif %}
         <p class="mt-3">{{ page.introduction }}</p>
       </div>
+
     </div>
     
       {% if class == 'group' %}
@@ -47,24 +48,15 @@
        
       {% endif %}
     
-  </div>
 
   {% if class == 'event' %}
-    <div class="px-5 pt-5 has-background-success">
-        {% if page.location %}
-          <h6 class="is-6 title mb-1">{{ 'Location:'|upper }}</h6>
-          <p class="has-text-weight-medium">{{ page.location }}</p>
-        {% endif %}
-        {% if page.date_scheduled %}
-          <h6 class="is-6 title my-2">{{ 'Date:'|upper }}</h6>
-          <p class="has-text-weight-medium">{{ page.date_scheduled|date:"d M Y" }}</p>
-        {% endif %}
-        {% if page.starting_time %}
-          <h6 class="is-6 title my-2">{{ 'Time:'|upper }}</h6>
-          <p class="has-text-weight-medium">{{ page.starting_time }}{% if page.ending_time %} - {{ page.ending_time }}{% endif %}</p>
-        {% endif %}
-      </div>
+    {% include "includes/card_article.html" with icon="users" title="Group" content=page.get_parent.title %}
+    {% include "includes/card_article.html" with icon="map-marked-alt" title="Location" content=page.location %}
+    {% include "includes/card_article.html" with icon="calendar-alt" title="Date" content=page.date_scheduled %}
+    {% include "includes/card_article.html" with icon="clock" title="Time" content=page.time %}
   {% endif %}
+
+  </div>
 
   <footer class="card-footer px-5 py-5 {% if footerclass %}{{ footerclass }}{% endif %}">
       <a href="{% pageurl page %}" class="button {% if buttonclass %}{{ buttonclass }}{% else %}is-link{% endif %} is-rounded is-fullwidth is-medium">{{ buttontext|upper }} ></a>

@@ -95,6 +95,14 @@ figcaption {
     font-size: $size-2;
 }
 
+.card-content {
+    .media:not(:first-child) {
+        border-top: 0;
+        border-bottom: 1px solid $beige; 
+    }
+
+}
+
 .card-equal-height {
    display: flex;
    flex-direction: column;

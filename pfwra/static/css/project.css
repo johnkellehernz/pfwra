@@ -10076,6 +10076,10 @@ figcaption {
   font-size: 64px;
   font-size: 4rem; }
 
+.card-content .media:not(:first-child) {
+  border-top: 0;
+  border-bottom: 1px solid #F2EEE0; }
+
 .card-equal-height {
   display: -webkit-box;
   display: -ms-flexbox;

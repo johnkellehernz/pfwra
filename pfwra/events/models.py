@@ -115,6 +115,14 @@ class EventPage(WagtailCacheMixin, Page):
     subpage_types = []
 
     @property
+    def time(self):
+        if self.starting_time and self.ending_time:
+            return self.starting_time + " - " + self.ending_time
+        elif self.starting_time:
+            return self.starting_time
+        else:
+            return None
+    @property
     def get_tags(self):
         tags = self.tags.all()
         for tag in tags:
