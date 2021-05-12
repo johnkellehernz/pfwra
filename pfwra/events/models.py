@@ -30,7 +30,7 @@ class EventPageSuburb(Orderable, models.Model):
 
     @property
     def suburb_name(self):
-        return suburb.name
+        return self.suburb.name
 
     class Meta(Orderable.Meta):
         verbose_name = "suburb"
@@ -41,7 +41,7 @@ class EventPageSuburb(Orderable, models.Model):
     ]
 
     def __str__(self):
-        return self.page.title + " -> " + self.suburb.name
+        return self.page.title + " -> " + self.suburb_name
 
 
 
