@@ -115,6 +115,10 @@ class EventPage(WagtailCacheMixin, Page):
     subpage_types = []
 
     @property
+    def breadcrumb(self):
+        return EventIndexPage.objects.live().first()
+    
+    @property
     def time(self):
         if self.starting_time and self.ending_time:
             return self.starting_time + " - " + self.ending_time

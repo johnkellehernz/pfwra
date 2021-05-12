@@ -312,5 +312,7 @@ WAGTAIL_GRAVATAR_PROVIDER_URL = None
 
 WAGTAIL_CACHE = False
 
+WAGTAIL_RICHTEXT_FEATURES = ['bold', 'italic', 'link', 'ol', 'ul', 'document-link']
+
 mimetypes.add_type("image/svg+xml", ".svg", True)
 mimetypes.add_type("image/svg+xml", ".svgz", True)

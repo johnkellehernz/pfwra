@@ -4,15 +4,30 @@
     {% image page.image fill-1600x400 as image %}
     <section class="hero is-small py-5 {% if heroclass %}{{ heroclass }}{% endif %}" style="background-image: linear-gradient(-1deg, #{{ linecolor }} 20%, transparent calc(20% + 1px)), linear-gradient(to right, #{{ gradientcolor }} 25%, transparent 45%, #{{ gradientcolor }}), url('{{ image.url }}');">
 {% else %}
-    <section class="hero is-small py-5 {% if heroclass %}{{ heroclass }}{% endif %}">
+    <section class="hero is-small py-5 {% if heroclass %}{{ heroclass }}{% endif %}" {% if linecolor %}style="background-image: linear-gradient(-1deg, #{{ linecolor }} 20%, transparent calc(20% + 1px));"{% endif %}>
 {% endif %}
 
   <div class="hero-body">
     <div class="container has-text-left">
+        
+        {% if breadcrumb %}
+            {% include "includes/breadcrumb.html" with page=page color=breadcrumbclass %}
+        {% endif %}
+        
         <h1 class="title is-2 {% if not heroclass %}has-text-primary-light{% endif %}">{{ page.title|upper }}{% if page.subtitle %}<span class="ml-5 {% if subtitleclass %}{{ subtitleclass }}{% endif %}">{{ page.subtitle|upper }}</span>{% endif %}</h1>
         <div class="columns">
             <div class="column is-three-quarters is-full-mobile">
-                <p class="subtitle has-text-weight-regular mb-5 {% if pclass %}{{ pclass }}{% elif not heroclass %}has-text-primary-light{% endif %}">{{ page.introduction }}</p>
+                {% if page.author %}
+                <p class="subtitle has-text-weight-regular mb-5 has-text-success">
+                    By {{ page.author.first_name }} {{ page.author.last_name }}
+                    {% if page.date_published %}
+                        on {{ page.date_published|date:"dS F Y" }}
+                    {% endif %}
+                </p>
+                {% endif %}
+                <p class="subtitle has-text-weight-regular mb-5 {% if pclass %}{{ pclass }}{% elif not heroclass %}has-text-primary-light{% endif %}">
+                    {{ page.introduction }}
+                </p>
             </div>
         </div>
     </div>

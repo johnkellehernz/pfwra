@@ -1,6 +1,7 @@
 {% load wagtailimages_tags wagtailcore_tags wagtailroutablepage_tags %}
 
 <div class="card card-equal-height">
+
   <div class="card-image">
     <figure class="image is-4by3">
       {% if page.image %}
@@ -14,39 +15,67 @@
   <div class="card-content py-2 px-3">
     <div class="media">
       <div class="media-content">
-        <p class="title has-text-primary">{{ page.title|upper }}</p>
+        <p class="title {% if class == 'group' %}has-text-blue{% else %} has-text-primary{% endif %}">{{ page.title|upper }}</p>
           {% if page.author %}
               <p class="has-text-weight-semibold has-text-primary">{{ page.author.first_name }} {{ page.author.last_name }}</p>
           {% endif %}
           {% if page.date_published %}
               <p class="has-text-weight-normal has-text-primary">{{ page.date_published|date:"d M Y" }}</p>
           {% endif %}
-        <p class="mt-3">{{ page.introduction }}</p>
+        <p class="pt-2 mt-2" {% if class == 'news' %}style="border-top:1px solid #f2eee0;"{% endif %}>{{ page.introduction }}</p>
       </div>
 
     </div>
-    
-      {% if class == 'group' %}
-        <div class="content">
-          {% if page.external_url %}
-            <span class="icon-text mb-3 has-text-primary">
-              <span class="icon">
-                <i class="fas fa-link"></i>
-              </span>
-              <span><a class="link is-family-sans-serif" href="{{ page.external_url}}" target="_blank">{{ 'GO TO Website'|upper }}</a></span>
-            </span>
-          {% endif %}
-          <div class="tags">
+
+    {% if class == 'news' %}
+      <div class="media pt-0" style="border:0;">
+        <div class="media-content">
+          <div class="tags pb-3">
             {% for tag in page.get_tags  %}
-                  <a class="tag is-small is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+                  <a class="tag is-small has-text-primary is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
             {% endfor %}
             {% for suburb in page.get_suburbs  %}
-                <a class="tag is-small is-link is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+                <a class="tag is-small has-text-primary is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
             {% endfor %}
           </div>
+        </div>     
       </div>
-       
-      {% endif %}
+    {% endif %}
+    
+    {% if class == 'group' %}
+
+      <div class="content">
+
+        <div class="tags">
+          {% for tag in page.get_tags  %}
+                <a class="tag is-small has-text-white has-background-blue is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+          {% endfor %}
+          {% for suburb in page.get_suburbs  %}
+              <a class="tag is-small has-text-white has-background-blue is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+          {% endfor %}
+        </div>
+
+        {% if page.external_url %}
+           <div class="media mb-0 mt-2 py-2 pl-2" style="border-top:1px solid #f2eee0;">
+            <div>
+              <p class="image">
+                <span class="icon">
+                  <i class="fas fa-1x fa-link has-text-blue" aria-hidden="true"></i>
+                </span>
+              </p>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <a class="has-text-blue is-family-sans-serif" href="{{ page.external_url}}" target="_blank">{{ 'Go to website'|upper }}</a>
+              </div>
+            </div>
+          </div>
+          
+        {% endif %}
+
+      </div>
+
+    {% endif %}
     
 
   {% if class == 'event' %}

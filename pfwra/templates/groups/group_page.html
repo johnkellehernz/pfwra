@@ -1,26 +1,91 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailroutablepage_tags %}
+{% load wagtailcore_tags wagtailroutablepage_tags wagtailimages_tags %}
 
 
 {% block pre-content %}
-    {% include "includes/page_title.html" with page=page heroclass='has-text-white' subtitleclass='has-text-primary' showimage=True %}
+    {% include "includes/page_title.html" with page=page breadcrumb=True linecolor="fff" heroclass='is-beige has-text-blue' subtitleclass='has-text-primary' %}
 {% endblock pre-content %}
 
 {% block content %}
-    
-    {% include "includes/breadcrumb.html" with page=page %}
 
-    <div class="container">
-        <div class="content ">
+    <div class="container my-5">
+        <div class="content group">
             <div class="columns">
-                <div class="column  is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
-            {% for block in page.body %}
-                {{ block }}
-            {% endfor %}
+                <div class="column is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
+                    {% for block in page.body %}
+                        {{ block }}
+                    {% endfor %}
+                </div>
+                <div class="column is-one-quarters-tablet is-one-quarters-desktop is-one-quarters-widescreen is-one-third-fullhd">
+                    
+                    <div class="columns">
+                        <div class="column group-social is-half">
+                            <figure class="image is-256x256">
+                            {% image page.logo width-512 %}
+                            </figure>
+
+                            {% if page.external_url %}
+                                <div class="icon-text is-align-items-center py-2">
+                                  <span class="icon is-medium has-text-info">
+                                    <i class="fas fa-lg fa-link has-text-blue"></i>
+                                  </span>
+                                  <a class="has-text-blue is-family-sans-serif" href="{{ page.external_url}}" target="_blank">{{ 'Go to website'|upper }}</a>
+                                </div>
+                               
+                            {% endif %}
+
+                            {% if page.facebook_url %}
+                                <div class="icon-text is-align-items-center py-2">
+                                  <span class="icon is-medium has-text-info">
+                                    <i class="fab fa-lg fa-facebook has-text-blue"></i>
+                                  </span>
+                                  <a class="has-text-blue is-family-sans-serif" href="{{ page.facebook_url}}" target="_blank">{{ 'Follow on Facebook'|upper }}</a>
+                                </div>
+                            {% endif %}
+
+                            {% if page.instagram_url %}
+                                <div class="icon-text is-align-items-center py-2">
+                                  <span class="icon is-medium has-text-info">
+                                    <i class="fab fa-lg fa-instagram has-text-blue"></i>
+                                  </span>
+                                  <a class="has-text-blue is-family-sans-serif" href="{{ page.instagram_url}}" target="_blank">{{ 'Follow on Instagram'|upper }}</a>
+                                </div>  
+                            {% endif %}
+
+                            {% if page.twitter_url %}
+                                <div class="icon-text is-align-items-center py-2">
+                                  <span class="icon is-medium has-text-info">
+                                    <i class="fab fa-lg fa-twitter has-text-blue"></i>
+                                  </span>
+                                  <a class="has-text-blue is-family-sans-serif" href="{{ page.twitter_url}}" target="_blank">{{ 'Follow on Twitter'|upper }}</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-        </div>
-    </div>
+
+    {% if page.get_events %}
+        <div class="groups-between"></div>
+
+        <section class="section has-background-beige">
+            <div class="container">
+                <h3 class="title is-3 has-text-blue">UPCOMING EVENTS</h2>
+                <div class="columns is-multiline my-5 ">
+                    {% for event in page.get_events|slice:3 %}
+                        <div class="column is-one-third">
+                            {% include "includes/card.html" with page=event class="event" buttonclass='is-success' buttontext='See details' %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+
+    <div class="events-between"></div>
 
     <section class="section">
         <div class="container">
@@ -29,27 +94,18 @@
                     {% if forloop.counter == 1 %}
                         <span class="mr-2 mb-2 mr-2 has-text-weight-semibold">Tags:</span>
                     {% endif %}
-                    <a class="tag py-5 px-5 is-info is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+                    <a class="tag py-5 px-5 is-blue is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
                 {% endfor %}
                 {% for suburb in page.get_suburbs  %}
                     {% if forloop.counter == 1 %}
                         <span class="ml-2 mb-2 mr-2 has-text-weight-semibold">Suburbs:</span>
                     {% endif %}
-                    <a class="tag py-5 px-5 is-info is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+                    <a class="tag py-5 px-5 is-blue is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
                 {% endfor %}
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <div class="columns is-multiline my-5 ">
-                {% for event in page.get_events|slice:3 %}
-                    <div class="column is-one-third">
-                        {% include "includes/card.html" with page=event class="event" buttonclass='has-text-primary has-background-white' footerclass="has-background-success" buttontext="See details" %}
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+
+
 {% endblock %}

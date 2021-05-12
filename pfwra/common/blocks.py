@@ -1,3 +1,5 @@
+from django.conf import settings 
+
 from wagtail.core.blocks import (
   CharBlock, ChoiceBlock, PageChooserBlock, RichTextBlock, StructValue, StructBlock, StreamBlock, TextBlock, URLBlock)
 from wagtail.images.blocks import ImageChooserBlock
@@ -81,9 +83,10 @@ class HeadingBlock(StructBlock):
     heading_text = CharBlock(classname="title", required=True)
     size = ChoiceBlock(choices=[
         ('', 'Select a header size'),
-        ('h2', 'H2'),
         ('h3', 'H3'),
-        ('h4', 'H4')
+        ('h4', 'H4'),
+        ('h5', 'H5'),
+        ('h6', 'H6')
     ], blank=True, required=False)
 
     class Meta:
@@ -111,7 +114,8 @@ class BaseStreamBlock(StreamBlock):
     heading_block = HeadingBlock()
     paragraph_block = RichTextBlock(
         icon="fa-paragraph",
-        template="common/blocks/paragraph.html"
+        template="common/blocks/paragraph.html",
+        features=settings.WAGTAIL_RICHTEXT_FEATURES,
     )
     image_block = ImageBlock()
     block_quote = BlockQuote()

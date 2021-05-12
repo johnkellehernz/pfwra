@@ -3,24 +3,9 @@
 
 {% block content %}
 
-    {% include "includes/page_title.html" with page=page heroclass='has-text-primary is-beige' subtitleclass='has-text-dark' pclass='has-text-black' %}
+    {% include "includes/page_title.html" with page=page breadcrumb=True breadcrumbclass='is-info' linecolor="fff" heroclass='has-text-dark is-beige' subtitleclass='has-text-primary' pclass='has-text-primary' %}
 
-    {% include "includes/breadcrumb.html" with page=page %}
-
-    <section class="section pt-3 pb-5">
-        <div class="container">
-            <p class="title is-5 is-family-primary">
-            {% if page.author %}
-                By {{ page.author.first_name }} {{ page.author.last_name }}
-            {% endif %}
-            {% if page.date_published %}
-                on {{ page.date_published|date:"d M Y" }}
-            {% endif %}
-            </p>
-        </div>
-    </section>
-
-    <div class="container">
+    <div class="container pt-3 pb-5">
         <div class="content ">
             <div class="columns">
                 <div class="column  is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
@@ -39,13 +24,13 @@
                     {% if forloop.counter == 1 %}
                         <span class="mr-2 mb-2 has-text-weight-semibold">Tags:</span>
                     {% endif %}
-                    <a class="tag py-5 px-5 is-rounded has-text-white has-background-success" href="{{ tag.url }}">{{ tag.name|title }}</a>
+                    <a class="tag py-5 px-5 is-rounded is-primary" href="{{ tag.url }}">{{ tag.name|title }}</a>
                 {% endfor %}
                 {% for suburb in page.get_child_suburbs  %}
                     {% if forloop.counter == 1 %}
                         <span class="mr-2 mb-2 has-text-weight-semibold">Suburbs:</span>
                     {% endif %}
-                    <a class="tag py-5 px-5 is-rounded has-text-white has-background-success" href="{% routablepageurl page "suburb_archive" suburb.slug %}">{{ suburb.name|title }}</a>
+                    <a class="tag py-5 px-5 is-rounded is-primary" href="{% routablepageurl page "suburb_archive" suburb.slug %}">{{ suburb.name|title }}</a>
                 {% endfor %}
             </div>
         </div>

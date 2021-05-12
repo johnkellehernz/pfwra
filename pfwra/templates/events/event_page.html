@@ -3,9 +3,7 @@
 
 {% block content %}
 
-    {% include "includes/page_title.html" with page=page heroclass='is-success light-green-info-gradient' subtitleclass='has-text-primary' %}
-
-    {% include "includes/breadcrumb.html" with page=page %}
+    {% include "includes/page_title.html" with page=page breadcrumb=True breadcrumbclass='is-success' heroclass='is-beige has-text-success' linecolor="fff" subtitleclass='has-text-primary' %}
 
   <section class="section py-0">
       <div class="container">
@@ -63,39 +61,46 @@
           </div>
         </div>
       </div>
-  </section>  
+  </section>
 
-    
-<section class="section pt-0">
+  <section class="section pt-0 white-beige-gradient">
+      <div class="container">
+          <div class="content event">
+              <div class="columns">
+                  <div class="column  is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
+                    {% for block in page.body %}
+                        {{ block }}
+                    {% endfor %}
+                   </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <div class="events-between my-0"></div>
+
+  <section class="section my-0 py-0">
     <div class="container">
-        <div class="content">
-            <div class="columns">
-                <div class="column  is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
-            {% for block in page.body %}
-                {{ block }}
-            {% endfor %}
-                    </div>
+      <p class=" has-text-weight-semibold">Group: <a class="ml-2 py-5 px-5 tag is-large is-rounded has-background-blue has-text-white">{{ page.get_parent.title|upper }}</a></p>
     </div>
-        </div>
-    </div>
-    </section>
+  </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="tags">
-                {% for tag in page.get_tags %}
-                    {% if forloop.counter == 1 %}
-                        <span class="mr-2 mb-2 has-text-weight-semibold">Tags:</span>
-                    {% endif %}
-                    <a class="tag is-medium is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
-                {% endfor %}
-                {% for suburb in page.get_suburbs  %}
-                    {% if forloop.counter == 1 %}
-                        <span class="ml-2 mb-2 has-text-weight-semibold">Suburbs:</span>
-                    {% endif %}
-                    <a class="tag is-medium is-link is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+  <section class="section mt-0 pt-5">
+      <div class="container">
+          <div class="tags are-large">
+              {% for tag in page.get_tags %}
+                  {% if forloop.counter == 1 %}
+                      <span class="mr-2 mb-2 has-text-weight-semibold">Tags:</span>
+                  {% endif %}
+                  <a class="tag py-5 px-5 is-link is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+              {% endfor %}
+              {% for suburb in page.get_suburbs  %}
+                  {% if forloop.counter == 1 %}
+                      <span class="mx-2 mb-2 has-text-weight-semibold">Suburbs:</span>
+                  {% endif %}
+                  <a class="tag py-5 px-5 is-link is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+              {% endfor %}
+          </div>
+      </div>
+  </section>
 {% endblock %}

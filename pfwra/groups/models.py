@@ -76,6 +76,9 @@ class GroupPage(WagtailCacheMixin, Page):
         related_name='+',
     )
     external_url = models.URLField(blank=True, null=True, help_text="URL of the group, if any")
+    facebook_url = models.URLField(blank=True, null=True, help_text="Facebook URL of the group, if any")
+    instagram_url = models.URLField(blank=True, null=True, help_text="Instagram URL of the group, if any")
+    twitter_url = models.URLField(blank=True, null=True, help_text="Twitter URL of the group, if any")
     body = StreamField(
         BaseStreamBlock(), verbose_name="Page body", blank=True
     )
@@ -85,8 +88,13 @@ class GroupPage(WagtailCacheMixin, Page):
         FieldPanel('introduction', classname="full"),
         ImageChooserPanel('image'),
         ImageChooserPanel('logo'),
-        FieldPanel('external_url', classname="full"),
         StreamFieldPanel('body'),
+        MultiFieldPanel([
+            FieldPanel('external_url'),
+            FieldPanel('facebook_url'),
+            FieldPanel('instagram_url'),
+            FieldPanel('twitter_url'),
+        ], heading="External links"),
         MultiFieldPanel([
             FieldPanel('tags'),
             InlinePanel('suburb_set', label="Suburbs")
@@ -139,8 +147,6 @@ class GroupPage(WagtailCacheMixin, Page):
     def get_events(self):
         return (EventPage.objects.live().descendant_of(self).
                 filter(date_scheduled__gte=datetime.today()).order_by('-date_scheduled'))
-
-
 
 
 class GroupIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):

@@ -8,7 +8,6 @@
 $family-sans-serif: "Oswald", sans-serif;
 // family-secondary defaults to family-sans-serif in Bulma
 $family-primary: "Bitter", serif;
-
 // Brand colors
 // Main palette
 $dark-green: #046A37; // Main brand colour
@@ -18,8 +17,10 @@ $green-transparent: rgba(92, 141, 62, 0.50); // Support with opacity 0.5
 $light-blue: #B9E2E7; // Support colour #2
 $dark-blue: #317796; // Button?
 $orange: #D96D28; // Button? / Alert?
+$blue: #447593;
 // Support palette
 $light-green: #88BE41; // Main brand colour
+$pale-green: #aabc92;
 $beige: #F2EEE0; // Neutral background
 $red: #D9222D; // Alert
 $primary: $dark-green;
@@ -33,7 +34,7 @@ $danger: $red;
 
 // Update some of Bulma's component variables
 // $body-background-color: $white;
-$custom-colors: ("beige": $beige, "light-green": $light-green, "transp-green": $green-transparent);
+$custom-colors: ("beige": $beige, "pale-green": $pale-green, "blue": $blue, "light-green": $light-green, "transp-green": $green-transparent);
 $title-line-height: 1;
 $title-family: $family-sans-serif;
 $size-1: 5rem;
@@ -48,6 +49,8 @@ $footer-background-color: $dark-green;
 $footer-color: white;
 
 $button-border-width:0;
+
+$text: hsl(0, 0%, 4%);
 
 // $control-border-width: 2px;
 // $input-border-color: transparent;
@@ -276,13 +279,28 @@ footer{
 }
 
 .white-beige-gradient {
-    background: linear-gradient(-2deg, $beige 90%, $white calc(90% + 1px));
+    background: linear-gradient(-2deg, $beige 80%, $white calc(80% + 1px));
 }
 
 div.events-between {
     height: 100px;
     margin-top: -100px;
     background: linear-gradient(to bottom left, $beige calc(50%), $white calc(50% + 1px));
+}
+
+div.groups-between {
+    height: 100px;
+    margin-top: -50px;
+    background: linear-gradient(to top left, $beige calc(50%), $white calc(50% + 1px));
+}
+
+div.group-social {
+    div.icon-text {
+        border-top: 1px solid $beige;
+    }
+    .icon-text:is(:last-child) {
+        border-bottom: 1px solid $beige;
+    }
 }
 
 // Tags
@@ -296,6 +314,20 @@ a.tag {
     width: 256px;
     height: 256px;
 }
+
+// Content headings
+
+div.content.event{
+    h2, h3, h4, h5, h6 {
+        color: $success;
+    }
+} 
+
+div.content.group{
+    h2, h3, h4, h5, h6 {
+        color: $blue;
+    }
+} 
 
 @import "./components/home.scss";
 @import "./wagtail.scss";
