@@ -57,7 +57,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 WAGTAIL = [
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
-    "wagtail.contrib.search_promotions",
+    # "wagtail.contrib.search_promotions",
     "wagtail.contrib.routable_page",
     "wagtail.contrib.modeladmin",
     "wagtail.embeds",
