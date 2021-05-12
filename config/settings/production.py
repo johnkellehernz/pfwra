@@ -198,7 +198,7 @@ WAGTAILSEARCH_BACKENDS = {
     'default': {
         'BACKEND': 'wagtail.search.backends.elasticsearch7',
         'URLS': [env("DJANGO_ELASTICSEARCH_URL")],
-        'INDEX': 'wagtail',
+        'INDEX': 'elasticsearch',
         'TIMEOUT': 5,
         'OPTIONS': {},
         'INDEX_SETTINGS': {},
