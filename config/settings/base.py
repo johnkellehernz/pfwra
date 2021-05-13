@@ -24,7 +24,7 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # though not all of them may be available with every OS.
 # In Windows, this must be set to your system time zone.
-TIME_ZONE = "UTC"
+TIME_ZONE = "Pacific/Auckland"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en-nz"
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
@@ -303,6 +303,9 @@ USE_THOUSAND_SEPARATOR = True
 # SOCIALACCOUNT_ADAPTER = "pfwra.users.adapters.SocialAccountAdapter"
 
 # Your stuff...
+
+DATE_FORMAT = '%a %d %B %Y'
+
 WAGTAIL_SITE_NAME = "Pest Free Waitākere Ranges Alliance"
 BASE_URL = "https://pfwra.org.nz"
 

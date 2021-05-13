@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    {% include "includes/page_title.html" with page=page breadcrumb=True breadcrumbclass='is-success' heroclass='is-beige has-text-success' linecolor="fff" subtitleclass='has-text-primary' %}
+    {% include "includes/page_title.html" with page=page breadcrumb=True heroclass='is-beige has-text-success' linecolor="fff" subtitleclass='has-text-primary' %}
 
   <section class="section py-0">
       <div class="container">
@@ -36,7 +36,7 @@
                 <div class="content">
                   <h1 class="title is-size-4 has-text-primary">Date</h1>
                   <p class="is-size-5 subtitle">
-                     {{ page.date_scheduled|date:"d M Y" }}
+                    {{ page.get_date_scheduled }}
                   </p>
                 </div>
               </div>
@@ -67,7 +67,7 @@
       <div class="container">
           <div class="content event">
               <div class="columns">
-                  <div class="column  is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
+                  <div class="column is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
                     {% for block in page.body %}
                         {{ block }}
                     {% endfor %}
@@ -75,6 +75,43 @@
               </div>
           </div>
       </div>
+  </section>
+
+  <section class="section pt-0 has-background-beige">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-three-quarters-tablet is-three-quarters-desktop is-three-quarters-widescreen is-two-thirds-fullhd">
+          <form class="box" action="#" method="POST" role="form">
+            <p class="title is-4">LET US KNOW YOU'RE COMING</p>
+            <fieldset>
+              <div class="columns is-multiline">
+                <div class="column is-half">
+                  <div class="field" aria-required="true">
+                    <div class="control has-icons-left has-icons-right">
+                      <input class="input is-medium" type="email" placeholder="Enter your email address">
+                      <span class="icon is-left">
+                        <i class="fas fa-envelope fa-sm"></i>
+                      </span>
+                    </div>
+                  </div> 
+                </div>
+                <div class="column is-half">
+                  <div class="field" aria-required="true">
+                    <div class="control">
+                      <input class="input is-medium" type="email" placeholder="Enter your name">
+                    </div>
+                  </div> 
+                </div>
+                <div class=" column is-full">
+                  <button class="button is-family-secondary is-medium is-rounded is-success">{{ 'Register'|upper }}</button>
+                </div>
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
 
   <div class="events-between my-0"></div>

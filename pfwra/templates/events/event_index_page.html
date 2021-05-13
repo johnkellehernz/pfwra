@@ -7,20 +7,7 @@
 
     <section class="section">
         <div class="container">
-            {% if tag %}
-                <div class='notification is-info is-light'>
-                    <p>Showing events tagged with: <strong>{{ tag|title }}</strong></p>
-                </div>
-            {% endif %}
-            {% if suburb %}
-                <div class='notification is-info is-light'>
-                    <p>Showing events from: <strong>{{ suburb|title }}</strong></p>
-                </div>
-            {% endif %}      
             <div class="tags are-large">
-                {% if tag or suburb %}
-                    <a class="tag py-5 px-5 is-primary is-rounded" href="{% pageurl page %}">{{ 'Show all'|title }}</a>
-                {% endif %}
                 {% for tag in page.get_child_tags  %}
                       <a class="tag py-5 px-5 is-rounded has-text-white has-background-success" href="{{ tag.url }}">{{ tag.name|title }}</a>
                 {% endfor %}
@@ -28,6 +15,16 @@
                     <a class="tag py-5 px-5 is-rounded has-text-white has-background-success" href="{% routablepageurl page "suburb_archive" suburb.slug %}">{{ suburb.name|title }}</a>    
                 {% endfor %}
             </div>
+            {% if tag %}
+                <div>
+                    <p class="is-flex is-align-items-center title is-3 has-text-dark">{{ "Showing events tagged with:"|upper }}&nbsp;<span class="has-text-light-green">{{ tag|upper }}</span><a class="ml-3 is-size-4 tag is-light-green is-rounded" href="{% pageurl page %}">{{ 'Clear filter'|upper }}</a></p>
+                </div>
+            {% endif %}
+            {% if suburb %}
+                <div>
+                    <p class="is-flex is-align-items-center title is-3 has-text-dark">{{ "Showing events tagged with:"|upper }}&nbsp;<span class="has-text-light-green">{{ suburb|upper }}</span><a class="ml-3 is-size-4 tag is-light-green is-rounded" href="{% pageurl page %}">{{ 'Clear filter'|upper }}</a></p>
+                </div>
+            {% endif %}
         </div>
     </section>
 

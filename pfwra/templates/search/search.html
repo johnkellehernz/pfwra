@@ -5,14 +5,7 @@
     <section class="hero is-small py-5 has-text-primary is-beige">
       <div class="hero-body">
         <div class="container has-text-left">
-            <h1 class="title is-1">{{ 'Search results'|upper }}</h1>
-            {% if search_query %}
-            <div class="columns">
-                <div class="column is-half-desktop is-full-mobile">
-                    <p class="subtitle has-text-weight-semibold has-text-dark">You have searched for: <strong>{{ search_query|escape|upper }}<strong/></p>
-                </div>
-            </div>
-            {% endif %}
+            <h1 class="title is-1">'{{ search_query|escape|upper }}'</h1>
         </div>
       </div>
     </section>

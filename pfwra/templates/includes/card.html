@@ -20,7 +20,7 @@
               <p class="has-text-weight-semibold has-text-primary">{{ page.author.first_name }} {{ page.author.last_name }}</p>
           {% endif %}
           {% if page.date_published %}
-              <p class="has-text-weight-normal has-text-primary">{{ page.date_published|date:"d M Y" }}</p>
+              <p class="has-text-weight-normal has-text-primary">{{ page.date_published|date:"dS M Y" }}</p>
           {% endif %}
         <p class="pt-2 mt-2" {% if class == 'news' %}style="border-top:1px solid #f2eee0;"{% endif %}>{{ page.introduction }}</p>
       </div>
@@ -32,10 +32,10 @@
         <div class="media-content">
           <div class="tags pb-3">
             {% for tag in page.get_tags  %}
-                  <a class="tag is-small has-text-primary is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+                  <a class="tag is-medium has-text-primary is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
             {% endfor %}
             {% for suburb in page.get_suburbs  %}
-                <a class="tag is-small has-text-primary is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+                <a class="tag is-medium has-text-primary is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
             {% endfor %}
           </div>
         </div>     
@@ -48,10 +48,10 @@
 
         <div class="tags">
           {% for tag in page.get_tags  %}
-                <a class="tag is-small has-text-white has-background-blue is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
+                <a class="tag is-medium has-text-white has-background-blue is-rounded" href="{{ tag.url }}">{{ tag.name|title }}</a>
           {% endfor %}
           {% for suburb in page.get_suburbs  %}
-              <a class="tag is-small has-text-white has-background-blue is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
+              <a class="tag is-medium has-text-white has-background-blue is-rounded" href="{{ suburb.url }}">{{ suburb.name|title }}</a>
           {% endfor %}
         </div>
 
@@ -81,7 +81,7 @@
   {% if class == 'event' %}
     {% include "includes/card_article.html" with icon="users" title="Group" content=page.get_parent.title %}
     {% include "includes/card_article.html" with icon="map-marked-alt" title="Location" content=page.location %}
-    {% include "includes/card_article.html" with icon="calendar-alt" title="Date" content=page.date_scheduled %}
+    {% include "includes/card_article.html" with icon="calendar-alt" title="Date" content=page.get_date_scheduled %}
     {% include "includes/card_article.html" with icon="clock" title="Time" content=page.time %}
   {% endif %}
 

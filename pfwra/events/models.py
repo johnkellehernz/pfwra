@@ -115,6 +115,11 @@ class EventPage(WagtailCacheMixin, Page):
     subpage_types = []
 
     @property
+    def get_date_scheduled(self):
+        if self.date_scheduled:
+            return self.date_scheduled.strftime("%a %d %B %Y")
+        return None
+    @property
     def breadcrumb(self):
         return EventIndexPage.objects.live().first()
     

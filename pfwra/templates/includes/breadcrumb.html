@@ -1,13 +1,11 @@
 {% load wagtailcore_tags %}
 
 <div class="container">
-    <nav class="breadcrumbs is-family-secondary is-size-4" aria-label="breadcrumbs">
+    <nav class="breadcrumb {% if breadcrumbclass %}{{ breadcrumbclass }}{% endif %} is-family-secondary is-size-4" aria-label="breadcrumbs">
       <ul>
-        <li>
-            <a class="link {{ color }}" href="{% if page.breadcrumb %}{% pageurl page.breadcrumb %}{% else %}{% pageurl page.get_parent %}{% endif %}"><span class="icon">
-                <i class="fas fa-1x fa-arrow-left" aria-hidden="true"></i>
-            </span>BACK TO {% if page.breadcrumb %}{{ page.breadcrumb|upper }}{% else%}{{ page.get_parent.title|upper }}{% endif %}</a>
-        </li>
+        <li><a href="/">{{ "Home"|upper }}</a></li>
+        <li><a href="{% if page.breadcrumb %}{% pageurl page.breadcrumb %}{% else %}{% pageurl page.get_parent %}{% endif %}">{% if page.breadcrumb %}{{ page.breadcrumb|upper }}{% else%}{{ page.get_parent.title|upper }}{% endif %}</a></li>
+        <li class="is-active has-text-dark"><a href="#">{{ page.title|upper }}</a></li>
       </ul>
     </nav>
 </div>
