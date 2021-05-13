@@ -303,8 +303,8 @@ USE_THOUSAND_SEPARATOR = True
 # SOCIALACCOUNT_ADAPTER = "pfwra.users.adapters.SocialAccountAdapter"
 
 # Your stuff...
-WAGTAIL_SITE_NAME = "pfwra"
-BASE_URL = "https://pfwra"
+WAGTAIL_SITE_NAME = "Pest Free Waitākere Ranges Alliance"
+BASE_URL = "https://pfwra.org.nz"
 
 WAGTAILEMBEDS_RESPONSIVE_HTML = True
 

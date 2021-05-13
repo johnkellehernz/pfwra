@@ -1,9 +1,12 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.staticfiles.storage import staticfiles_storage
 from django.urls import include, path, re_path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
+from django.views.generic.base import RedirectView
+
 from wagtail.documents import urls as wagtaildocs_urls  # noqa isort:skip
 from wagtail.core import urls as wagtail_urls  # noqa isort:skip
 from wagtail.admin import urls as wagtailadmin_urls  # noqa isort:skip
@@ -12,8 +15,12 @@ from pfwra.search import views as search_views  # noqa isort:skip
 
 urlpatterns = [
     # Django Admin, use {% url "admin:index" %}
-    path(settings.DJANGO_ADMIN_URL, admin.site.urls),
+    # path(settings.DJANGO_ADMIN_URL, admin.site.urls),
     # Wagtail Admin
+    path(
+        "favicon.ico",
+        RedirectView.as_view(url=staticfiles_storage.url("images/favicon/favicon.ico")),
+    ),
     path(settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
     re_path(r"^documents/", include(wagtaildocs_urls)),
     re_path(r"^search/$", search_views.search, name="search"),

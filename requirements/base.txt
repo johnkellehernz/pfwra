@@ -7,7 +7,7 @@ hiredis==1.1.0  # https://github.com/redis/hiredis-py
 
 # Django
 # ------------------------------------------------------------------------------
-django==3.1.7  # https://www.djangoproject.com/
+django==3.1.10  # https://www.djangoproject.com/
 django-environ==0.4.5  # https://github.com/joke2k/django-environ
 django-model-utils==4.1.1  # https://github.com/jazzband/django-model-utils
 django-allauth==0.44.0  # https://github.com/pennersr/django-allauth
@@ -16,6 +16,6 @@ django-widget-tweaks==1.4.8  # https://pypi.org/project/django-widget-tweaks/
 
 # Wagtail
 # ------------------------------------------------------------------------------
-wagtail==2.12.4  # https://github.com/wagtail/wagtail
+wagtail==2.13 # https://github.com/wagtail/wagtail
 wagtailmenus==3.0.2  # https://pypi.org/project/wagtailmenus/
 wagtail-cache==1.0.2  # https://pypi.org/project/wagtail-cache/
